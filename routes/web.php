@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home-admin');
+Route::get('/login', 'Auth\LoginController@showFormLogin')->name('formLogin');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/', function (){ return view('admin.home');})->name('admin.home');
+        Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+        Route::prefix('users')->group(function () {
+            Route::get('/', 'UserController@index')->name('users.index');
+            Route::get('/create', 'UserController@create')->name('users.create');
+            Route::get('/create', 'UserController@store')->name('users.store');
+            Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
+            Route::get('{id}/edit', 'UserController@update')->name('users.update');
+            Route::get('{id}/delete', 'UserController@delete')->name('users.delete');
+        });
+    });
 });
