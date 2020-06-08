@@ -19,7 +19,7 @@ class LoginController extends Controller
         $password = $request->password;
 
         $user = [
-            'email' => $email,
+            'username' => $email,
             'password' => $password
         ];
 

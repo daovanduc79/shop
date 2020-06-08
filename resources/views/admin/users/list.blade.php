@@ -25,15 +25,29 @@
             <div class="col">
                 <div class="card">
                     <!-- Card header -->
-                    <div class="card-header border-0">
+                    <div class="card-header border-0 col-6">
                         <h3 class="mb-0">Users List</h3>
                     </div>
+                    <div class="col-6"><p>{{session('success')}}</p></div>
                     <div class="row">
+<<<<<<< HEAD
 
                         <div class="col-1 text-center">
                             <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
                         </div>
                         <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
+=======
+                        <div class="col-1"></div>
+                        <div class="col-10 text-right">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="col-1 text-center">
+                            <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
+                        </div>
+>>>>>>> tienanh
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
