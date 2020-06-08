@@ -5,19 +5,24 @@ namespace App\Http\Controllers;
 use App\Http\Service\UserService;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Symfony\Component\Console\Input\Input;
+use function Composer\Autoload\includeFile;
 
 class UserController extends Controller
 {
-    protected $users;
+    protected $userService;
+
 
     public function __construct(UserService $userService)
     {
-        $this->users = $userService;
+        $this->userService = $userService;
+
     }
 
     public function index()
     {
-        $users = $this->users->all();
+        $users = $this->userService->all();
         return view('admin.users.list', compact('users'));
     }
 
@@ -28,33 +33,41 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->role = $request->role;
-
-        if ($request->password === $request->comfirmPassword) {
-            $user->password = $request->password;
-        } else {
+        $user = $this->userService->create();
+        $user = $this->userService->store($user,$request);
+        if ($user->password === null)
+        {
             $message = 'mat khau khong trung khop';
             session()->flash('create-error', $message);
             return back();
-        }
-
-        $user->birthday = $request->birthday;
-        $user->phone = $request->phone;
-        $user->address = $request->address;
-
-        if ($request->hasFile('image')){
-            $image = $request->image;
-            $path = $image->store('images', 'public');
-            $user->image = $path;
         } else {
-            $user->image = 'images/default';
+            $this->userService->save($user);
+            $message = 'them moi thanh cong';
+            session()->flash('success', $message);
+            return redirect()->route('users.index');
         }
-        $message = 'them moi thanh cong';
-        session()->flash('success',$message);
+    }
 
+    public function delete($id)
+    {
+        $this->userService->delete($id);
+        return redirect()->route('users.index');
+    }
+
+    public function edit($id)
+    {
+        $user = $this->userService->findOrFail($id);
+        return view('admin.users.edit', compact('user'));
+    }
+
+    public function update($id, Request $request)
+    {
+        $user = $this->userService->findOrFail($id);
+        $user = $this->userService->update($user, $request);
+        $this->userService->save($user);
+
+        $message = 'cap nhat thanh cong !!!';
+        session()->flash('success', $message);
         return redirect()->route('users.index');
     }
 }

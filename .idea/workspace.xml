@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e6775d-cc24-4dbf-bfbd-d1c76b04ca93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleConstant.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_07_065345_add_column_role_image_brithday_phone_address_to_table_users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/Repository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/Service.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,18 +145,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app/public/images" />
+      <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
   <component name="RunManager">
@@ -180,7 +184,10 @@
       <workItem from="1591467436372" duration="180000" />
       <workItem from="1591467631401" duration="137000" />
       <workItem from="1591467779433" duration="11349000" />
-      <workItem from="1591578104600" duration="1628000" />
+      <workItem from="1591578104600" duration="4694000" />
+      <workItem from="1591592647452" duration="1948000" />
+      <workItem from="1591602121265" duration="219000" />
+      <workItem from="1591602351678" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="create home admin and login">
       <created>1591254499975</created>
@@ -217,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591501451050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="create user">
+      <created>1591579749920</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591579749920</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,17 +244,22 @@
     <MESSAGE value="repository and service" />
     <MESSAGE value="login logout" />
     <MESSAGE value="list users" />
-    <option name="LAST_COMMIT_MESSAGE" value="list users" />
+    <MESSAGE value="create user" />
+    <option name="LAST_COMMIT_MESSAGE" value="create user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591180930750">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591180930750" />
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591501450954">
+    <state x="693" y="315" width="524" height="485" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591605339748">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591501450954" />
+    <state x="693" y="315" width="524" height="485" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591605339748" />
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591579749748">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579749748" />
     <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591322058987">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
@@ -249,17 +268,17 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512321952" />
-    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog" timestamp="1591512279552">
+    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog" timestamp="1591606286616">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512279552" />
-    <state x="434" y="192" width="1052" height="731" key="SettingsEditor" timestamp="1591467766799">
+    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591606286616" />
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor" timestamp="1591602338293">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591467766799" />
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591257760234">
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591602338293" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591579753952">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591257760234" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579753952" />
   </component>
 </project>

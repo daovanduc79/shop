@@ -11,7 +11,7 @@
                                 <li class="breadcrumb-item"><a href="{{route('admin.home')}}">
                                         <i class="fas fa-home"></i></a></li>
                                 <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Create</li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit</li>
                             </ol>
                         </nav>
                     </div>
@@ -27,61 +27,61 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0">
-                        <h2 class="mb-0">Users Add New</h2>
+                        <h2 class="mb-0">Users Edit {{$user->name}}</h2>
                     </div>
                     <div class="card-body">
-                        <p style="color: red">{{session('create-error')}}</p>
-                        <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
+                        {{--                    <p style="color: red">{{session('create-error')}}</p>--}}
+                        <form method="post" action="{{route('users.edit', ['id'=>$user->id])}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
-                                <input class="form-control py-4" name="name" type="text" placeholder="Enter name"/>
+                                <input class="form-control py-4" name="name" type="text" value="{{$user->name}}"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                <input class="form-control py-4" name="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                <input class="form-control py-4" name="email" type="email" disabled
+                                       value="{{$user->username}}"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Role</label>
                                 <select name="role" class="form-control">
-                                    <option value="{{\App\Http\Controllers\RoleConstant::ADMIN}}">Admin</option>
-                                    <option value="{{\App\Http\Controllers\RoleConstant::USER}}">User</option>
-                                    <option value="{{\App\Http\Controllers\RoleConstant::MEMBER}}">Member</option>
+                                    <option value="{{\App\Http\Controllers\RoleConstant::ADMIN}}"
+                                            @if($user->role === \App\Http\Controllers\RoleConstant::ADMIN)
+                                            selected
+                                                @endif
+                                    >Admin
+                                    </option>
+                                    <option value="{{\App\Http\Controllers\RoleConstant::USER}}"
+                                            @if($user->role === \App\Http\Controllers\RoleConstant::USER)
+                                            selected
+                                                @endif
+                                    >User
+                                    </option>
+                                    <option value="{{\App\Http\Controllers\RoleConstant::MEMBER}}"
+                                            @if($user->role === \App\Http\Controllers\RoleConstant::MEMBER)
+                                            selected
+                                            @endif
+                                    >Member
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control py-4" name="password" id="inputPassword" type="password" placeholder="Enter password" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                        <input class="form-control py-4" name="confirmPassword" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <h3>More information</h3>
-                            <div class="form-row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label class="small mb-1">Phone</label>
-                                        <input class="form-control py-4" value="" type="text" name="phone"/>
+                                        <input class="form-control py-4" value="{{$user->phone}}" type="text" name="phone"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1">Birthday</label>
-                                        <input class="form-control py-4" type="date" name="birthday"/>
+                                        <input class="form-control py-4" type="date" value="{{$user->birthday}}" name="birthday"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Address</label>
-                                <input class="form-control py-4" type="text" name="address" />
+                                <input class="form-control py-4" type="text" value="{{$user->address}}" name="address"/>
                             </div>
                             <div class="form-group">
                                 <label class="small md-1">Avatar</label>
@@ -89,7 +89,7 @@
                             </div>
                             <hr>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-success">Create</button>
+                                <button type="submit" class="btn btn-success">Update</button>
                                 <a href="{{route('users.index')}}" class="btn btn-light">Cancel</a>
                             </div>
                         </form>

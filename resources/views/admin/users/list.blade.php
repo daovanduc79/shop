@@ -15,10 +15,6 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -37,13 +33,7 @@
                         <div class="col-1 text-center">
                             <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
                         </div>
-                        <div class="col-7"><p>{{session('success')}}</p>/div>
-                        <div class="col-4 text-right">
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
+                        <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -55,7 +45,8 @@
                                 <th scope="col" class="text-center">Image</th>
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="text-center">Role</th>
+                                <th scope="col" class="sort"></th>
 
                             </tr>
                             </thead>
@@ -64,13 +55,20 @@
                             <tr>
                                 <th scope="row">{{$key}}</th>
                                 <td class="text-center">{{$user->id}}</td>
-                                <td class="text-center">{{'image'}}</td>
+                                <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px" height="70px"></td>
                                 <td class="text-center">{{$user->name}}</td>
                                 <td class="text-center">{{$user->username}}</td>
+                                <td class="text-center">
+                                    @switch($user->role)
+                                        @case(\App\Http\Controllers\RoleConstant::ADMIN) {{'Admin'}} @break
+                                        @case(\App\Http\Controllers\RoleConstant::USER) {{'User'}} @break
+                                        @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
+                                    @endswitch
+                                </td>
                                 <td class="text-right">
-                                    <a type="button" class="btn btn-outline-info btn-sm">View</a>
-                                    <a type="button" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a type="button" class="btn btn-outline-danger btn-sm">Delete</a>
+                                    <a class="btn btn-outline-info btn-sm">View</a>
+                                    <a href="{{route('users.edit', ['id'=>$user->id])}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                                    <a href="{{route('users.delete',['id'=>$user->id])}}" class="btn btn-outline-danger btn-sm" onclick="confirm('Do you want to delete ???')">Delete</a>
                                 </td>
 
                             </tr>

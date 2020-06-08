@@ -14,5 +14,8 @@ class UserRepository extends Repository
         parent::__construct($user);
     }
 
-
+    public function create()
+    {
+        return new User();
+    }
 }
