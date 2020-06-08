@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function (){
+   return view('shop.home');
+});
 
 Route::get('/login', 'Auth\LoginController@showFormLogin')->name('formLogin');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
