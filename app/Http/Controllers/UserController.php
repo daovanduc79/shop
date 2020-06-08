@@ -33,12 +33,12 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->role = $request->role;
 
-        if ($request->password === $request->comfirmPassword) {
-            $user->password = $request->password;
-        } else {
+        if ($request->password != $request->comfirmPassword) {
             $message = 'mat khau khong trung khop';
             session()->flash('create-error', $message);
             return back();
+        } else {
+            $user->password = $request->password;
         }
 
         $user->birthday = $request->birthday;

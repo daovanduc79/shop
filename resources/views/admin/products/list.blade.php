@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
 @extends('home-admin')
 @section('content')
     <div class="header bg-primary pb-6">
@@ -10,7 +11,7 @@
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
                                             class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
+                                <li class="breadcrumb-item"><a href="{{route('product.index')}}">Products</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">List</li>
                             </ol>
                         </nav>
@@ -29,20 +30,21 @@
             <div class="col">
                 <div class="card">
                     <!-- Card header -->
-                    <div class="card-header border-0 col-6">
-                        <h3 class="mb-0">Users List</h3>
+                    <div class="card-header border-0">
+                        <h3 class="mb-0">Pet List</h3>
                     </div>
-                    <div class="col-6"><p>{{session('success')}}</p></div>
                     <div class="row">
                         <div class="col-1"></div>
                         <div class="col-10 text-right">
                             <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                <input class="form-control btn-sm mr-sm-2 search-input" type="search" placeholder="Search"
+                                       aria-label="Search" name="keyWord" >
+                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search
+                                </button>
                             </form>
                         </div>
                         <div class="col-1 text-center">
-                            <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
+                            <a href="{{ route('product.create') }}" class="btn btn-sm btn-success">New</a>
                         </div>
                     </div>
                     <!-- Light table -->
@@ -51,29 +53,31 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort">#</th>
-                                <th scope="col" class="text-center">ID</th>
+                                <th scope="col" class="text-center">Pet Code</th>
                                 <th scope="col" class="text-center">Image</th>
-                                <th scope="col" class="text-center">Name</th>
-                                <th scope="col" class="text-center">Email</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="text-center">Origination</th>
+                                <th scope="col" class="text-center">Characteristics</th>
+                                <th scope="col" class="text-center">Action</th>
 
                             </tr>
                             </thead>
                             <tbody class="list">
-                            @foreach($users as $key=>$user)
-                            <tr>
-                                <th scope="row">{{$key}}</th>
-                                <td class="text-center">{{$user->id}}</td>
-                                <td class="text-center">{{'image'}}</td>
-                                <td class="text-center">{{$user->name}}</td>
-                                <td class="text-center">{{$user->username}}</td>
-                                <td class="text-right">
-                                    <a type="button" class="btn btn-outline-info btn-sm">View</a>
-                                    <a type="button" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a type="button" class="btn btn-outline-danger btn-sm">Delete</a>
-                                </td>
+                            @foreach($products as $key=>$product)
+                                <tr>
+                                    <th scope="row">{{++$key}}</th>
+                                    <td class="text-center">{{$product->product_code}}</td>
+                                    <td class="text-center">
+                                        <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->image }}" >
+                                    </td>
+                                    <td class="text-center">{{$product->origination}}</td>
+                                    <td class="text-center">{{$product->characteristics	}}</td>
+                                    <td class="text-center">
+                                        <a href="" type="button" class="btn btn-outline-info btn-sm">View</a>
+                                        <a href="{{ route('product.edit',$product->id) }}" type="button" class="btn btn-outline-primary btn-sm">Edit</a>
+                                        <a href="{{ route('product.delete',$product->id) }}" type="button" class="btn btn-outline-danger btn-sm">Delete</a>
+                                    </td>
 
-                            </tr>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
@@ -107,4 +111,41 @@
                 </div>
             </div>
         </div>
+        <script>
+            $(document).ready(function($) {
+                const engine1 = new Bloodhound({
+                    remote: {
+                        url: '/search?value=%QUERY%',
+                        wildcard: '%QUERY%'
+                    },
+                    datumTokenizer: Bloodhound.tokenizers.whitespace('keyWord'),
+                    queryTokenizer: Bloodhound.tokenizers.whitespace
+                });
+
+                $(".search-input").typeahead({
+                    hint: true,
+                    highlight: true,
+                    minLength: 1
+                }, [
+                    {
+                        source: engine1.ttAdapter(),
+                        name: 'product_code',
+                        display: function(data) {
+                            return data.name;
+                        },
+                        templates: {
+                            empty: [
+                                '<div class="header-title">Product_code</div><div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
+                            ],
+                            header: [
+                                '<div class="header-title">Product_code</div><div class="list-group search-results-dropdown"></div>'
+                            ],
+                            suggestion: function (data) {
+                                return '<a href="/product/' + data.id + '" class="list-group-item">' + data.name + '</a>';
+                            }
+                        }
+                    },
+                ]);
+            });
+        </script>
 @endsection
