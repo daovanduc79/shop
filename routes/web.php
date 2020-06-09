@@ -51,6 +51,8 @@ Route::middleware(['auth'])->group(function () {
             Route::post('{id}/edit', 'PetController@update')->name('pets.update');
             Route::get('{id}/delete', 'PetController@delete')->name('pets.delete');
         });
+
+        Route::get('search','SearchController@search')->name('search');
     });
 
 });

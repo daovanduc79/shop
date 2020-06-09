@@ -1,4 +1,5 @@
 @extends('home-admin')
+@section('object','pets')
 @section('content')
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -60,8 +61,10 @@
                                     </td>
                                     <td class="text-right">
                                         <a href="#" type="button" class="btn btn-outline-info btn-sm">View</a>
-                                        <a href="{{route('pets.edit',['id'=>$pet->id])}}" type="button" class="btn btn-outline-primary btn-sm">Edit</a>
-                                        <a href="{{route('pets.delete',['id'=>$pet->id])}}" type="button"
+                                        <a href="{{route('pets.edit',['id'=>$pet->id])}}" type="button"
+                                           class="btn btn-outline-primary btn-sm">Edit</a>
+                                        <a onclick="return confirm('Are you delete?')"
+                                           href="{{route('pets.delete',['id'=>$pet->id])}}" type="button"
                                            class="btn btn-outline-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
