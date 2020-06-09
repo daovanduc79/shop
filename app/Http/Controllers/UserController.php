@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Service\UserService;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Symfony\Component\Console\Input\Input;
-use function Composer\Autoload\includeFile;
+
 
 class UserController extends Controller
 {
@@ -23,7 +21,7 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userService->all();
-        $keyword ='';
+        $keyword = '';
         return view('admin.users.list', compact('users', 'keyword'));
     }
 
@@ -37,25 +35,17 @@ class UserController extends Controller
         $user = $this->userService->create();
         $user = $this->userService->store($user, $request);
         if ($user->password === null) {
-            $user = new User();
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->role = $request->role;
-
-            if ($request->password != $request->comfirmPassword) {
-                $message = 'mat khau khong trung khop';
-                session()->flash('create-error', $message);
-                return back();
-            } else {
-                $this->userService->save($user);
-                $message = 'them moi thanh cong';
-                session()->flash('success', $message);
-                return redirect()->route('users.index');
-
-                $user->password = $request->password;
-            }
+            $message = 'mat khau khong trung khop';
+            session()->flash('create-error', $message);
+            return back();
+        } else {
+            $this->userService->save($user);
+            $message = 'them moi thanh cong';
+            session()->flash('success', $message);
+            return redirect()->route('users.index');
         }
     }
+
 
     public function delete($id)
     {
@@ -84,6 +74,6 @@ class UserController extends Controller
     {
         $keyword = $request->keyword;
         $users = $this->userService->search($keyword);
-        return view('admin.users.list', compact('users','keyword'));
+        return view('admin.users.list', compact('users', 'keyword'));
     }
 }
