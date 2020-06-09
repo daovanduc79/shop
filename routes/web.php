@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit','ProductController@edit')->name('product.edit');
             Route::post('{id}/update','ProductController@update')->name('product.update');
             Route::get('{id}/delete', 'ProductController@destroy')->name('product.delete');
+            Route::get('/search', 'ProductController@searchByKeyWordsearchByKeyWord');
         });
     });
 });

@@ -2,16 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e6775d-cc24-4dbf-bfbd-d1c76b04ca93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_09_045417_create_posts_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/PostTableSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/150x250/cat.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/150x250/dog.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/150x250/rsz_1uoe8fh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/1920x800/animals1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/1920x800/animals2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/350x230/Uoe8fh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/350x230/animal1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/350x230/animal2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/350x230/animal3.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/Repository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Service/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/Service.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Repository/ProductRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/ProductRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Service/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/ProductService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/countdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/countdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/typeahead.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/core/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/core/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/shop/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +203,7 @@
       <workItem from="1591592647452" duration="1948000" />
       <workItem from="1591602121265" duration="219000" />
       <workItem from="1591602351678" duration="5276000" />
+      <workItem from="1591677704910" duration="4882000" />
     </task>
     <task id="LOCAL-00001" summary="create home admin and login">
       <created>1591254499975</created>
@@ -264,10 +280,11 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591322058987" />
-    <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog" timestamp="1591512321952">
-      <screen x="0" y="35" width="1920" height="1045" />
+    <state x="691" y="261" width="668" height="582" key="NewPhpClassDialog" timestamp="1591686168154">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512321952" />
+    <state x="691" y="261" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1591686168154" />
     <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog" timestamp="1591606286616">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>

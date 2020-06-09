@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.11.1/typeahead.bundle.min.js"></script>
 @extends('home-admin')
 @section('content')
     <div class="header bg-primary pb-6">
@@ -111,41 +110,4 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function($) {
-                const engine1 = new Bloodhound({
-                    remote: {
-                        url: '/search?value=%QUERY%',
-                        wildcard: '%QUERY%'
-                    },
-                    datumTokenizer: Bloodhound.tokenizers.whitespace('keyWord'),
-                    queryTokenizer: Bloodhound.tokenizers.whitespace
-                });
-
-                $(".search-input").typeahead({
-                    hint: true,
-                    highlight: true,
-                    minLength: 1
-                }, [
-                    {
-                        source: engine1.ttAdapter(),
-                        name: 'product_code',
-                        display: function(data) {
-                            return data.name;
-                        },
-                        templates: {
-                            empty: [
-                                '<div class="header-title">Product_code</div><div class="list-group search-results-dropdown"><div class="list-group-item">Nothing found.</div></div>'
-                            ],
-                            header: [
-                                '<div class="header-title">Product_code</div><div class="list-group search-results-dropdown"></div>'
-                            ],
-                            suggestion: function (data) {
-                                return '<a href="/product/' + data.id + '" class="list-group-item">' + data.name + '</a>';
-                            }
-                        }
-                    },
-                ]);
-            });
-        </script>
 @endsection

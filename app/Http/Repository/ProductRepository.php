@@ -14,8 +14,4 @@ class ProductRepository extends Repository
         parent::__construct($product);
     }
 
-    public function searchByKeyWord($keyWord)
-    {
-        return Product::where('product_code', 'LIKE', '%'. $keyWord . '%')->orWhere('origination', 'LIKE', '%' . $keyWord . '%')->get();
-    }
 }
