@@ -52,6 +52,15 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/delete', 'PetController@delete')->name('pets.delete');
         });
 
+        Route::prefix('categories')->group(function () {
+            Route::get('/','PetController@index')->name('pets.index');
+            Route::get('/create', 'PetController@create')->name('pets.create');
+            Route::post('/create', 'PetController@store')->name('pets.store');
+            Route::get('{id}/edit', 'PetController@edit')->name('pets.edit');
+            Route::post('{id}/edit', 'PetController@update')->name('pets.update');
+            Route::get('{id}/delete', 'PetController@delete')->name('pets.delete');
+        });
+
         Route::get('search','SearchController@search')->name('search');
     });
 
