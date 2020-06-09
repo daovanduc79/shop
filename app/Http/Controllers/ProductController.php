@@ -59,9 +59,4 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
-    public function searchByKeyWord(Request $request)
-    {
-        $product = $request->search($request);
-        return response()->json($product);
-    }
 }

@@ -74,7 +74,7 @@
                     </span>
                                 <small>Maps</small>
                             </a>
-                            <a href="#!" class="col-4 shortcut-item">
+                            <a href="{{ route('shop') }}" class="col-4 shortcut-item">
                     <span class="shortcut-media avatar rounded-circle bg-gradient-yellow">
                       <i class="ni ni-basket"></i>
                     </span>

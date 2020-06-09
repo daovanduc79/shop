@@ -14,14 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',function (){
    return view('shop.home');
-});
+})->name('shop');
+
 Route::prefix('login')->group(function () {
     Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
     Route::post('/', 'Auth\LoginController@login')->name('login');
     Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
     Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');
 });
-
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
@@ -45,7 +45,6 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit','ProductController@edit')->name('product.edit');
             Route::post('{id}/update','ProductController@update')->name('product.update');
             Route::get('{id}/delete', 'ProductController@destroy')->name('product.delete');
-
         });
     });
 });

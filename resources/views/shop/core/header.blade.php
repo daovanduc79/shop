@@ -59,7 +59,7 @@
                                 </li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="magamenu">
-                                        <li class="banner"><a href="shop.html"><img src="img/maga1.png" alt="" /></a></li>
+                                        <li class="banner"><a href="shop.html"><img src="{{ asset('img/150x250/cat.jpg') }}" alt="" /></a></li>
                                         <li><h5>men’s wear</h5>
                                             <ul>
                                                 <li><a href="#">Shirts & Top</a></li>
@@ -84,7 +84,7 @@
                                                 <li><a href="#">Women Watch</a></li>
                                             </ul>
                                         </li>
-                                        <li class="banner"><a href="shop.html"><img src="img/maga2.png" alt="" /></a></li>
+                                        <li class="banner"><a href="shop.html"><img src="{{ asset('img/150x250/dog.jpeg') }}" alt="" /></a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Pages</a>

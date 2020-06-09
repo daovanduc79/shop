@@ -7,8 +7,8 @@
         <div id="wrapper">
             <div class="slider-wrapper">
                 <div id="mainSlider" class="nivoSlider">
-                    <img src="img/slider/home2/1.jpg" alt="main slider" title="#htmlcaption"/>
-                    <img src="img/slider/home2/2.jpg" alt="main slider" title="#htmlcaption2"/>
+                        <img src="{{ asset('img/1920x800/animals1.jpg') }}" alt="main slider" title="#htmlcaption"/>
+                    <img src="{{ asset('img/1920x800/animals2.jpg') }}" alt="main slider" title="#htmlcaption2"/>
                 </div>
                 <div id="htmlcaption" class="nivo-html-caption slider-caption">
                     <div class="container">
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="single-colect banner collect-one">
-                        <a href="#"><img src="img/collect/4.jpg" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal3.jpg') }}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -60,12 +60,12 @@
                         <a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
                     </div>
                     <div class="collect-img banner margin single-colect">
-                        <a href="#"><img src="img/collect/5.jpg" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal1.jpg') }}" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="collect-img banner single-colect">
-                        <a href="#"><img src="img/collect/6.jpg" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal2.jpg') }}" alt="" /></a>
                     </div>
                     <div class="colect-text ">
                         <h4><a href="#">Men’s Collection 2016</a></h4>
@@ -261,7 +261,7 @@
                 <div class="col-sm-4 col-md-2">
                     <div class="tab-menu nav nav-tabs padding">
                         <ul>
-                            <li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="img/coming/s1.jpg" alt="" /></a></li>
+                            <li class="active"><a href="#dress1" data-toggle="tab" data-target="#dress1, #text1"><img src="{{ asset('img/150x250/rsz_1uoe8fh.jpg') }}" alt="" /></a></li>
                             <li><a href="#dress2" data-toggle="tab" data-target="#dress2,#text2"><img src="img/coming/s2.jpg" alt="" /></a></li>
                         </ul>
                     </div>
@@ -269,7 +269,7 @@
                 <div class="col-sm-7 col-md-5">
                     <div class="text-center large-img tab-content">
                         <div class="tab-pane fade in active" id="dress1">
-                            <img src="img/coming/l1.jpg" alt="" />
+                            <img src="https://cdn.wallpapersafari.com/58/21/Uoe8fh.jpg" alt="" />
                             <div class="count-text clearfix">
                                 <ul id="countdown-1">
                                     <li>
@@ -292,7 +292,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="dress2">
-                            <img src="img/coming/l2.jpg" alt="" />
+                            <img src="https://i.pinimg.com/originals/f7/92/eb/f792ebec2e10d4fd686b4ed0828bf314.jpg" alt="" />
                             <div class="count-text clearfix">
                                 <ul id="countdown-2">
                                     <li>
