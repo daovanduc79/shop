@@ -31,5 +31,10 @@ class PetSeeder extends Seeder
         $pet->name = 'Spiders';
         $pet->image = 'image4.jpg';
         $pet->save();
+
+        $pet = new Pet();
+        $pet->name = 'Unknown';
+        $pet->image = 'image4.jpg';
+        $pet->save();
     }
 }
