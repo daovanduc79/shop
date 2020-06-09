@@ -3,12 +3,8 @@
     @include('layouts/menu-left')
     <div class="main-content" id="panel">
         @include('layouts/menu-top')
-        @include('layouts/dashboards/default')
+        @yield('content')
 
-
-    </div>
-    <div class="container-fluid mt--6">
-        @include('layouts/dashboards/chart')
-        @include('layouts/footer')
+{{--        @include('layouts/footer')--}}
     </div>
 @endsection

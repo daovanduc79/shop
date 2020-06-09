@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home-admin');
+Route::get('/login', 'Auth\LoginController@showFormLogin')->name('formLogin');
+Route::post('/login', 'Auth\LoginController@login')->name('login');
+
+Route::middleware(['auth'])->group(function () {
+    Route::prefix('admin')->group(function () {
+        Route::get('/', function (){ return view('admin.home');})->name('admin.home');
+        Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+        Route::prefix('users')->group(function () {
+            Route::get('/', 'UserController@index')->name('users.index');
+            Route::get('/create', 'UserController@create')->name('users.create');
+            Route::post('/create', 'UserController@store')->name('users.store');
+            Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
+            Route::post('{id}/edit', 'UserController@update')->name('users.update');
+            Route::get('{id}/delete', 'UserController@delete')->name('users.delete');
+        });
+
+        Route::prefix('pets')->group(function () {
+            Route::get('/','PetController@index')->name('pets.index');
+            Route::get('/create', 'PetController@create')->name('pets.create');
+            Route::post('/create', 'PetController@store')->name('pets.store');
+            Route::get('{id}/edit', 'PetController@edit')->name('pets.edit');
+            Route::post('{id}/edit', 'PetController@update')->name('pets.update');
+            Route::get('{id}/delete', 'PetController@delete')->name('pets.delete');
+        });
+    });
+
 });

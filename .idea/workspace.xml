@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e6775d-cc24-4dbf-bfbd-d1c76b04ca93" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleConstant.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_07_065345_add_column_role_image_brithday_phone_address_to_table_users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+>>>>>>> 6b05e7fa3b73dab38591c64f2495c8fa36b0246b
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +28,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpTemplates">
+    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="inc" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -122,24 +135,37 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1cntSDa6n7fywvlEVP8N1h1skmh" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../shop" />
     <property name="nodejs_package_manager_path" value="npm" />
+=======
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+>>>>>>> 6b05e7fa3b73dab38591c64f2495c8fa36b0246b
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Http" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -159,31 +185,107 @@
       <option name="presentableId" value="Default" />
       <updated>1591176182243</updated>
       <workItem from="1591176183630" duration="6131000" />
+<<<<<<< HEAD
       <workItem from="1591245982017" duration="3278000" />
       <workItem from="1591579123709" duration="1193000" />
+=======
+      <workItem from="1591245982017" duration="7191000" />
+      <workItem from="1591321295467" duration="767000" />
+      <workItem from="1591340007752" duration="4974000" />
+      <workItem from="1591462178449" duration="3910000" />
+      <workItem from="1591467436372" duration="180000" />
+      <workItem from="1591467631401" duration="137000" />
+      <workItem from="1591467779433" duration="11349000" />
+      <workItem from="1591578104600" duration="1628000" />
     </task>
+    <task id="LOCAL-00001" summary="create home admin and login">
+      <created>1591254499975</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591254499976</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update database">
+      <created>1591257756275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591257756275</updated>
+>>>>>>> 6b05e7fa3b73dab38591c64f2495c8fa36b0246b
+    </task>
+    <task id="LOCAL-00003" summary="repository and service">
+      <created>1591501374374</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591501374374</updated>
+    </task>
+    <task id="LOCAL-00004" summary="login logout">
+      <created>1591501434655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591501434655</updated>
+    </task>
+    <task id="LOCAL-00005" summary="list users">
+      <created>1591501451050</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591501451050</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="create home admin and login" />
+    <MESSAGE value="update database" />
+    <MESSAGE value="repository and service" />
+    <MESSAGE value="login logout" />
+    <MESSAGE value="list users" />
+    <option name="LAST_COMMIT_MESSAGE" value="list users" />
   </component>
   <component name="WindowStateProjectService">
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591180930750">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591180930750" />
+<<<<<<< HEAD
     <state x="564" y="226" width="424" height="484" key="FileChooserDialogImpl" timestamp="1591579172520">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591246704703" />
     <state x="564" y="226" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1591579172520" />
     <state x="643" y="267" width="623" height="582" key="NewPhpClassDialog" timestamp="1591176348984">
+=======
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591501450954">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="643" y="267" width="623" height="582" key="NewPhpClassDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591176348984" />
-    <state x="733" y="481" width="444" height="154" key="NewPhpFileDialog" timestamp="1591180802860">
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591501450954" />
+    <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591322058987">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="733" y="481" width="444" height="154" key="NewPhpFileDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591180802860" />
+    <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591322058987" />
+    <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog" timestamp="1591512321952">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512321952" />
+    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog" timestamp="1591512279552">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512279552" />
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor" timestamp="1591467766799">
+>>>>>>> 6b05e7fa3b73dab38591c64f2495c8fa36b0246b
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591467766799" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591257760234">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591257760234" />
   </component>
 </project>
