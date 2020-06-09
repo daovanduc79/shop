@@ -42,14 +42,14 @@
                             <div class="text-center text-muted mb-4">
                                 <small>Or sign up with credentials</small>
                             </div>
-                            <form method="post" action="" role="form">
+                            <form method="post" action="{{route('registerActive')}}" role="form">
                                 @csrf
                                 <div class="form-group">
                                     <div class="input-group input-group-merge input-group-alternative mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Name" type="text">
+                                        <input class="form-control" name="name" placeholder="Name" type="text">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -57,7 +57,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Email" type="email">
+                                        <input class="form-control" name="email" placeholder="Email" type="email">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -65,17 +65,17 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                         </div>
-                                        <input class="form-control" placeholder="Password" type="password">
+                                        <input class="form-control" name="password" placeholder="Password" type="password">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="input-group input-group-merge input-group-alternative">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                                        </div>
-                                        <input class="form-control" placeholder="ConfirmPassword" type="password">
-                                    </div>
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <div class="input-group input-group-merge input-group-alternative">--}}
+{{--                                        <div class="input-group-prepend">--}}
+{{--                                            <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>--}}
+{{--                                        </div>--}}
+{{--                                        <input class="form-control" placeholder="ConfirmPassword" type="password">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
                                 <div class="row my-4">
                                     <div class="col-12">
                                         <div class="custom-control custom-control-alternative custom-checkbox">
