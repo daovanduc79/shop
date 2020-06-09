@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',function (){
    return view('shop.home');
-});
+})->name('shop');
 
 Route::get('/login', 'Auth\LoginController@showFormLogin')->name('formLogin');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
@@ -30,7 +30,8 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
             Route::post('{id}/edit', 'UserController@update')->name('users.update');
             Route::get('{id}/delete', 'UserController@delete')->name('users.delete');
-            Route::get('/search','UserController@searchByKeyWord');
+            Route::get('search', 'UserController@search')->name('users.search');
+
         });
 
         Route::prefix('product')->group(function (){
@@ -40,7 +41,6 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit','ProductController@edit')->name('product.edit');
             Route::post('{id}/update','ProductController@update')->name('product.update');
             Route::get('{id}/delete', 'ProductController@destroy')->name('product.delete');
-            Route::get('/search', 'ProductController@searchByKeyWordsearchByKeyWord');
         });
     });
 });

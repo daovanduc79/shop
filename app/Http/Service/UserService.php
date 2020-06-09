@@ -67,5 +67,10 @@ class UserService extends Service
        return $user;
    }
 
+   public function search($keyword)
+   {
+       return $this->repository->search($keyword);
+   }
+
 
 }

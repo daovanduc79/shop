@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e6775d-cc24-4dbf-bfbd-d1c76b04ca93" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/migrations/2020_06_09_045417_create_posts_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/database/seeds/PostTableSeeder.php" afterDir="false" />
@@ -27,6 +28,12 @@
       <change beforePath="$PROJECT_DIR$/resources/views/shop/core/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/core/header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/shop/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/menu-top.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/menu-top.blade.php" afterDir="false" />
+>>>>>>> 4249f48d39d5ec712ab6e0d1e79affd834ece586
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +167,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -202,8 +209,13 @@
       <workItem from="1591578104600" duration="4694000" />
       <workItem from="1591592647452" duration="1948000" />
       <workItem from="1591602121265" duration="219000" />
+<<<<<<< HEAD
       <workItem from="1591602351678" duration="5276000" />
       <workItem from="1591677704910" duration="4882000" />
+=======
+      <workItem from="1591602351678" duration="12001000" />
+      <workItem from="1591677390544" duration="2497000" />
+>>>>>>> 4249f48d39d5ec712ab6e0d1e79affd834ece586
     </task>
     <task id="LOCAL-00001" summary="create home admin and login">
       <created>1591254499975</created>
@@ -247,7 +259,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591579749920</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edit and delete user">
+      <created>1591607711876</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591607711876</updated>
+    </task>
+    <task id="LOCAL-00008" summary="search users">
+      <created>1591683099735</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1591683099735</updated>
+    </task>
+    <task id="LOCAL-00009" summary="pull">
+      <created>1591683326907</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1591683326907</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +294,10 @@
     <MESSAGE value="login logout" />
     <MESSAGE value="list users" />
     <MESSAGE value="create user" />
-    <option name="LAST_COMMIT_MESSAGE" value="create user" />
+    <MESSAGE value="edit and delete user" />
+    <MESSAGE value="search users" />
+    <MESSAGE value="pull" />
+    <option name="LAST_COMMIT_MESSAGE" value="pull" />
   </component>
   <component name="WindowStateProjectService">
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591180930750">
@@ -272,16 +308,42 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="693" y="315" width="524" height="485" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591605339748" />
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591579749748">
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591683326792">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579749748" />
-    <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591322058987">
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591683326792" />
+    <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591620057434">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
+    <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591620057434" />
+    <state width="1870" height="263" key="GridCell.Tab.0.bottom" timestamp="1591683190182">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+<<<<<<< HEAD
     <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591322058987" />
     <state x="691" y="261" width="668" height="582" key="NewPhpClassDialog" timestamp="1591686168154">
       <screen x="72" y="27" width="1848" height="1053" />
+=======
+    <state width="1870" height="263" key="GridCell.Tab.0.bottom/0.35.1920.1045@0.35.1920.1045" timestamp="1591683190182" />
+    <state width="1870" height="263" key="GridCell.Tab.0.center" timestamp="1591683190181">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state width="1870" height="263" key="GridCell.Tab.0.center/0.35.1920.1045@0.35.1920.1045" timestamp="1591683190181" />
+    <state width="1870" height="263" key="GridCell.Tab.0.left" timestamp="1591683190181">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state width="1870" height="263" key="GridCell.Tab.0.left/0.35.1920.1045@0.35.1920.1045" timestamp="1591683190181" />
+    <state width="1870" height="263" key="GridCell.Tab.0.right" timestamp="1591683190181">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state width="1870" height="263" key="GridCell.Tab.0.right/0.35.1920.1045@0.35.1920.1045" timestamp="1591683190181" />
+    <state x="592" y="310" width="726" height="495" key="MultipleFileMergeDialog" timestamp="1591683121811">
+      <screen x="0" y="35" width="1920" height="1045" />
+    </state>
+    <state x="592" y="310" width="726" height="495" key="MultipleFileMergeDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591683121811" />
+    <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog" timestamp="1591512321952">
+      <screen x="0" y="35" width="1920" height="1045" />
+>>>>>>> 4249f48d39d5ec712ab6e0d1e79affd834ece586
     </state>
     <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591512321952" />
     <state x="691" y="261" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1591686168154" />
@@ -289,13 +351,24 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="733" y="481" width="444" height="160" key="NewPhpFileDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591606286616" />
-    <state x="434" y="192" width="1052" height="731" key="SettingsEditor" timestamp="1591602338293">
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor" timestamp="1591683816825">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591602338293" />
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591579753952">
+    <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591683816825" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591683105607">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579753952" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591683105607" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/users/list.blade.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

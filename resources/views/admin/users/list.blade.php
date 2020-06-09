@@ -4,18 +4,45 @@
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Users</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
-                                            class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">List</li>
-                            </ol>
-                        </nav>
+                    <div class="col-md-6">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <nav aria-label="breadcrumb"
+                                         class="d-none d-md-inline-block ml-md-4 container-fluid">
+                                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                            <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
+                                                        class="fas fa-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a>
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">List</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-left">
+                        <form method="get" action="{{route('users.search')}}"
+                              class="navbar-search navbar-search-light form-inline mr-sm-3"
+                              id="navbar-search-main">
+                            <div class="form-group mb-0">
+                                <div class="input-group input-group-alternative input-group-merge">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    </div>
+                                    <input class="form-control" name="keyword" value="{{$keyword}}"
+                                           placeholder="Search" type="text">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn hidden"></button>
+                        </form>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -26,24 +53,11 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0 col-6">
-                        <h3 class="mb-0">Users List</h3>
+                        <h2 class="mb-0">Users List</h2>
                     </div>
                     <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     <div class="row">
-
-                        <div class="col-1"></div>
-                        <div class="col-10 text-right">
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Search"
-                                       aria-label="Search">
-                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search
-                                </button>
-                            </form>
-                        </div>
-                        <div class="col-1 text-center">
-                            <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
-                        </div>
-
+                        <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
