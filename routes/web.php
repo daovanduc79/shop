@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',function (){
    return view('shop.home');
 });
+Route::prefix('login')->group(function () {
+    Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
+    Route::post('/', 'Auth\LoginController@login')->name('login');
+    Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
+    Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');
+});
 
-Route::get('/login', 'Auth\LoginController@showFormLogin')->name('formLogin');
-Route::post('/login', 'Auth\LoginController@login')->name('login');
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
