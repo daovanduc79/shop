@@ -31,11 +31,19 @@
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
-                                <input class="form-control py-4" name="name" type="text" placeholder="Enter name"/>
+                                <input class="form-control py-4 <?php echo $errors->first('name') ? 'is-invalid' : ''?>"
+                                       value="{{old('name')}}" minlength="3" maxlength="20" required name="name" type="text"
+                                       placeholder="Enter name"/>
+                                @if($errors->first('name'))
+                                    <p class="text-danger">{{$errors->first('name')}}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small md-1">Image</label>
-                                <input class="form-control-file" type="file" name="image">
+                                <input class="form-control <?php echo $errors->first('name') ? 'is-invalid' : ''?>" required type="file" name="image">
+                                @if($errors->first('name'))
+                                    <p class="text-danger">{{$errors->first('name')}}</p>
+                                @endif
                             </div>
                             <hr>
                             <div class="form-group">

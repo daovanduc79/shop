@@ -14,11 +14,8 @@ class AddColumnRoleImageBrithdayPhoneAddressToTableUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('role')->nullable()->after('password');
-            $table->string('image')->nullable()->after('role');
             $table->integer('phone')->nullable()->after('image');
             $table->date('birthday')->nullable()->after('phone');
-            $table->string('address')->nullable()->after('birthday');
         });
     }
 

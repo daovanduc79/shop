@@ -14,5 +14,14 @@ class UserRepository extends Repository
         parent::__construct($user);
     }
 
+    public function create()
+    {
+        return new User();
+    }
 
+    public function search($keyword)
+    {
+        return $this->model->where('name','like','%'.$keyword.'%')
+                            ->orWhere('username','like','%'.$keyword.'%')->get();
+    }
 }

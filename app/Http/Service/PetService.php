@@ -14,7 +14,8 @@ class PetService extends Service
         parent::__construct($petRepository);
     }
 
-    function store($petRequest) {
+    function store($petRequest)
+    {
         $name = $petRequest->name;
         $image = $petRequest->image->store('images', 'public');
 
@@ -22,6 +23,17 @@ class PetService extends Service
         $pet->name = $name;
         $pet->image = $image;
 
+        $this->save($pet);
+    }
+
+    function update($id, $petRequest)
+    {
+        $name = $petRequest->name;
+        $image = $petRequest->image->store('images', 'public');
+
+        $pet = $this->findOrFail($id);
+        $pet->name = $name;
+        $pet->image = $image;
         $this->save($pet);
     }
 }

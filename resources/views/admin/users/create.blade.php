@@ -15,10 +15,6 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -34,8 +30,8 @@
                         <h2 class="mb-0">Users Add New</h2>
                     </div>
                     <div class="card-body">
-                        {{session('create-error')}}
-                        <form method="post" action="{{route('users.store')}}">
+                        <p style="color: red">{{session('create-error')}}</p>
+                        <form method="post" action="{{route('users.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
@@ -89,7 +85,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="small md-1">Avatar</label>
-                                <input class="form-control py-4" type="file" name="image">
+                                <input class="form-control-file" type="file" name="inputFile">
                             </div>
                             <hr>
                             <div class="form-group">

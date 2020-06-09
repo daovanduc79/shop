@@ -4,6 +4,8 @@
 namespace App\Http\Service;
 
 
+use http\Exception\InvalidArgumentException;
+
 class Service
 {
     protected $repository;
@@ -40,6 +42,7 @@ class Service
 
     public function delete($id)
     {
-        return $this->repository->delete($id);
+        $user = $this->repository->findOrFail($id);
+        return $user->delete();
     }
 }

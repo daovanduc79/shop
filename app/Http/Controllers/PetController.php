@@ -32,6 +32,16 @@ class PetController extends Controller
         return redirect()->route('pets.index');
     }
 
+    function edit($id) {
+        $pet = $this->petService->findOrFail($id);
+        return view('pets.edit',compact('pet'));
+    }
+
+    function update($id, PetRequest $petRequest) {
+        $this->petService->update($id, $petRequest);
+        return redirect()->route('pets.index');
+    }
+
     function delete($id) {
         $this->petService->delete($id);
         return redirect()->route('pets.index');

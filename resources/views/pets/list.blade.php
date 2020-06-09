@@ -50,7 +50,7 @@
                                         {{++$key}}
                                     </th>
                                     <td class="budget">
-                                        {{$pet->image}}
+                                        <img src="{{asset('storage/'.$pet->image)}}" width="70px" height="70px">
                                     </td>
                                     <td>
                                         {{$pet->name}}
@@ -60,7 +60,7 @@
                                     </td>
                                     <td class="text-right">
                                         <a href="#" type="button" class="btn btn-outline-info btn-sm">View</a>
-                                        <a type="button" class="btn btn-outline-primary btn-sm">Edit</a>
+                                        <a href="{{route('pets.edit',['id'=>$pet->id])}}" type="button" class="btn btn-outline-primary btn-sm">Edit</a>
                                         <a href="{{route('pets.delete',['id'=>$pet->id])}}" type="button"
                                            class="btn btn-outline-danger btn-sm">Delete</a>
                                     </td>

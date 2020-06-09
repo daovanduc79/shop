@@ -4,22 +4,45 @@
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Users</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
-                                            class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">List</li>
-                            </ol>
-                        </nav>
+                    <div class="col-md-6">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <nav aria-label="breadcrumb"
+                                         class="d-none d-md-inline-block ml-md-4 container-fluid">
+                                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                            <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
+                                                        class="fas fa-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a>
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">List</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
-                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+                    <div class="col-md-5 text-left">
+                        <form method="get" action="{{route('users.search')}}"
+                              class="navbar-search navbar-search-light form-inline mr-sm-3"
+                              id="navbar-search-main">
+                            <div class="form-group mb-0">
+                                <div class="input-group input-group-alternative input-group-merge">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    </div>
+                                    <input class="form-control" name="keyword" value="{{$keyword}}"
+                                           placeholder="Search" type="text">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn hidden"></button>
+                        </form>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -29,21 +52,12 @@
             <div class="col">
                 <div class="card">
                     <!-- Card header -->
-                    <div class="card-header border-0">
-                        <h3 class="mb-0">Users List</h3>
+                    <div class="card-header border-0 col-6">
+                        <h2 class="mb-0">Users List</h2>
                     </div>
+                    <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     <div class="row">
-
-                        <div class="col-1 text-center">
-                            <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
-                        </div>
-                        <div class="col-7"><p>{{session('success')}}</p>/div>
-                        <div class="col-4 text-right">
-                            <form class="form-inline my-2 my-lg-0">
-                                <input class="form-control btn-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-sm btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                            </form>
-                        </div>
+                        <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
@@ -55,25 +69,37 @@
                                 <th scope="col" class="text-center">Image</th>
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="text-center">Role</th>
+                                <th scope="col" class="sort"></th>
 
                             </tr>
                             </thead>
                             <tbody class="list">
                             @foreach($users as $key=>$user)
-                            <tr>
-                                <th scope="row">{{$key}}</th>
-                                <td class="text-center">{{$user->id}}</td>
-                                <td class="text-center">{{'image'}}</td>
-                                <td class="text-center">{{$user->name}}</td>
-                                <td class="text-center">{{$user->username}}</td>
-                                <td class="text-right">
-                                    <a type="button" class="btn btn-outline-info btn-sm">View</a>
-                                    <a type="button" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a type="button" class="btn btn-outline-danger btn-sm">Delete</a>
-                                </td>
+                                <tr>
+                                    <th scope="row">{{$key}}</th>
+                                    <td class="text-center">{{$user->id}}</td>
+                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px"
+                                                                 height="70px"></td>
+                                    <td class="text-center">{{$user->name}}</td>
+                                    <td class="text-center">{{$user->username}}</td>
+                                    <td class="text-center">
+                                        @switch($user->role)
+                                            @case(\App\Http\Controllers\RoleConstant::ADMIN) {{'Admin'}} @break
+                                            @case(\App\Http\Controllers\RoleConstant::USER) {{'User'}} @break
+                                            @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
+                                        @endswitch
+                                    </td>
+                                    <td class="text-right">
+                                        <a class="btn btn-outline-info btn-sm">View</a>
+                                        <a href="{{route('users.edit', ['id'=>$user->id])}}"
+                                           class="btn btn-outline-primary btn-sm">Edit</a>
+                                        <a href="{{route('users.delete',['id'=>$user->id])}}"
+                                           class="btn btn-outline-danger btn-sm"
+                                           onclick="confirm('Do you want to delete ???')">Delete</a>
+                                    </td>
 
-                            </tr>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
