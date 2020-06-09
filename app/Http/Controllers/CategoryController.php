@@ -45,4 +45,9 @@ class CategoryController extends Controller
         $this->categoryService->update($id, $categoryRequest);
         return redirect()->route('categories.index');
     }
+
+    function delete($id) {
+        $this->categoryService->delete($id);
+        return redirect()->route('categories.index');
+    }
 }

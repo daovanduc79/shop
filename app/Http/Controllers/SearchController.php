@@ -23,6 +23,9 @@ class SearchController extends Controller
         if ($object == 'pets') {
             $pets = $this->searchService->searchPet($keyword);
             return view('pets.list', compact('pets'));
+        } elseif ($object == 'categories') {
+            $categories = $this->searchService->searchCategory($keyword);
+            return view('categories.list', compact('categories'));
         }
     }
 }

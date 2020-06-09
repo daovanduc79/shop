@@ -17,4 +17,8 @@ class SearchService
     function searchPet($keyword) {
             return $this->searchRepository->searchPet($keyword);
     }
+
+    function searchCategory($keyword) {
+        return $this->searchRepository->searchCategory($keyword);
+    }
 }
