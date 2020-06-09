@@ -35,17 +35,25 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = $this->userService->create();
-        $user = $this->userService->store($user,$request);
-        if ($user->password === null)
-        {
-            $message = 'mat khau khong trung khop';
-            session()->flash('create-error', $message);
-            return back();
-        } else {
-            $this->userService->save($user);
-            $message = 'them moi thanh cong';
-            session()->flash('success', $message);
-            return redirect()->route('users.index');
+        $user = $this->userService->store($user, $request);
+        if ($user->password === null) {
+            $user = new User();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->role = $request->role;
+
+            if ($request->password != $request->comfirmPassword) {
+                $message = 'mat khau khong trung khop';
+                session()->flash('create-error', $message);
+                return back();
+            } else {
+                $this->userService->save($user);
+                $message = 'them moi thanh cong';
+                session()->flash('success', $message);
+                return redirect()->route('users.index');
+
+                $user->password = $request->password;
+            }
         }
     }
 

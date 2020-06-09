@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnRoleImageBrithdayPhoneAddressToTableUsers extends Migration
+class AddColumnImageToTableProducts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddColumnRoleImageBrithdayPhoneAddressToTableUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('phone')->nullable()->after('image');
-            $table->date('birthday')->nullable()->after('phone');
+        Schema::table('products', function (Blueprint $table) {
+            $table->string('image')->after('product_code')->nullable();
         });
     }
 
@@ -26,7 +25,7 @@ class AddColumnRoleImageBrithdayPhoneAddressToTableUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('products', function (Blueprint $table) {
             //
         });
     }
