@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
             Route::post('{id}/edit', 'UserController@update')->name('users.update');
             Route::get('{id}/delete', 'UserController@delete')->name('users.delete');
+            Route::get('search', 'UserController@search')->name('users.search');
         });
     });
 });

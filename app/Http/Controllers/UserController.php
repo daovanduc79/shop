@@ -23,7 +23,8 @@ class UserController extends Controller
     public function index()
     {
         $users = $this->userService->all();
-        return view('admin.users.list', compact('users'));
+        $keyword ='';
+        return view('admin.users.list', compact('users', 'keyword'));
     }
 
     public function create()
@@ -69,5 +70,12 @@ class UserController extends Controller
         $message = 'cap nhat thanh cong !!!';
         session()->flash('success', $message);
         return redirect()->route('users.index');
+    }
+
+    public function search(Request $request, User $user)
+    {
+        $keyword = $request->keyword;
+        $users = $this->userService->search($keyword);
+        return view('admin.users.list', compact('users','keyword'));
     }
 }

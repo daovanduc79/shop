@@ -18,4 +18,10 @@ class UserRepository extends Repository
     {
         return new User();
     }
+
+    public function search($keyword)
+    {
+        return $this->model->where('name','like','%'.$keyword.'%')
+                            ->orWhere('username','like','%'.$keyword.'%')->get();
+    }
 }

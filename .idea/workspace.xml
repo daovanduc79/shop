@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79e6775d-cc24-4dbf-bfbd-d1c76b04ca93" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Repository/Repository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/Repository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Service/Service.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/Service.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Service/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Service/UserService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +142,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -187,7 +184,8 @@
       <workItem from="1591578104600" duration="4694000" />
       <workItem from="1591592647452" duration="1948000" />
       <workItem from="1591602121265" duration="219000" />
-      <workItem from="1591602351678" duration="5276000" />
+      <workItem from="1591602351678" duration="12001000" />
+      <workItem from="1591677390544" duration="1421000" />
     </task>
     <task id="LOCAL-00001" summary="create home admin and login">
       <created>1591254499975</created>
@@ -231,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591579749920</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edit and delete user">
+      <created>1591607711876</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1591607711876</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +250,8 @@
     <MESSAGE value="login logout" />
     <MESSAGE value="list users" />
     <MESSAGE value="create user" />
-    <option name="LAST_COMMIT_MESSAGE" value="create user" />
+    <MESSAGE value="edit and delete user" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit and delete user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="693" y="305" width="524" height="505" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591180930750">
@@ -256,14 +262,14 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="693" y="315" width="524" height="485" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.35.1920.1045@0.35.1920.1045" timestamp="1591605339748" />
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591579749748">
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2" timestamp="1591607711728">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579749748" />
-    <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591322058987">
+    <state x="394" y="79" width="1121" height="958" key="CommitChangelistDialog2/0.35.1920.1045@0.35.1920.1045" timestamp="1591607711728" />
+    <state x="735" y="315" key="FileChooserDialogImpl" timestamp="1591620057434">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591322058987" />
+    <state x="735" y="315" key="FileChooserDialogImpl/0.35.1920.1045@0.35.1920.1045" timestamp="1591620057434" />
     <state x="643" y="267" width="668" height="582" key="NewPhpClassDialog" timestamp="1591512321952">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
@@ -276,9 +282,20 @@
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
     <state x="434" y="192" width="1052" height="731" key="SettingsEditor/0.35.1920.1045@0.35.1920.1045" timestamp="1591602338293" />
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591579753952">
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2" timestamp="1591607716508">
       <screen x="0" y="35" width="1920" height="1045" />
     </state>
-    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591579753952" />
+    <state x="555" y="293" width="800" height="529" key="Vcs.Push.Dialog.v2/0.35.1920.1045@0.35.1920.1045" timestamp="1591607716508" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/users/list.blade.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

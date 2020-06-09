@@ -4,18 +4,43 @@
         <div class="container-fluid">
             <div class="header-body">
                 <div class="row align-items-center py-4">
-                    <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Users</h6>
-                        <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
-                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-                                <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
-                                            class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">List</li>
-                            </ol>
-                        </nav>
+                    <div class="col-md-7">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-6">
+                                    <nav aria-label="breadcrumb"
+                                         class="d-none d-md-inline-block ml-md-4 container-fluid">
+                                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                            <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
+                                                        class="fas fa-home"></i></a></li>
+                                            <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a>
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">List</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-left">
+                        <form method="get" action="{{route('users.search')}}"
+                              class="navbar-search navbar-search-light form-inline mr-sm-3"
+                              id="navbar-search-main">
+                            <div class="form-group mb-0">
+                                <div class="input-group input-group-alternative input-group-merge">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                    </div>
+                                    <input class="form-control" name="keyword" value="{{$keyword}}"
+                                           placeholder="Search" type="text">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn hidden"></button>
+                        </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -52,26 +77,30 @@
                             </thead>
                             <tbody class="list">
                             @foreach($users as $key=>$user)
-                            <tr>
-                                <th scope="row">{{$key}}</th>
-                                <td class="text-center">{{$user->id}}</td>
-                                <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px" height="70px"></td>
-                                <td class="text-center">{{$user->name}}</td>
-                                <td class="text-center">{{$user->username}}</td>
-                                <td class="text-center">
-                                    @switch($user->role)
-                                        @case(\App\Http\Controllers\RoleConstant::ADMIN) {{'Admin'}} @break
-                                        @case(\App\Http\Controllers\RoleConstant::USER) {{'User'}} @break
-                                        @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
-                                    @endswitch
-                                </td>
-                                <td class="text-right">
-                                    <a class="btn btn-outline-info btn-sm">View</a>
-                                    <a href="{{route('users.edit', ['id'=>$user->id])}}" class="btn btn-outline-primary btn-sm">Edit</a>
-                                    <a href="{{route('users.delete',['id'=>$user->id])}}" class="btn btn-outline-danger btn-sm" onclick="confirm('Do you want to delete ???')">Delete</a>
-                                </td>
+                                <tr>
+                                    <th scope="row">{{$key}}</th>
+                                    <td class="text-center">{{$user->id}}</td>
+                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px"
+                                                                 height="70px"></td>
+                                    <td class="text-center">{{$user->name}}</td>
+                                    <td class="text-center">{{$user->username}}</td>
+                                    <td class="text-center">
+                                        @switch($user->role)
+                                            @case(\App\Http\Controllers\RoleConstant::ADMIN) {{'Admin'}} @break
+                                            @case(\App\Http\Controllers\RoleConstant::USER) {{'User'}} @break
+                                            @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
+                                        @endswitch
+                                    </td>
+                                    <td class="text-right">
+                                        <a class="btn btn-outline-info btn-sm">View</a>
+                                        <a href="{{route('users.edit', ['id'=>$user->id])}}"
+                                           class="btn btn-outline-primary btn-sm">Edit</a>
+                                        <a href="{{route('users.delete',['id'=>$user->id])}}"
+                                           class="btn btn-outline-danger btn-sm"
+                                           onclick="confirm('Do you want to delete ???')">Delete</a>
+                                    </td>
 
-                            </tr>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
