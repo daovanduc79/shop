@@ -12,9 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',function (){
-   return view('shop.home');
-})->name('shop');
+Route::get('/','HomeController@index')->name('shop');
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
 Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
@@ -52,5 +50,26 @@ Route::middleware(['auth'])->group(function () {
             Route::post('{id}/update','ProductController@update')->name('product.update');
             Route::get('{id}/delete', 'ProductController@destroy')->name('product.delete');
         });
+
+        Route::prefix('pets')->group(function () {
+            Route::get('/','PetController@index')->name('pets.index');
+            Route::get('/create', 'PetController@create')->name('pets.create');
+            Route::post('/create', 'PetController@store')->name('pets.store');
+            Route::get('{id}/edit', 'PetController@edit')->name('pets.edit');
+            Route::post('{id}/edit', 'PetController@update')->name('pets.update');
+            Route::get('{id}/delete', 'PetController@delete')->name('pets.delete');
+        });
+
+        Route::prefix('categories')->group(function () {
+            Route::get('/','CategoryController@index')->name('categories.index');
+            Route::get('/create', 'CategoryController@create')->name('categories.create');
+            Route::post('/create', 'CategoryController@store')->name('categories.store');
+            Route::get('{id}/edit', 'CategoryController@edit')->name('categories.edit');
+            Route::post('{id}/edit', 'CategoryController@update')->name('categories.update');
+            Route::get('{id}/delete', 'CategoryController@delete')->name('categories.delete');
+        });
+
+        Route::get('search','SearchController@search')->name('search');
     });
+
 });

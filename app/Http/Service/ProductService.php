@@ -16,7 +16,7 @@ class ProductService extends Service
 
     public function create($request)
     {
-        $product = new Product();
+        $product = $this->repository->create();
         $product->product_code = $request->product_code;
         $product->origination = $request->origination;
         $product->fur_color = $request->fur_color;
@@ -24,14 +24,15 @@ class ProductService extends Service
         $product->longevity = $request->longevity;
         $product->characteristics = $request->characteristics;
 
-        if (!$request->hasFile('image')){
-            $product->image = $request->image;
+        if ($request->hasFile('image')) {
+            $file = $request->image;
+            $path = $file->store('images', 'public');
+            $product->image = $path;
         } else {
-            $file = $request->file('image');
-            $request->file('image')->storeAs('public/images');
+            $product->image = 'images/default.png';
         }
 
-        $this->save($product);
+        return $product;
     }
 
     public function update($id , $request)
@@ -44,11 +45,12 @@ class ProductService extends Service
         $product->longevity = $request->longevity;
         $product->characteristics = $request->characteristics;
 
-        if (!$request->hasFile('image')){
-            $product->image = $request->image;
+        if ($request->hasFile('inputFile')) {
+            $file = $request->inputFile;
+            $path = $file->store('images', 'public');
+            $product->image = $path;
         } else {
-            $path = $request->file('image');
-            $request->file('image')->storeAs('public/images');
+            $product->image = 'images/default.png';
         }
 
         $this->save($product);

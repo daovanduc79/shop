@@ -29,8 +29,8 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $this->products->create($request);
-
+        $product = $this->products->create($request);
+        $this->products->save($product);
         $message = 'them moi thanh cong';
         session()->flash('success',$message);
 
