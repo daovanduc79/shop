@@ -1,5 +1,5 @@
 @extends('home-admin')
-@section('object', 'users')
+@section('object', 'customers')
 @section('content')
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
@@ -14,7 +14,7 @@
                                         <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                             <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
                                                         class="fas fa-home"></i></a></li>
-                                            <li class="breadcrumb-item"><a href="{{route('users.index')}}">Users</a>
+                                            <li class="breadcrumb-item"><a href="{{route('customers.index')}}">Customers</a>
                                             </li>
                                             <li class="breadcrumb-item active" aria-current="page">List</li>
                                         </ol>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="{{route('users.create')}}" class="btn btn-sm btn-neutral">New</a>
+                        <a href="#" class="btn btn-sm btn-neutral">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="card">
                     <!-- Card header -->
                     <div class="card-header border-0 col-6">
-                        <h2 class="mb-0">Users List</h2>
+                        <h2 class="mb-0">Customers</h2>
                     </div>
                     <div class="row">
                         <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
@@ -51,35 +51,28 @@
                             <tr>
                                 <th scope="col" class="sort">#</th>
                                 <th scope="col" class="text-center">ID</th>
-                                <th scope="col" class="text-center">Image</th>
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
-                                <th scope="col" class="text-center">Role</th>
+                                <th scope="col" class="text-center">Phone</th>
+                                <th scope="col" class="text-center">Address</th>
                                 <th scope="col" class="sort"></th>
 
                             </tr>
                             </thead>
                             <tbody class="list">
-                            @foreach($users as $key=>$user)
+                            @foreach($customers as $key=>$customer)
                                 <tr>
-                                    <th scope="row">{{$key}}</th>
-                                    <td class="text-center">{{$user->id}}</td>
-                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px"
-                                                                 height="70px"></td>
-                                    <td class="text-center">{{$user->name}}</td>
-                                    <td class="text-center">{{$user->username}}</td>
-                                    <td class="text-center">
-                                        @switch($user->role)
-                                            @case(\App\Http\Controllers\RoleConstant::ADMIN) {{'Admin'}} @break
-                                            @case(\App\Http\Controllers\RoleConstant::USER) {{'User'}} @break
-                                            @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
-                                        @endswitch
-                                    </td>
+                                    <th scope="row">{{++$key}}</th>
+                                    <td class="text-center"><a>{{$customer->id}}</a></td>
+                                    <td class="text-center">{{$customer->name}}</td>
+                                    <td class="text-center">{{$customer->email}}</td>
+                                    <td class="text-center">{{$customer->phone}}</td>
+                                    <td class="text-center">{{$customer->address}}</td>
                                     <td class="text-right">
                                         <a class="btn btn-outline-info btn-sm">View</a>
-                                        <a href="{{route('users.edit', ['id'=>$user->id])}}"
+                                        <a href="{{route('customers.edit', ['id'=>$customer->id])}}"
                                            class="btn btn-outline-primary btn-sm">Edit</a>
-                                        <a href="{{route('users.delete',['id'=>$user->id])}}"
+                                        <a href="{{route('customers.delete',['id'=>$customer->id])}}"
                                            class="btn btn-outline-danger btn-sm"
                                            onclick="return confirm('Do you want to delete ???')">Delete</a>
                                     </td>
