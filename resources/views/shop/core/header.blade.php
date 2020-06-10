@@ -31,7 +31,7 @@
                         <div class="right floatright">
                             <form action="#" method="get">
                                 <button type="submit"><i class="mdi mdi-magnify"></i></button>
-                                <input type="text" placeholder="Search within these results..." />
+                                <input type="text" placeholder="Search within these results..."/>
                             </form>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <div class="logo">
-                    <a href="index.html"><img src="img/logo2.png" alt="Sellshop" /></a>
+                    <a href="index.html"><img src="img/logo2.png" alt="Sellshop"/></a>
                 </div>
             </div>
             <div class="col-sm-8">
@@ -59,50 +59,19 @@
                                 </li>
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="magamenu">
-                                        <li class="banner"><a href="shop.html"><img src="{{ asset('img/150x250/cat.jpg') }}" alt="" /></a></li>
-                                        <li><h5>men’s wear</h5>
+                                        <li class="banner"><a href="shop.html"><img
+                                                    src="{{ asset('img/150x250/dog.jpeg') }}" alt=""/></a></li>
+                                        @foreach($pets as $pet)
+                                        <li><h5>{{$pet->name}}</h5>
                                             <ul>
-                                                <li><a href="#">Shirts & Top</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Men Watch</a></li>
+                                                @foreach($pet->categories->all() as $category)
+                                                    <li><a href="#">{{$category->name}}</a></li>
+                                                @endforeach
                                             </ul>
                                         </li>
-                                        <li><h5>women’s wear</h5>
-                                            <ul>
-                                                <li><a href="#">Shirts & Tops</a></li>
-                                                <li><a href="#">Shoes</a></li>
-                                                <li><a href="#">Dresses</a></li>
-                                                <li><a href="#">Shemwear</a></li>
-                                                <li><a href="#">Jeans</a></li>
-                                                <li><a href="#">Sweaters</a></li>
-                                                <li><a href="#">Jacket</a></li>
-                                                <li><a href="#">Women Watch</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="banner"><a href="shop.html"><img src="{{ asset('img/150x250/dog.jpeg') }}" alt="" /></a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="wishlist.html">Wishlist</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="product-grid.html">Product Grid View</a></li>
-                                        <li><a href="product-list.html">Product List View</a></li>
-                                        <li><a href="single-product.html">Single Product</a></li>
-                                        <li><a href="error-404.html">404 page</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="blog.html">Blog</a>
-                                    <ul class="dropdown">
-                                        <li><a href="blog-style-1.html">Blog Style One</a></li>
-                                        <li><a href="blog-style-2.html">Blog Style Two</a></li>
-                                        <li><a href="single-blog.html">Single Blog</a></li>
+                                       @endforeach
+                                        <li class="banner"><a href="shop.html"><img
+                                                    src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                     </ul>
                                 </li>
                                 <li><a href="about.html">About</a></li>
@@ -123,7 +92,7 @@
                                     </li>
                                     <li><a href="shop.html">Shop</a>
                                         <ul>
-                                            <li><h5>men’s wear</h5>
+                                            <li><h5>dogs</h5>
                                                 <ul>
                                                     <li><a href="#">Shirts & Top</a></li>
                                                     <li><a href="#">Shoes</a></li>
@@ -179,12 +148,12 @@
                 <div class="cart-itmes">
                     <a class="cart-itme-a" href="cart.html">
                         <i class="mdi mdi-cart"></i>
-                        02 items :  <strong>$86.00</strong>
+                        02 items : <strong>$86.00</strong>
                     </a>
                     <div class="cartdrop">
                         <div class="sin-itme clearfix">
                             <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/1.png" alt="" /></a>
+                            <a class="cart-img" href="cart.html"><img src="img/cart/1.png" alt=""/></a>
                             <div class="menu-cart-text">
                                 <a href="#"><h5>men’s black t-shirt</h5></a>
                                 <span>Color :  Black</span>
@@ -194,7 +163,7 @@
                         </div>
                         <div class="sin-itme clearfix">
                             <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/2.png" alt="" /></a>
+                            <a class="cart-img" href="cart.html"><img src="img/cart/2.png" alt=""/></a>
                             <div class="menu-cart-text">
                                 <a href="#"><h5>men’s black t-shirt</h5></a>
                                 <span>Color :  Black</span>
