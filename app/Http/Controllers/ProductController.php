@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Service\ProductService;
 use App\Product;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProductController extends Controller
 {
@@ -31,8 +32,7 @@ class ProductController extends Controller
     {
         $product = $this->products->create($request);
         $this->products->save($product);
-        $message = 'them moi thanh cong';
-        session()->flash('success',$message);
+        Toastr::success('Post added successfully :)','Success');
 
         return redirect()->route('product.index');
     }

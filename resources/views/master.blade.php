@@ -18,6 +18,7 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/argon.css?v=1.2.0')}}" type="text/css">
 
+
 </head>
 
 <body class="bg-default">
@@ -25,8 +26,11 @@
 
 @yield('master')
 
+
+
 <!-- Argon Scripts -->
 <!-- Core -->
+
 <script src="{{asset("assets/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/vendor/js-cookie/js.cookie.js')}}"></script>

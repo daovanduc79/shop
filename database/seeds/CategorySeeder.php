@@ -30,10 +30,5 @@ class CategorySeeder extends Seeder
         $category->image = 'image.jpg';
         $category->save();
 
-        $category = new Category();
-        $category->pet_id = 2;
-        $category->name = 'VietNam Cats';
-        $category->image = 'image.jpg';
-        $category->save();
     }
 }

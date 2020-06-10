@@ -57,7 +57,7 @@
                                         <li><a href="index-2.html">Home version two</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="shop.html">Shop</a>
+                                <li><a href="{{ route('shop.shop') }}">Shop</a>
                                     <ul class="magamenu">
                                         <li class="banner"><a href="shop.html"><img src="{{ asset('img/150x250/cat.jpg') }}" alt="" /></a></li>
                                         <li><h5>men’s wear</h5>

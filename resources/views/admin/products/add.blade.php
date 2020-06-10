@@ -34,7 +34,7 @@
                         <h2 class="mb-0">Pet Add New</h2>
                     </div>
                     <div class="card-body">
-                        {{session('create-error')}}
+
                         <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">

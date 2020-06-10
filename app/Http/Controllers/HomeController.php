@@ -9,7 +9,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $product = Product::all();
-        return view('shop.home',compact('product'));
+        $products = Product::all();
+        return view('shop.home',compact('products'));
+    }
+
+    public function shop()
+    {
+        $products = Product::all();
+        return view('shop.shop',compact('products'));
     }
 }
