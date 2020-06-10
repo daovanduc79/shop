@@ -47,9 +47,9 @@
                                     <div class="single-product">
                                         <div class="product-img">
                                             <div class="pro-type">
-                                                <span>new</span>
+                                                <span>{{ $product->status }}</span>
                                             </div>
-                                            <a href="#"><img src="{{ asset('storage/' . $product->image) }}" alt="Product Title" /></a>
+                                            <a href="#"><img src="{{ asset('storage/' . $product->image) }}" width="270" height="350" alt="Product Title" /></a>
                                             <div class="actions-btn">
                                                 <a href="#"><i class="mdi mdi-cart"></i></a>
                                                 <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>

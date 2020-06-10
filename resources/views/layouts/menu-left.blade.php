@@ -12,7 +12,7 @@
                 <!-- Nav items -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="">
+                        <a class="nav-link active" href="{{route('admin.home')}}">
                             <i class="ni ni-tv-2 text-primary"></i>
                             <span class="nav-link-text">Home</span>
                         </a>
@@ -24,15 +24,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('customers.index')}}">
                             <i class="ni ni-single-02 text-yellow"></i>
                             <span class="nav-link-text">Customers</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{route('categories.index')}}">
                             <i class="ni ni-bullet-list-67 text-default"></i>
                             <span class="nav-link-text">Categories</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('pets.index')}}">
+                            <i class="ni ni-pin-3 text-primary"></i>
+                            <span class="nav-link-text">Pets</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -41,20 +47,6 @@
                             <span class="nav-link-text">Products</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <i class="ni ni-pin-3 text-primary"></i>
-                            <span class="nav-link-text">ahihi</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            <i class="ni ni-key-25 text-info"></i>
-                            <span class="nav-link-text">Login</span>
-                        </a>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="">
                             <i class="ni ni-send text-dark"></i>

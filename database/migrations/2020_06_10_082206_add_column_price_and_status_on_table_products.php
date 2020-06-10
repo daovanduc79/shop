@@ -15,9 +15,11 @@ class AddColumnPriceAndStatusOnTableProducts extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             $table->bigInteger('price')->nullable()->after('image');
-            $table->string('status')->nullable()->after('price');
+            $table->string('sale')->nullable()->after('price');
             $table->unsignedBigInteger('category_id')->nullable()->after('status');
             $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('customer_id')->after('category_id')->nullable();
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

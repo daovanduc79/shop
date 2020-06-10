@@ -41,9 +41,33 @@
                                 <label class="small mb-1">Product Code</label>
                                 <input class="form-control py-4" name="product_code" type="text" placeholder="Enter Product Code"/>
                             </div>
+                            <div class="row">
+                                <div class="form-group col-md-6" >
+                                    <label class="small mb-1" for="inputEmailAddress">Origination</label>
+                                    <input class="form-control py-4" name="origination" id="inputEmailAddress" type="text" aria-describedby="emailHelp" placeholder="Enter Origination" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="small mb-1" for="inputEmailAddress">Category</label>
+                                    <select class="form-control " name="category_id" >
+                                        @foreach($categories as $key => $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="form-group">
-                                <label class="small mb-1" for="inputEmailAddress">Origination</label>
-                                <input class="form-control py-4" name="origination" id="inputEmailAddress" type="text" aria-describedby="emailHelp" placeholder="Enter Origination" />
+                                <label class="small mb-1">Price</label>
+                                <input class="form-control py-4" name="price" type="text" placeholder="Enter Product Price"/>
+                            </div>
+                            <div class="row">
+                            <div class="form-group col-md-6">
+                                <label class="small mb-1">Sale</label>
+                                <select class="form-control" name="product_code" >
+                                    <option>new</option>
+                                    <option>sale 15%</option>
+                                </select>
+                            </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4">

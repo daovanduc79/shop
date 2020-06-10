@@ -44,7 +44,7 @@ class RegisterController extends Controller
 
         if ($user->count() > 0) {
             $user->update([
-                'active' => 1,
+                'active' => true,
                 'activation_code' => null
             ]);
             $notification_status = 'Bạn đã xác nhận thành công';
