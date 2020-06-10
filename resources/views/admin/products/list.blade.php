@@ -66,7 +66,7 @@
                                     <th scope="row">{{++$key}}</th>
                                     <td class="text-center">{{$product->product_code}}</td>
                                     <td class="text-center">
-                                        <img src="{{ asset('storage/images/' . $product->image) }}" alt="{{ $product->image }}" >
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->image }}" style="width: 60px">
                                     </td>
                                     <td class="text-center">{{$product->origination}}</td>
                                     <td class="text-center">{{$product->characteristics	}}</td>

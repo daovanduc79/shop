@@ -14,4 +14,9 @@ class ProductRepository extends Repository
         parent::__construct($product);
     }
 
+    public function create()
+    {
+        return new Product();
+    }
+
 }

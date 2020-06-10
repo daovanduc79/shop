@@ -20,17 +20,17 @@ class LoginController extends Controller
 
         $user = [
             'username' => $email,
-            'password' => $password
+            'password' => $password,
+            'active' => 1
         ];
 
         if (Auth::attempt($user))
         {
             return redirect()->route('admin.home');
         } else {
-            session()->flash('error-login','tai khoan mat khau khong chinh xac');
+            session()->flash('error-login','tai khoan mat khau khong dung');
             return back();
         }
-
     }
 
     public function logout()

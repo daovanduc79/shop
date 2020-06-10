@@ -56,7 +56,6 @@
                     <div class="card-header border-0 col-6">
                         <h2 class="mb-0">Users List</h2>
                     </div>
-                    <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     <div class="row">
                         <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     </div>
