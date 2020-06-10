@@ -21,7 +21,7 @@ class LoginController extends Controller
         $user = [
             'username' => $email,
             'password' => $password,
-            'active' => 1
+            'active' => true,
         ];
 
         if (Auth::attempt($user))
