@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWaitOdersTable extends Migration
+class CreateWaitOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,7 @@ class CreateWaitOdersTable extends Migration
         Schema::create('wait_orders', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->string('name');
             $table->integer('totalQty');
             $table->integer('totalPrice');
@@ -30,6 +31,6 @@ class CreateWaitOdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wait_oders');
+        Schema::dropIfExists('wait_orders');
     }
 }
