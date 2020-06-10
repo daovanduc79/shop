@@ -30,6 +30,8 @@ class CategorySeeder extends Seeder
         $category->image = 'image3.jpg';
         $category->save();
 
+<<<<<<< HEAD
+=======
         $category = new Category();
         $category->pet_id = 5;
         $category->name = 'Pitbull';
@@ -107,5 +109,6 @@ class CategorySeeder extends Seeder
         $category->name = 'Mèo Chinchilla';
         $category->image = 'image16.jpg';
         $category->save();
+>>>>>>> 2c4e3c285f608245d5feb1267a6095225dd1d7ec
     }
 }

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Http\Service\ProductService;
 use App\Product;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 
 class ProductController extends Controller
 {
@@ -24,16 +26,14 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('admin.products.add');
+        $categories = Category::all();
+        return view('admin.products.add',compact('categories'));
     }
 
     public function store(Request $request)
     {
         $product = $this->products->create($request);
         $this->products->save($product);
-        $message = 'them moi thanh cong';
-        session()->flash('success',$message);
-
         return redirect()->route('product.index');
     }
 
