@@ -23,24 +23,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 text-left">
-                        <form method="get" action="{{route('users.search')}}"
-                              class="navbar-search navbar-search-light form-inline mr-sm-3"
-                              id="navbar-search-main">
-                            <div class="form-group mb-0">
-                                <div class="input-group input-group-alternative input-group-merge">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="fas fa-search"></i></span>
-                                    </div>
-                                    <input class="form-control" name="keyword" value="{{$keyword}}"
-                                           placeholder="Search" type="text">
-                                </div>
-                            </div>
-                            <button type="submit" class="btn hidden"></button>
-                        </form>
-                    </div>
-                    <div class="col-md-1">
-                        <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
+                    <div class="col-lg-6 col-5 text-right">
+                        <a href="{{route('users.create')}}" class="btn btn-sm btn-neutral">New</a>
+                        <a href="#" class="btn btn-sm btn-neutral">Filters</a>
                     </div>
                 </div>
 
@@ -96,7 +81,7 @@
                                            class="btn btn-outline-primary btn-sm">Edit</a>
                                         <a href="{{route('users.delete',['id'=>$user->id])}}"
                                            class="btn btn-outline-danger btn-sm"
-                                           onclick="confirm('Do you want to delete ???')">Delete</a>
+                                           onclick="return confirm('Do you want to delete ???')">Delete</a>
                                     </td>
 
                                 </tr>

@@ -38,8 +38,12 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/edit', 'UserController@edit')->name('users.edit');
             Route::post('{id}/edit', 'UserController@update')->name('users.update');
             Route::get('{id}/delete', 'UserController@delete')->name('users.delete');
-            Route::get('search', 'UserController@search')->name('users.search');
-
+        });
+        Route::prefix('customers')->group(function () {
+            Route::get('/', 'CustomerController@index')->name('customers.index');
+            Route::get('{id}/edit', 'CustomerController@edit')->name('customers.edit');
+            Route::post('{id}/edit', 'CustomerController@update')->name('customers.update');
+            Route::get('{id}/delete', 'CustomerController@delete')->name('customers.delete');
         });
 
         Route::prefix('product')->group(function (){
