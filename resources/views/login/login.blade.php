@@ -29,7 +29,7 @@
     <!-- Page content -->
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-7">
+            <div class="col-lg-6 col-md-7 ">
                 <div class="card bg-secondary border-0 mb-0">
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
@@ -44,10 +44,14 @@
                             </a>
                         </div>
                     </div>
-                    <div class="card-body px-lg-5 py-lg-5">
+                    <div class="card-body px-lg-4 py-lg-6">
                         <div class="text-center text-muted mb-4">
                             <small>Or sign in with credentials</small>
                         </div>
+                        <p style="color: red">{{session('error-login')}}</p>
+{{--                        @if($status)--}}
+{{--                            {{$status}}--}}
+{{--                            @endif--}}
                         <form role="form" method="post" action="{{route('login')}}">
                             @csrf
                             <div class="form-group mb-3">
@@ -83,7 +87,7 @@
                         <a href="#" class="text-light"><small>Forgot password?</small></a>
                     </div>
                     <div class="col-6 text-right">
-                        <a href="#" class="text-light"><small>Create new account</small></a>
+                        <a href="{{route('formRegister')}}" class="text-light"><small>Create new account</small></a>
                     </div>
                 </div>
             </div>

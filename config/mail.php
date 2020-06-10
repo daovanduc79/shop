@@ -107,4 +107,18 @@ return [
         ],
     ],
 
+    'mailgun' => [
+        'domain' => 'your-mailgun-domain',
+        'secret' => 'your-mailgun-key',
+    ],
+
+    'mandrill' => [
+        'secret' => 'your-mandrill-key',
+    ],
+
+    'ses' => [
+        'key' => 'your-ses-key',
+        'secret' => 'your-ses-secret',
+        'region' => 'ses-region',  // e.g. us-east-1
+    ],
 ];
