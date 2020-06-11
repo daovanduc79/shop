@@ -52,25 +52,21 @@
                         <nav>
                             <ul>
                                 <li><a href="{{route('home.index')}}">Home</a>
-                                    <ul class="dropdown">
-                                        <li><a href="index.html">Home version one</a></li>
-                                        <li><a href="index-2.html">Home version two</a></li>
-                                    </ul>
                                 </li>
                                 <li><a href="{{ route('shop.index') }}">Shop</a>
                                     <ul class="magamenu">
-                                        <li class="banner"><a href="shop.html"><img
+                                        <li class="banner"><a href="{{ route('shop.index') }}"><img
                                                     src="{{ asset('img/150x250/dog.jpeg') }}" alt=""/></a></li>
                                         @foreach($pets as $pet)
-                                        <li><h5>{{$pet->name}}</h5>
-                                            <ul>
-                                                @foreach($pet->categories->all() as $category)
-                                                    <li><a href="#">{{$category->name}}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                       @endforeach
-                                        <li class="banner"><a href="shop.html"><img
+                                            <li><h5>{{$pet->name}}</h5>
+                                                <ul>
+                                                    @foreach($pet->categories->all() as $category)
+                                                        <li><a href="#">{{$category->name}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
+                                        <li class="banner"><a href="{{ route('shop.index') }}"><img
                                                     src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                     </ul>
                                 </li>
@@ -84,56 +80,23 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li><a href="index.html">Home</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">Home version one</a></li>
-                                            <li><a href="index-2.html">Home version two</a></li>
-                                        </ul>
+                                    <li><a href="{{route('home.index')}}">Home</a>
                                     </li>
-                                    <li><a href="shop.html">Shop</a>
-                                        <ul>
-                                            <li><h5>dogs</h5>
-                                                <ul>
-                                                    <li><a href="#">Shirts & Top</a></li>
-                                                    <li><a href="#">Shoes</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shemwear</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Jacket</a></li>
-                                                    <li><a href="#">Men Watch</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><h5>women’s wear</h5>
-                                                <ul>
-                                                    <li><a href="#">Shirts & Tops</a></li>
-                                                    <li><a href="#">Shoes</a></li>
-                                                    <li><a href="#">Dresses</a></li>
-                                                    <li><a href="#">Shemwear</a></li>
-                                                    <li><a href="#">Jeans</a></li>
-                                                    <li><a href="#">Sweaters</a></li>
-                                                    <li><a href="#">Jacket</a></li>
-                                                    <li><a href="#">Women Watch</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="product-grid.html">Product Grid View</a></li>
-                                            <li><a href="product-list.html">Product List View</a></li>
-                                            <li><a href="single-product.html">Single Product</a></li>
-                                            <li><a href="error-404.html">404 page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <ul>
-                                            <li><a href="blog-style-1.html">Blog Style One</a></li>
-                                            <li><a href="blog-style-2.html">Blog Style Two</a></li>
-                                            <li><a href="single-blog.html">Single Blog</a></li>
+                                    <li><a href="{{ route('shop.index') }}">Shop</a>
+                                        <ul class="magamenu">
+                                            <li class="banner"><a href="{{ route('shop.index') }}"><img
+                                                        src="{{ asset('img/150x250/dog.jpeg') }}" alt=""/></a></li>
+                                            @foreach($pets as $pet)
+                                                <li><h5>{{$pet->name}}</h5>
+                                                    <ul>
+                                                        @foreach($pet->categories->all() as $category)
+                                                            <li><a href="#">{{$category->name}}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @endforeach
+                                            <li class="banner"><a href="{{ route('shop.index') }}"><img
+                                                        src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                         </ul>
                                     </li>
                                     <li><a href="about.html">About</a></li>
