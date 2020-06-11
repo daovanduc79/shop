@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','HomeController@index')->name('shop.home');
-Route::get('/shop','HomeController@shop')->name('shop.shop');
 
-//Route::get('/','HomeController@index')->name('home');
 
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
