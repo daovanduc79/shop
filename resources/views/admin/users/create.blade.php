@@ -35,31 +35,71 @@
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
-                                <input class="form-control py-4" name="name" type="text" placeholder="Enter name"/>
+
+                                <input type="text" required minlength="3" class="form-control py-4
+                                @if($errors->first('name'))
+                                    is-invalid
+                                @endif
+                                    " value="{{ old('name') }}" name="name" placeholder="Enter name">
+                                @if($errors->first('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                <input class="form-control py-4" name="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" />
+                                <input required class="form-control py-4
+                                @if($errors->first('email'))
+                                    is-invalid
+                                @endif
+                                    " name="email" id="inputEmailAddress" type="email" value="{{ old('email') }}"
+                                       aria-describedby="emailHelp" placeholder="Enter email address"/>
+                                @if($errors->first('email'))
+                                    <p class="text-danger">{{ $errors->first('email') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Role</label>
-                                <select name="role" class="form-control">
+                                <select name="role" class="form-control
+                                @if($errors->first('role'))
+                                    is-invalid
+                                @endif
+                                    ">
                                     <option value="{{\App\Http\Controllers\RoleConstant::ADMIN}}">Admin</option>
                                     <option value="{{\App\Http\Controllers\RoleConstant::USER}}">User</option>
                                     <option value="{{\App\Http\Controllers\RoleConstant::MEMBER}}">Member</option>
                                 </select>
+                                @if($errors->first('role'))
+                                    <p class="text-danger">{{ $errors->first('role') }}</p>
+                                @endif
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input class="form-control py-4" name="password" id="inputPassword" type="password" placeholder="Enter password" />
+                                        <input required minlength="6" maxlength="32" class="form-control py-4
+                                        @if($errors->first('password'))
+                                            is-invalid
+                                        @endif
+                                            " name="password" id="inputPassword"
+                                               type="password" placeholder="Enter password"/>
+                                        @if($errors->first('password'))
+                                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                        <input class="form-control py-4" name="confirmPassword" id="inputConfirmPassword" type="password" placeholder="Confirm password" />
+                                        <input required minlength="6" maxlength="32" class="form-control py-4
+                                        @if($errors->first('password_confirmation'))
+                                            is-invalid
+                                        @endif
+                                            " name="password_confirmation"
+                                               id="inputConfirmPassword" type="password"
+                                               placeholder="Confirm password"/>
+                                        @if($errors->first('password_confirmation'))
+                                            <p class="text-danger">{{ $errors->first('password_confirmation') }}</p>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +109,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="small mb-1">Phone</label>
-                                        <input class="form-control py-4" value="" type="text" name="phone"/>
+                                        <input class="form-control py-4" type="text" name="phone"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -81,7 +121,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Address</label>
-                                <input class="form-control py-4" type="text" name="address" />
+                                <input class="form-control py-4" type="text" name="address"/>
                             </div>
                             <div class="form-group">
                                 <label class="small md-1">Avatar</label>
@@ -98,5 +138,4 @@
             </div>
         </div>
     </div>
-
 @endsection
