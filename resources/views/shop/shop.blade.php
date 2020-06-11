@@ -8,7 +8,8 @@
                     <div class="pages-title-text text-center">
                         <h2>Shop</h2>
                         <ul class="text-left">
-                            <li><a href="{{ route('home') }}">Home </a></li>
+                            <li><a href="{{ route('home.index') }}">Home </a></li>
+
                             <li><span> // </span>Shop</li>
                         </ul>
                     </div>

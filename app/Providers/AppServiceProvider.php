@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Http\Service\PetService;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,8 +23,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(PetService $petService)
     {
-        //
+        $pets = $petService->all();
+        View::share('pets', $pets);
     }
 }

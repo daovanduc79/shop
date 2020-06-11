@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/','HomeController@index')->name('home.index');
 
-
+Route::prefix('shop')->group(function () {
+    Route::get('/','ShopController@index')->name('shop.index');
+});
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
 Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
