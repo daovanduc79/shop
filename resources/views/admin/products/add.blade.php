@@ -39,7 +39,16 @@
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Product Code</label>
-                                <input class="form-control py-4" name="product_code" type="text" placeholder="Enter Product Code"/>
+                                <input class="form-control py-4
+                                        @if($errors->first('product_code'))
+                                        is-invalid
+                                        @endif"
+                                       name="product_code" type="text"
+                                       placeholder="Enter Product Code"
+                                       value="{{old('product_code')}}"/>
+                                @if($errors->first('product_code'))
+                                    <p class="text-danger">{{ $errors->first('product_code') }}</p>
+                                @endif
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6" >
