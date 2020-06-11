@@ -16,7 +16,7 @@ class CustomerController extends Controller
 
     public function index()
     {
-        $customers = $this->customerService->all();
+        $customers = $this->customerService->paginate(5);
 
         return view('admin.customers.list', compact('customers'));
     }

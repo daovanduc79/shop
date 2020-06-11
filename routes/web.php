@@ -13,12 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/','HomeController@index')->name('home.index');
 
 Route::prefix('shop')->group(function () {
     Route::get('/','ShopController@index')->name('shop.index');
+<<<<<<< HEAD
     Route::prefix('cart')->group(function () {
         Route::get('/','ShopController@showCart')->name('shop.showCart');
         Route::get('{productId}/add','ShopController@addToCart')->name('shop.addToCart');
@@ -27,8 +26,10 @@ Route::prefix('shop')->group(function () {
         Route::post('checkout','ShopController@checkout')->name('shop.checkout');
     });
 
+=======
+    Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
+>>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
 });
-
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
 Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
@@ -37,6 +38,10 @@ Route::get('/register/verify/{code}', 'Auth\RegisterController@verify')->name('v
 Route::prefix('login')->group(function () {
     Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
     Route::post('/', 'Auth\LoginController@login')->name('login');
+});
+Route::prefix('login-shop')->group(function () {
+    Route::get('/', 'Auth\Shop\LoginShopController@showFormLogin')->name('login-shop.form');
+    Route::post('/', 'Auth\Shop\LoginShopController@login')->name('login-shop');
 });
 
 Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');

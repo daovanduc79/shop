@@ -19,7 +19,7 @@ class PetController extends Controller
 
     function index()
     {
-        $pets = $this->petService->all();
+        $pets = $this->petService->paginate(5);
         return view('pets.list', compact('pets'));
     }
 

@@ -27,10 +27,8 @@ class UserService extends Service
        $user->username = $request->email;
        $user->role = $request->role;
 
-       if ($request->password == $request->confirmPassword) {
+       if ($request->password == $request->password_confirmation) {
            $user->password = Hash::make($request->password);
-       } else {
-           $user->password = null;
        }
 
        $user->birthday = $request->birthday;
@@ -45,7 +43,7 @@ class UserService extends Service
            $user->image = 'images/default.png';
        }
 
-       return $user;
+       return $this->repository->save($user);
    }
 
    public function update($user, $request)
@@ -64,13 +62,11 @@ class UserService extends Service
            $user->image = 'images/default.png';
        }
 
-       return $user;
+       return $this->repository->save($user);
    }
 
    public function search($keyword)
    {
        return $this->repository->search($keyword);
    }
-
-
 }

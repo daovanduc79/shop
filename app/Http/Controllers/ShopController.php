@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Http\Service\ProductService;
+<<<<<<< HEAD
 use App\Http\Service\ShopService;
+=======
+use App\Product;
+>>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -48,5 +52,11 @@ class ShopController extends Controller
 
     function checkout() {
 
+    }
+
+    function showShopDetail($id)
+    {
+        $productDetails = Product::where('id',$id)->get();
+        return view('shop.product_ detail',compact('productDetails'));
     }
 }

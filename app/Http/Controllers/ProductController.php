@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\ProductRequest;
 use App\Http\Service\ProductService;
 use App\Product;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->products->all();
+        $products = $this->products->paginate(5);
 
         return view('admin.products.list',compact('products'));
     }
@@ -30,7 +31,7 @@ class ProductController extends Controller
         return view('admin.products.add',compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $product = $this->products->create($request);
         $this->products->save($product);

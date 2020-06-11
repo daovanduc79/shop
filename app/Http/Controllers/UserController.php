@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Http\Service\UserService;
 use App\User;
 use Illuminate\Http\Request;
@@ -20,9 +21,8 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = $this->userService->all();
-        $keyword = '';
-        return view('admin.users.list', compact('users', 'keyword'));
+        $users = $this->userService->paginate(5);
+        return view('admin.users.list', compact('users'));
     }
 
     public function create()
@@ -30,20 +30,14 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $user = $this->userService->create();
-        $user = $this->userService->store($user, $request);
-        if ($user->password === null) {
-            $message = 'mat khau khong trung khop';
-            session()->flash('create-error', $message);
-            return back();
-        } else {
-            $this->userService->save($user);
-            $message = 'them moi thanh cong';
-            session()->flash('success', $message);
-            return redirect()->route('users.index');
-        }
+        $this->userService->store($user, $request);
+
+        $message = 'them moi thanh cong';
+        session()->flash('success', $message);
+        return redirect()->route('users.index');
     }
 
 
@@ -59,21 +53,13 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update($id, Request $request)
+    public function update($id,UserRequest $request)
     {
         $user = $this->userService->findOrFail($id);
-        $user = $this->userService->update($user, $request);
-        $this->userService->save($user);
+        $this->userService->update($user, $request);
 
         $message = 'cap nhat thanh cong !!!';
         session()->flash('success', $message);
         return redirect()->route('users.index');
-    }
-
-    public function search(Request $request, User $user)
-    {
-        $keyword = $request->keyword;
-        $users = $this->userService->search($keyword);
-        return view('admin.users.list', compact('users', 'keyword'));
     }
 }
