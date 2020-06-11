@@ -6,17 +6,16 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Tables</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                                <li class="breadcrumb-item"><a href="#">Tables</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Tables</li>
+                                <li class="breadcrumb-item"><a href="#">Pets</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">List</li>
                             </ol>
                         </nav>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="{{route('pets.create')}}" class="btn btn-sm btn-neutral">New</a>
+                        <a href="{{route('pets.create')}}" class="btn btn-sm btn-success">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
                     </div>
                 </div>
@@ -51,7 +50,7 @@
                                         {{++$key}}
                                     </th>
                                     <td class="budget">
-                                        <img src="{{asset('storage/'.$pet->image)}}" width="70px" height="70px">
+                                        <img src="{{asset('storage/'.$pet->image)}}" height="85" width="65">
                                     </td>
                                     <td>
                                         {{$pet->name}}

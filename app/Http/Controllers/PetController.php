@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PetRequest;
 use App\Http\Service\PetService;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class PetController extends Controller
@@ -29,6 +30,7 @@ class PetController extends Controller
 
     function store(PetRequest $petRequest) {
         $this->petService->store($petRequest);
+        Toastr::success('Thêm mới thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
         return redirect()->route('pets.index');
     }
 
@@ -39,11 +41,13 @@ class PetController extends Controller
 
     function update($id, PetRequest $petRequest) {
         $this->petService->update($id, $petRequest);
+        Toastr::success('Chỉnh sửa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
         return redirect()->route('pets.index');
     }
 
     function delete($id) {
         $this->petService->delete($id);
+        Toastr::success('Xóa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
         return redirect()->route('pets.index');
     }
 }

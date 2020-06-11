@@ -64,8 +64,7 @@
                                 <tr>
                                     <th scope="row">{{$key}}</th>
                                     <td class="text-center">{{$user->id}}</td>
-                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" width="70px"
-                                                                 height="70px"></td>
+                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" height="85" width="65"></td>
                                     <td class="text-center">{{$user->name}}</td>
                                     <td class="text-center">{{$user->username}}</td>
                                     <td class="text-center">

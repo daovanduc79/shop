@@ -19,10 +19,12 @@ class ProductService extends Service
         $product = $this->repository->create();
         $product->product_code = $request->product_code;
         $product->origination = $request->origination;
+        $product->category_id = $request->category_id;
         $product->fur_color = $request->fur_color;
         $product->weight = $request->weight;
         $product->price = $request->price;
         $product->longevity = $request->longevity;
+        $product->sale = $request->sale;
         $product->characteristics = $request->characteristics;
 
         if ($request->hasFile('image')) {

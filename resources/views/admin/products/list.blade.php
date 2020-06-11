@@ -5,7 +5,6 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Users</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="{{route('admin.home')}}"><i
@@ -52,18 +51,18 @@
                                     <th scope="row">{{++$key}}</th>
                                     <td class="text-center">{{$product->product_code}}</td>
                                     <td class="text-center">
-                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->image }}" style="width: 60px">
+                                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->image }}" height="85" width="65">
                                     </td>
                                     <td class="text-center">{{$product->origination}}</td>
-                                    <td class="text-center">{{$product->category->name	}}</td>
+                                    <td class="text-center">{{$product->category->name}}</td>
                                     <td class="text-center">
                                         <a href="" type="button" class="btn btn-outline-info btn-sm">View</a>
                                         <a href="{{ route('product.edit',$product->id) }}" type="button" class="btn btn-outline-primary btn-sm">Edit</a>
                                         <a href="{{ route('product.delete',$product->id) }}" type="button" class="btn btn-outline-danger btn-sm">Delete</a>
                                     </td>
-
                                 </tr>
                             @endforeach
+
                             </tbody>
                         </table>
                     </div>

@@ -5,7 +5,6 @@
             <div class="header-body">
                 <div class="row align-items-center py-4">
                     <div class="col-lg-6 col-7">
-                        <h6 class="h2 text-white d-inline-block mb-0">Users</h6>
                         <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                                 <li class="breadcrumb-item"><a href="{{route('admin.home')}}">
@@ -72,9 +71,10 @@
                             <div class="row">
                             <div class="form-group col-md-6">
                                 <label class="small mb-1">Sale</label>
-                                <select class="form-control" name="product_code" >
+                                <select class="form-control" name="sale" >
                                     <option>new</option>
                                     <option>sale 15%</option>
+                                    <option>sell</option>
                                 </select>
                             </div>
                             </div>

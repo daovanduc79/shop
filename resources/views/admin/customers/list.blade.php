@@ -24,7 +24,6 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="#" class="btn btn-sm btn-neutral">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
                     </div>
                 </div>
@@ -40,9 +39,6 @@
                     <!-- Card header -->
                     <div class="card-header border-0 col-6">
                         <h2 class="mb-0">Customers</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-7 text-center"><p style="color: green">{{session('success')}}</p></div>
                     </div>
                     <!-- Light table -->
                     <div class="table-responsive">
