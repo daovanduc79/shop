@@ -18,7 +18,7 @@
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{asset('assets/css/argon.css?v=1.2.0')}}" type="text/css">
 
-
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 </head>
 
 <body class="bg-default">
@@ -30,6 +30,8 @@
 
 <!-- Argon Scripts -->
 <!-- Core -->
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 
 <script src="{{asset("assets/vendor/jquery/dist/jquery.min.js")}}"></script>
 <script src="{{asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>

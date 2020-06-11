@@ -35,6 +35,7 @@ class ProductController extends Controller
     {
         $product = $this->products->create($request);
         $this->products->save($product);
+        Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
         return redirect()->route('product.index');
     }
 
