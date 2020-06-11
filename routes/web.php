@@ -17,6 +17,7 @@ Route::get('/','HomeController@index')->name('home.index');
 
 Route::prefix('shop')->group(function () {
     Route::get('/','ShopController@index')->name('shop.index');
+    Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
 });
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');

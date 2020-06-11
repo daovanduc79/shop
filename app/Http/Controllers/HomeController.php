@@ -13,8 +13,9 @@ class HomeController extends Controller
 {
 
     function index() {
+//        $products = Product::select()
+//        dd($products);
         return view('shop.home');
     }
-
 }
 
