@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Service\PetService;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,5 +28,9 @@ class AppServiceProvider extends ServiceProvider
     {
         $pets = $petService->all();
         View::share('pets', $pets);
+
+        $cart = Session::get('cart');
+        View::share('cart', $cart);
     }
+
 }

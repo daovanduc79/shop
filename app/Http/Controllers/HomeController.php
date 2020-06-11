@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
-
-use App\Http\Service\PetService;
-use App\Product;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
 
     function index() {
-//        $products = Product::select()
-//        dd($products);
-        return view('shop.home');
+        $cart = Session::get('cart');
+        return view('shop.home',compact('cart'));
     }
 }
 
