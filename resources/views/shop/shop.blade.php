@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 @extends('shop.layout.shopLayout')
 @section('shop-content')
 
@@ -414,4 +412,3 @@
     <!-- quick view end -->
     <!-- shop content section end -->
 @endsection
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7

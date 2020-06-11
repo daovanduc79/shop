@@ -66,11 +66,10 @@
                                                 </ul>
                                             </li>
                                         @endforeach
-<<<<<<< HEAD
-                                        <li class="banner"><a href="shop.html"><img
-=======
+                                        <li class="banner"><a href="shop.html"><img>
+
                                         <li class="banner"><a href="{{ route('shop.index') }}"><img
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
+
                                                     src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                     </ul>
                                 </li>
@@ -113,12 +112,13 @@
             </div>
             <div class="col-sm-2">
                 <div class="cart-itmes">
+                    @if(session('cart'))
                     <a class="cart-itme-a" href="{{route('shop.showCart')}}">
                         <i class="mdi mdi-cart"></i>
-                        {{count($cart->items)}} items : <strong>{{$cart->totalPrice}}</strong>
+                        {{count(session('cart')->items)}} items : <strong>{{$cart->totalPrice}}</strong>
                     </a>
                     <div class="cartdrop">
-                        @foreach($cart->items as $product)
+                        @foreach(session('cart') as $product)
                             <div class="sin-itme clearfix">
                                 <a href="{{route('shop.removeProductIntoCart', ['productId'=>$product['item']->id])}}"><i
                                         class="mdi mdi-close"></i></a>
@@ -137,6 +137,11 @@
                         <a class="goto" href="{{route('shop.showCart')}}">go to cart</a>
                         <a class="out-menu" href="{{route('shop.showCheckout')}}">Check out</a>
                     </div>
+                    @else
+                        <a class="cart-itme-a" href="{{route('shop.showCart')}}">
+                            <i class="mdi mdi-cart"></i>0 items
+                        </a>
+                        @endif
                 </div>
             </div>
         </div>
