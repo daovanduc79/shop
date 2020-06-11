@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $products = $this->products->all();
+        $products = $this->products->paginate(5);
 
         return view('admin.products.list',compact('products'));
     }
