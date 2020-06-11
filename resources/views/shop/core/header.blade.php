@@ -66,11 +66,11 @@
                                                 </ul>
                                             </li>
                                         @endforeach
-<<<<<<< HEAD
+
                                         <li class="banner"><a href="shop.html"><img
-=======
+
                                         <li class="banner"><a href="{{ route('shop.index') }}"><img
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
+
                                                     src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                     </ul>
                                 </li>
@@ -113,30 +113,37 @@
             </div>
             <div class="col-sm-2">
                 <div class="cart-itmes">
-                    <a class="cart-itme-a" href="{{route('shop.showCart')}}">
-                        <i class="mdi mdi-cart"></i>
-                        {{count($cart->items)}} items : <strong>{{$cart->totalPrice}}</strong>
-                    </a>
-                    <div class="cartdrop">
-                        @foreach($cart->items as $product)
-                            <div class="sin-itme clearfix">
-                                <a href="{{route('shop.removeProductIntoCart', ['productId'=>$product['item']->id])}}"><i
-                                        class="mdi mdi-close"></i></a>
-                                <a class="cart-img" href="{{route('shop.showCart')}}"><img width="83" height="108"
-                                                                                           src="{{asset('storage/'.$product['item']->image)}}"
-                                                                                           alt=""/></a>
-                                <div class="menu-cart-text">
-                                    <h5>{{$product['item']->product_code}}</h5>
-                                    <strong>${{$product['item']->price}}</strong>
+                    @if(session('cart'))
+                        <a class="cart-itme-a" href="{{route('shop.showCart')}}">
+                            <i class="mdi mdi-cart"></i>
+                            {{count($cart->items)}} items : <strong>{{$cart->totalPrice}}</strong>
+                        </a>
+                        <div class="cartdrop">
+                            @foreach($cart->items as $product)
+                                <div class="sin-itme clearfix">
+                                    <a href="{{route('shop.removeProductIntoCart', ['productId'=>$product['item']->id])}}"><i
+                                            class="mdi mdi-close"></i></a>
+                                    <a class="cart-img" href="{{route('shop.showCart')}}"><img width="83" height="108"
+                                                                                               src="{{asset('storage/'.$product['item']->image)}}"
+                                                                                               alt=""/></a>
+                                    <div class="menu-cart-text">
+                                        <h5>{{$product['item']->product_code}}</h5>
+                                        <strong>${{$product['item']->price}}</strong>
+                                    </div>
                                 </div>
+                            @endforeach
+                            <div class="total">
+                                <span>total <strong>= ${{$cart->totalPrice}}</strong></span>
                             </div>
-                        @endforeach
-                        <div class="total">
-                            <span>total <strong>= ${{$cart->totalPrice}}</strong></span>
+                            <a class="goto" href="{{route('shop.showCart')}}">go to cart</a>
+                            <a class="out-menu" href="{{route('shop.showCheckout')}}">Check out</a>
                         </div>
-                        <a class="goto" href="{{route('shop.showCart')}}">go to cart</a>
-                        <a class="out-menu" href="{{route('shop.showCheckout')}}">Check out</a>
-                    </div>
+                    @else
+                        <a class="cart-itme-a" href="{{route('shop.showCart')}}">
+                            <i class="mdi mdi-cart"></i>
+                            0 items <strong></strong>
+                        </a>
+                    @endif
                 </div>
             </div>
         </div>

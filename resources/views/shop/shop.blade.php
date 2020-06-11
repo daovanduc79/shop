@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 @extends('shop.layout.shopLayout')
 @section('shop-content')
 
@@ -184,7 +183,7 @@
                                                     <div class="col-xs-12 col-md-8">
                                                         <div class="list-text">
                                                             <h3>{{ $product->product_code }}</h3>
-                                                            <span>{{ $product->category->name }}</span>
+{{--                                                            <span>{{ $product->category->name }}</span>--}}
                                                             <div class="ratting floatright">
                                                                 <p>( 27 Rating )</p>
                                                                 <i class="mdi mdi-star"></i>
@@ -415,4 +414,3 @@
     <!-- shop content section end -->
 
 @endsection
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7

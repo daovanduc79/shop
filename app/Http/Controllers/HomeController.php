@@ -14,14 +14,8 @@ class HomeController extends Controller
 {
 
     function index() {
-<<<<<<< HEAD
         $cart = Session::get('cart');
         return view('shop.home',compact('cart'));
-=======
-//        $products = Product::select()
-//        dd($products);
-        return view('shop.home');
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
     }
 }
 
