@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                     {{session('update-error')}}
-                    <form method="post" action="{{route('product.update', $product->id)}}">
+                    <form method="post" action="{{route('product.update', $product->id)}}" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label class="small mb-1">Product Code</label>

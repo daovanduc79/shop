@@ -146,7 +146,7 @@
             </div>
             <div class="col-sm-2">
                 <div class="cart-itmes">
-                    <a class="cart-itme-a" href="cart.html">
+                    <a class="cart-itme-a" href="{{route('shop.showCart')}}">
                         <i class="mdi mdi-cart"></i>
                         02 items : <strong>$86.00</strong>
                     </a>

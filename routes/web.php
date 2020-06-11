@@ -19,6 +19,12 @@ Route::get('/','HomeController@index')->name('home.index');
 
 Route::prefix('shop')->group(function () {
     Route::get('/','ShopController@index')->name('shop.index');
+    Route::prefix('cart')->group(function () {
+        Route::get('/','ShopController@showCart')->name('shop.showCart');
+        Route::get('{productId}/add','ShopController@addToCart')->name('shop.addToCart');
+        Route::get('{productId}/remove', 'ShopController@removeProductIntoCart')->name('shop.removeProductIntoCart');
+    });
+
 });
 
 

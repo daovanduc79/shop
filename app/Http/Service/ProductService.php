@@ -45,8 +45,8 @@ class ProductService extends Service
         $product->longevity = $request->longevity;
         $product->characteristics = $request->characteristics;
 
-        if ($request->hasFile('inputFile')) {
-            $file = $request->inputFile;
+        if ($request->hasFile('image')) {
+            $file = $request->image;
             $path = $file->store('images', 'public');
             $product->image = $path;
         } else {
