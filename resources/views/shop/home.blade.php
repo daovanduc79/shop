@@ -7,7 +7,7 @@
         <div id="wrapper">
             <div class="slider-wrapper">
                 <div id="mainSlider" class="nivoSlider">
-                        <img src="{{ asset('img/1920x800/animals1.jpg') }}" alt="main slider" title="#htmlcaption"/>
+                    <img src="{{ asset('img/1920x800/animals1.jpg') }}" alt="main slider" title="#htmlcaption"/>
                     <img src="{{ asset('img/1920x800/animals2.jpg') }}" alt="main slider" title="#htmlcaption2"/>
                 </div>
                 <div id="htmlcaption" class="nivo-html-caption slider-caption">
@@ -32,7 +32,8 @@
                                 <span>Starting at $65.00. Don’t miss out!</span>
                             </div>
                             <div class="one-p animated bounceInLeft">
-                                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum".</p>
+                                <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those
+                                    interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum".</p>
                             </div>
                             <div class="animated slider-btn fadeInUpBig">
                                 <a class="shop-btn" href="shop.html">Shop now</a>
@@ -50,26 +51,27 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="single-colect banner collect-one">
-                        <a href="#"><img src="{{ asset('img/350x230/animal3.jpg') }}" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal3.jpg') }}" alt=""/></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="colect-text ">
                         <h4><a href="#">Fashion Collection 2016</a></h4>
-                        <h5>big sale of the men 2016 fashion <br /> Up To 23% Off!</h5>
+                        <h5>big sale of the men 2016 fashion <br/> Up To 23% Off!</h5>
                         <a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
                     </div>
                     <div class="collect-img banner margin single-colect">
-                        <a href="#"><img src="{{ asset('img/350x230/animal1.jpg') }}" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal1.jpg') }}" alt=""/></a>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="collect-img banner single-colect">
-                        <a href="#"><img src="{{ asset('img/350x230/animal2.jpg') }}" alt="" /></a>
+                        <a href="#"><img src="{{ asset('img/350x230/animal2.jpg') }}" alt=""/></a>
                     </div>
                     <div class="colect-text ">
                         <h4><a href="#">Men’s Collection 2016</a></h4>
-                        <p>There are many variations of passages of Lorem Ipsum avalabbut the majority have suffered alteration in some form.</p>
+                        <p>There are many variations of passages of Lorem Ipsum avalabbut the majority have suffered
+                            alteration in some form.</p>
                         <a href="#">Shop Now <i class="mdi mdi-arrow-right"></i></a>
                     </div>
                 </div>
@@ -79,74 +81,78 @@
     <!-- collection section end -->
     <!-- featured-products section start -->
 
-    <section class="single-products  products-two section-padding extra-padding-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="section-title text-center">
-                        <h2>Featured Products</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="wrapper">
-                <ul class="load-list load-list-one">
-                    <li>
-                        <div class="row text-center">
-                            @foreach($products as $key => $product)
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <div class="pro-type">
-                                            <span>new</span>
-                                        </div>
-                                        <a href="#"><img src="{{ asset('storage/' . $product->image) }}" alt="Product Title" /></a>
-                                        <div class="actions-btn">
-                                            <a href="#"><i class="mdi mdi-cart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                            <a href="#"><i class="mdi mdi-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-dsc">
-                                        <p><a href="#">men’s Black t-shirt</a></p>
-                                        <span>$65.20</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                            <!-- single product end -->
-                        </div>
-                    </li>
-                    <li>
-                        <div class="row text-center">
-                            @foreach($products as $key => $product)
-                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="single-product">
-                                    <div class="product-img">
-                                        <div class="pro-type">
-                                            <span>new</span>
-                                        </div>
-                                        <a href="#"><img src="{{ asset('storage/' . $product->image) }}" alt="Product Title" /></a>
-                                        <div class="actions-btn">
-                                            <a href="#"><i class="mdi mdi-cart"></i></a>
-                                            <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
-                                            <a href="#"><i class="mdi mdi-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="product-dsc">
-                                        <p><a href="#">men’s White t-shirt</a></p>
-                                        <span>$165.20</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                            <!-- single product end -->
-                        </div>
-                    </li>
-                </ul>
-                <button id="load-more-one">Load More</button>
-            </div>
-        </div>
-    </section>
+{{--    <section class="single-products  products-two section-padding extra-padding-bottom">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-xs-12">--}}
+{{--                    <div class="section-title text-center">--}}
+{{--                        <h2>Featured Products</h2>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="wrapper">--}}
+{{--                <ul class="load-list load-list-one">--}}
+{{--                    <li>--}}
+{{--                        <div class="row text-center">--}}
+{{--                            @foreach($products as $key => $product)--}}
+{{--                                <div class="col-xs-12 col-sm-6 col-md-3">--}}
+{{--                                    <div class="single-product">--}}
+{{--                                        <div class="product-img">--}}
+{{--                                            <div class="pro-type">--}}
+{{--                                                <span>new</span>--}}
+{{--                                            </div>--}}
+{{--                                            <a href="#"><img src="{{ asset('storage/' . $product->image) }}"--}}
+{{--                                                             alt="Product Title"/></a>--}}
+{{--                                            <div class="actions-btn">--}}
+{{--                                                <a href="#"><i class="mdi mdi-cart"></i></a>--}}
+{{--                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i--}}
+{{--                                                        class="mdi mdi-eye"></i></a>--}}
+{{--                                                <a href="#"><i class="mdi mdi-heart"></i></a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="product-dsc">--}}
+{{--                                            <p><a href="#">men’s Black t-shirt</a></p>--}}
+{{--                                            <span>$65.20</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                        @endforeach--}}
+{{--                        <!-- single product end -->--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <div class="row text-center">--}}
+{{--                            @foreach($products as $key => $product)--}}
+{{--                                <div class="col-xs-12 col-sm-6 col-md-3">--}}
+{{--                                    <div class="single-product">--}}
+{{--                                        <div class="product-img">--}}
+{{--                                            <div class="pro-type">--}}
+{{--                                                <span>new</span>--}}
+{{--                                            </div>--}}
+{{--                                            <a href="#"><img src="{{ asset('storage/' . $product->image) }}"--}}
+{{--                                                             alt="Product Title"/></a>--}}
+{{--                                            <div class="actions-btn">--}}
+{{--                                                <a href="#"><i class="mdi mdi-cart"></i></a>--}}
+{{--                                                <a href="#" data-toggle="modal" data-target="#quick-view"><i--}}
+{{--                                                        class="mdi mdi-eye"></i></a>--}}
+{{--                                                <a href="#"><i class="mdi mdi-heart"></i></a>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="product-dsc">--}}
+{{--                                            <p><a href="#">men’s White t-shirt</a></p>--}}
+{{--                                            <span>$165.20</span>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                        @endforeach--}}
+{{--                        <!-- single product end -->--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+{{--                </ul>--}}
+{{--                <button id="load-more-one">Load More</button>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
 
     <!-- featured-products section end -->
 
@@ -158,7 +164,8 @@
                     <div class="section-title text-center">
                         <div class="product-tab nav nav-tabs">
                             <ul>
-                                <li class="active"><a data-toggle="tab" href="#arrival">New Arrival <span>//</span></a></li>
+                                <li class="active"><a data-toggle="tab" href="#arrival">New Arrival <span>//</span></a>
+                                </li>
                                 <li><a data-toggle="tab" href="#popular">Popular Product <span>//</span></a></li>
                                 <li><a data-toggle="tab" href="#best">Best Seller</a></li>
                             </ul>
@@ -178,10 +185,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -198,10 +206,11 @@
                                                 <div class="pro-type sell">
                                                     <span>sell</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -218,10 +227,11 @@
                                                 <div class="pro-type">
                                                     <span>-15%</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -235,10 +245,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -256,10 +267,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -276,10 +288,11 @@
                                                 <div class="pro-type sell">
                                                     <span>sell</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -293,10 +306,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -310,10 +324,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -334,10 +349,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -351,10 +367,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -368,10 +385,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -385,10 +403,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -414,10 +433,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -431,10 +451,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -448,10 +469,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -465,10 +487,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -486,10 +509,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -506,10 +530,11 @@
                                                 <div class="pro-type sell">
                                                     <span>sell</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -523,10 +548,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -540,10 +566,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -564,10 +591,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -581,10 +609,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -598,10 +627,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -615,10 +645,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -647,10 +678,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/21.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -664,10 +696,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/13.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/13.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -684,10 +717,11 @@
                                                 <div class="pro-type">
                                                     <span>-15%</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/22.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -701,10 +735,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -722,10 +757,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/17.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -742,10 +778,11 @@
                                                 <div class="pro-type sell">
                                                     <span>sell</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/19.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -759,10 +796,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -776,10 +814,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -800,10 +839,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/23.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -820,10 +860,11 @@
                                                 <div class="pro-type">
                                                     <span>new</span>
                                                 </div>
-                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/20.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -837,10 +878,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/16.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -854,10 +896,11 @@
                                     <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
                                         <div class="single-product">
                                             <div class="product-img">
-                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title" /></a>
+                                                <a href="#"><img src="img/products/18.jpg" alt="Product Title"/></a>
                                                 <div class="actions-btn">
                                                     <a href="#"><i class="mdi mdi-cart"></i></a>
-                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+                                                    <a href="#" data-toggle="modal" data-target="#quick-view"><i
+                                                            class="mdi mdi-eye"></i></a>
                                                     <a href="#"><i class="mdi mdi-heart"></i></a>
                                                 </div>
                                             </div>
@@ -895,11 +938,14 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_453bc502-370b-431b-a289-5a99739af402.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_453bc502-370b-431b-a289-5a99739af402.jpg') }}"
+                                                alt=""/></a></div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 25, 2016</a>
@@ -909,11 +955,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_9982178_l-370x255.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_9982178_l-370x255.jpg') }}" alt=""/></a>
+                                    </div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 15, 2016</a>
@@ -923,11 +972,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_canwegetronafrompets_1024.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_canwegetronafrompets_1024.jpg') }}"
+                                                alt=""/></a></div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2016</a>
@@ -941,11 +993,14 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_dogily-petshop-370608.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_dogily-petshop-370608.jpg') }}" alt=""/></a>
+                                    </div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">women’s winter Fashion style</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2016</a>
@@ -955,11 +1010,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_file-20191114-26207-lray93.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_file-20191114-26207-lray93.jpg') }}"
+                                                alt=""/></a></div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">Fashion style fine arts drawing</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 25, 2016</a>
@@ -969,11 +1027,14 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="l-blog-text">
-                                    <div class="banner"><a href="single-blog.html"><img src="{{ asset('img/370x255/rsz_kitten-440379.jpg') }}" alt="" /></a></div>
+                                    <div class="banner"><a href="single-blog.html"><img
+                                                src="{{ asset('img/370x255/rsz_kitten-440379.jpg') }}" alt=""/></a>
+                                    </div>
                                     <div class="s-blog-text">
                                         <h4><a href="single-blog.html">women’s Fashion style 2016</a></h4>
                                         <span>By : <a href="#">Rakib</a> | <a href="#">210 Like</a> | <a href="#">69 Comments</a></span>
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour....</p>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the
+                                            majority have suffered alteration in some form, by injected humour....</p>
                                     </div>
                                     <div class="date-read clearfix">
                                         <a href="#"><i class="mdi mdi-clock"></i> jun 15, 2016</a>
@@ -1007,39 +1068,63 @@
                                                 <div class="single-quick-image text-center">
                                                     <div class="list-img">
                                                         <div class="product-img tab-content">
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-1">
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                 id="sin-1">
                                                                 <div class="pro-type">
                                                                     <span>new</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="img/products/z1.jpg" href="#"><img src="img/products/z1.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image"
+                                                                   data-lens-image="img/products/z1.jpg" href="#"><img
+                                                                        src="img/products/z1.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
                                                             </div>
-                                                            <div class="simpleLens-container tab-pane active fade in" id="sin-2">
+                                                            <div class="simpleLens-container tab-pane active fade in"
+                                                                 id="sin-2">
                                                                 <div class="pro-type sell">
                                                                     <span>sell</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="img/products/z2.jpg" href="#"><img src="img/products/z2.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image"
+                                                                   data-lens-image="img/products/z2.jpg" href="#"><img
+                                                                        src="img/products/z2.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
                                                             </div>
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-3">
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                 id="sin-3">
                                                                 <div class="pro-type">
                                                                     <span>-15%</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="img/products/z3.jpg" href="#"><img src="img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image"
+                                                                   data-lens-image="img/products/z3.jpg" href="#"><img
+                                                                        src="img/products/z3.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
                                                             </div>
-                                                            <div class="simpleLens-container tab-pane fade in" id="sin-4">
+                                                            <div class="simpleLens-container tab-pane fade in"
+                                                                 id="sin-4">
                                                                 <div class="pro-type">
                                                                     <span>new</span>
                                                                 </div>
-                                                                <a class="simpleLens-image" data-lens-image="img/products/z4.jpg" href="#"><img src="img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
+                                                                <a class="simpleLens-image"
+                                                                   data-lens-image="img/products/z4.jpg" href="#"><img
+                                                                        src="img/products/z4.jpg" alt=""
+                                                                        class="simpleLens-big-image"></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="quick-thumb">
                                                     <ul class="product-slider">
-                                                        <li><a data-toggle="tab" href="#sin-1"> <img src="img/products/s1.jpg" alt="quick view" /> </a></li>
-                                                        <li class="active"><a data-toggle="tab" href="#sin-2"> <img src="img/products/s2.jpg" alt="small image" /> </a></li>
-                                                        <li><a data-toggle="tab" href="#sin-3"> <img src="img/products/s3.jpg" alt="small image" /> </a></li>
-                                                        <li><a data-toggle="tab" href="#sin-4"> <img src="img/products/s4.jpg" alt="small image" /> </a></li>
+                                                        <li><a data-toggle="tab" href="#sin-1"> <img
+                                                                    src="img/products/s1.jpg" alt="quick view"/> </a>
+                                                        </li>
+                                                        <li class="active"><a data-toggle="tab" href="#sin-2"> <img
+                                                                    src="img/products/s2.jpg" alt="small image"/> </a>
+                                                        </li>
+                                                        <li><a data-toggle="tab" href="#sin-3"> <img
+                                                                    src="img/products/s3.jpg" alt="small image"/> </a>
+                                                        </li>
+                                                        <li><a data-toggle="tab" href="#sin-4"> <img
+                                                                    src="img/products/s4.jpg" alt="small image"/> </a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1057,8 +1142,17 @@
                                                         <i class="mdi mdi-star-half"></i>
                                                         <i class="mdi mdi-star-outline"></i>
                                                     </div>
-                                                    <h5><del>$79.30</del> $69.30</h5>
-                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have be suffered alteration in some form, by injected humour, or randomised words which donot look even slightly believable. If you are going to use a passage of Lorem Ipsum, you neede be sure there isn't anything embarrassing hidden in the middle of text. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                                    <h5>
+                                                        <del>$79.30</del>
+                                                        $69.30
+                                                    </h5>
+                                                    <p>There are many variations of passages of Lorem Ipsum available,
+                                                        but the majority have be suffered alteration in some form, by
+                                                        injected humour, or randomised words which donot look even
+                                                        slightly believable. If you are going to use a passage of Lorem
+                                                        Ipsum, you neede be sure there isn't anything embarrassing
+                                                        hidden in the middle of text. Lorem Ipsum is simply dummy text
+                                                        of the printing and typesetting industry.</p>
                                                     <div class="all-choose">
                                                         <div class="s-shoose">
                                                             <h5>Color</h5>
@@ -1074,8 +1168,11 @@
                                                             <div class="size-drop">
                                                                 <div class="btn-group">
                                                                     <button type="button" class="btn">XL</button>
-                                                                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                        <span class=""><i class="mdi mdi-chevron-down"></i></span>
+                                                                    <button type="button" class="btn dropdown-toggle"
+                                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                                            aria-expanded="false">
+                                                                        <span class=""><i
+                                                                                class="mdi mdi-chevron-down"></i></span>
                                                                     </button>
                                                                     <ul class="dropdown-menu">
                                                                         <li><a href="#">Xl</a></li>
@@ -1091,7 +1188,8 @@
                                                             <form action="#" method="POST">
                                                                 <div class="plus-minus">
                                                                     <a class="dec qtybutton">-</a>
-                                                                    <input type="text" value="02" name="qtybutton" class="plus-minus-box">
+                                                                    <input type="text" value="02" name="qtybutton"
+                                                                           class="plus-minus-box">
                                                                     <a class="inc qtybutton">+</a>
                                                                 </div>
                                                             </form>

@@ -51,13 +51,13 @@
                     <div class="mainmenu">
                         <nav>
                             <ul>
-                                <li><a href="index.html">Home</a>
+                                <li><a href="{{route('home.index')}}">Home</a>
                                     <ul class="dropdown">
                                         <li><a href="index.html">Home version one</a></li>
                                         <li><a href="index-2.html">Home version two</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="{{ route('shop.shop') }}">Shop</a>
+                                <li><a href="{{ route('shop.index') }}">Shop</a>
                                     <ul class="magamenu">
                                         <li class="banner"><a href="shop.html"><img
                                                     src="{{ asset('img/150x250/dog.jpeg') }}" alt=""/></a></li>
