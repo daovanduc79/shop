@@ -62,14 +62,14 @@
                                         <li class="banner"><a href="shop.html"><img
                                                     src="{{ asset('img/150x250/dog.jpeg') }}" alt=""/></a></li>
                                         @foreach($pets as $pet)
-                                        <li><h5>{{$pet->name}}</h5>
-                                            <ul>
-                                                @foreach($pet->categories->all() as $category)
-                                                    <li><a href="#">{{$category->name}}</a></li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                       @endforeach
+                                            <li><h5>{{$pet->name}}</h5>
+                                                <ul>
+                                                    @foreach($pet->categories->all() as $category)
+                                                        <li><a href="#">{{$category->name}}</a></li>
+                                                    @endforeach
+                                                </ul>
+                                            </li>
+                                        @endforeach
                                         <li class="banner"><a href="shop.html"><img
                                                     src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
                                     </ul>
@@ -148,34 +148,27 @@
                 <div class="cart-itmes">
                     <a class="cart-itme-a" href="{{route('shop.showCart')}}">
                         <i class="mdi mdi-cart"></i>
-                        02 items : <strong>$86.00</strong>
+                        {{count($cart->items)}} items : <strong>{{$cart->totalPrice}}</strong>
                     </a>
                     <div class="cartdrop">
-                        <div class="sin-itme clearfix">
-                            <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/1.png" alt=""/></a>
-                            <div class="menu-cart-text">
-                                <a href="#"><h5>men’s black t-shirt</h5></a>
-                                <span>Color :  Black</span>
-                                <span>Size :     SL</span>
-                                <strong>$122.00</strong>
+                        @foreach($cart->items as $product)
+                            <div class="sin-itme clearfix">
+                                <a href="{{route('shop.removeProductIntoCart', ['productId'=>$product['item']->id])}}"><i
+                                        class="mdi mdi-close"></i></a>
+                                <a class="cart-img" href="{{route('shop.showCart')}}"><img width="83" height="108"
+                                                                                           src="{{asset('storage/'.$product['item']->image)}}"
+                                                                                           alt=""/></a>
+                                <div class="menu-cart-text">
+                                    <h5>{{$product['item']->product_code}}</h5>
+                                    <strong>${{$product['item']->price}}</strong>
+                                </div>
                             </div>
-                        </div>
-                        <div class="sin-itme clearfix">
-                            <i class="mdi mdi-close"></i>
-                            <a class="cart-img" href="cart.html"><img src="img/cart/2.png" alt=""/></a>
-                            <div class="menu-cart-text">
-                                <a href="#"><h5>men’s black t-shirt</h5></a>
-                                <span>Color :  Black</span>
-                                <span>Size :     SL</span>
-                                <strong>$132.00</strong>
-                            </div>
-                        </div>
+                        @endforeach
                         <div class="total">
-                            <span>total <strong>= $306.00</strong></span>
+                            <span>total <strong>= ${{$cart->totalPrice}}</strong></span>
                         </div>
-                        <a class="goto" href="cart.html">go to cart</a>
-                        <a class="out-menu" href="checkout.html">Check out</a>
+                        <a class="goto" href="{{route('shop.showCart')}}">go to cart</a>
+                        <a class="out-menu" href="{{route('shop.showCheckout')}}">Check out</a>
                     </div>
                 </div>
             </div>

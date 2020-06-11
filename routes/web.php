@@ -23,6 +23,8 @@ Route::prefix('shop')->group(function () {
         Route::get('/','ShopController@showCart')->name('shop.showCart');
         Route::get('{productId}/add','ShopController@addToCart')->name('shop.addToCart');
         Route::get('{productId}/remove', 'ShopController@removeProductIntoCart')->name('shop.removeProductIntoCart');
+        Route::get('show-checkout','ShopController@showCheckout')->name('shop.showCheckout');
+        Route::post('checkout','ShopController@checkout')->name('shop.checkout');
     });
 
 });

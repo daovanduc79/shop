@@ -101,7 +101,7 @@
                                 @endif
                             </table>
                             <div class="submit-text coupon">
-                                <a href="" class="btn">Check out</a>
+                                <a href="{{route('shop.showCheckout')}}" class="btn">Check out</a>
                             </div>
                         </div>
                     </div>
