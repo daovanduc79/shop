@@ -16,7 +16,6 @@ class CustomerService extends Service
     public function update($customer, $request)
     {
         $customer->name = $request->name;
-        $customer->email = $request->email;
         $customer->phone = $request->phone;
         $customer->address = $request->address;
 

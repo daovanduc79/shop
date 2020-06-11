@@ -69,14 +69,14 @@
                                     <td class="text-center">{{$customer->phone}}</td>
                                     <td class="text-center">{{$customer->address}}</td>
                                     <td class="text-right">
-                                        <a class="btn btn-outline-info btn-sm">View</a>
+                                        <button type="button" class="btn btn-outline-info btn-sm" data-toggle="modal" data-target="#exampleModal{{$customer->id}}">View</button>
                                         <a href="{{route('customers.edit', ['id'=>$customer->id])}}"
                                            class="btn btn-outline-primary btn-sm">Edit</a>
                                         <a href="{{route('customers.delete',['id'=>$customer->id])}}"
                                            class="btn btn-outline-danger btn-sm"
                                            onclick="return confirm('Do you want to delete ???')">Delete</a>
+                                        @include('admin.customers.view')
                                     </td>
-
                                 </tr>
                             @endforeach
                             </tbody>

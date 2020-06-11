@@ -22,12 +22,9 @@ Route::prefix('shop')->group(function () {
 });
 
 
-
-
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
 Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
 Route::get('/register/verify/{code}', 'Auth\RegisterController@verify')->name('verify');
-
 
 Route::prefix('login')->group(function () {
     Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
@@ -35,7 +32,6 @@ Route::prefix('login')->group(function () {
 });
 
 Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');
-
 
 Route::middleware(['auth'])->group(function () {
     Route::prefix('admin')->group(function () {
@@ -87,7 +83,6 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
-
 
 Route::get('test', function () {
    return view('shop.test');

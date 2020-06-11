@@ -51,7 +51,7 @@
                     <div class="mainmenu">
                         <nav>
                             <ul>
-                                <li><a href="index.html">Home</a>
+                                <li><a href="{{route('home.index')}}">Home</a>
                                     <ul class="dropdown">
                                         <li><a href="index.html">Home version one</a></li>
                                         <li><a href="index-2.html">Home version two</a></li>
