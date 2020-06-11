@@ -28,6 +28,10 @@ Route::prefix('login')->group(function () {
     Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
     Route::post('/', 'Auth\LoginController@login')->name('login');
 });
+Route::prefix('login-shop')->group(function () {
+    Route::get('/', 'Auth\Shop\LoginShopController@showFormLogin')->name('login-shop.form');
+    Route::post('/', 'Auth\Shop\LoginShopController@login')->name('login-shop');
+});
 
 Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');
 

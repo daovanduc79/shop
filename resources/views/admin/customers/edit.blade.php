@@ -31,27 +31,51 @@
                     </div>
                     <div class="card-body">
                         {{--                    <p style="color: red">{{session('create-error')}}</p>--}}
-                        <form method="post" action="{{route('customers.edit', ['id'=>$customer->id])}}" enctype="multipart/form-data">
+                        <form method="post" action="{{route('customers.edit', ['id'=>$customer->id])}}"
+                              enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">MKH</label>
-                                <input class="form-control py-4" name="id" disabled type="text" value="{{$customer->id}}"/>
+                                <input class="form-control py-4" name="id" disabled type="text"
+                                       value="{{$customer->id}}"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
-                                <input class="form-control py-4" name="name" type="text" value="{{$customer->name}}"/>
+                                <input required class="form-control py-4
+                                @if($errors->first('name'))
+                                    is-invalid
+                                    @endif
+                                    " name="name" type="text" value="{{$customer->name}}"/>
+                                @if($errors->first('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Email</label>
-                                <input class="form-control py-4" name="email" disabled type="email" value="{{$customer->email}}"/>
+                                <input class="form-control py-4" name="email" disabled type="email"
+                                       value="{{$customer->email}}"/>
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Phone</label>
-                                <input class="form-control py-4" name="phone" type="text" value="{{$customer->phone}}"/>
+                                <input required class="form-control py-4
+                                @if($errors->first('phone'))
+                                    is-invalid
+                                    @endif
+                                    " name="phone" type="text" value="{{$customer->phone}}"/>
+                                @if($errors->first('phone'))
+                                    <p class="text-danger">{{ $errors->first('phone') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1">Address</label>
-                                <input class="form-control py-4" name="address" type="text" value="{{$customer->address}}"/>
+                                <input required class="form-control py-4
+                                @if($errors->first('address'))
+                                    is-invalid
+                                    @endif
+                                    " name="address" type="text" value="{{$customer->address}}"/>
+                                @if($errors->first('address'))
+                                    <p class="text-danger">{{ $errors->first('address') }}</p>
+                                @endif
                             </div>
                             <hr>
                             <div class="form-group">
