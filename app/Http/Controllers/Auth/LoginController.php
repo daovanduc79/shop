@@ -21,12 +21,18 @@ class LoginController extends Controller
         $user = [
             'username' => $email,
             'password' => $password,
-            'active' => true,
+            'active' => 1,
         ];
 
         if (Auth::attempt($user))
         {
-            return redirect()->route('admin.home');
+            if (Auth::user()->role === 1 or Auth::user()->role === 2)
+            {
+                return redirect()->route('admin.home');
+            } else {
+                session()->flash('error-login','ban khong co quyen');
+                return back();
+            }
         } else {
             session()->flash('error-login','tai khoan mat khau khong dung');
             return back();

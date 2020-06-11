@@ -24,6 +24,7 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
                     <div class="main-input padding60">
+                        <p class="text-danger">{{session('login-error')}}</p>
                         <div class="login-text">
                             <div class="custom-input">
                                 <p>If you have an account with us, Please log in!</p>
