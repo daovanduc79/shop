@@ -21,6 +21,7 @@ class ProductService extends Service
         $product->origination = $request->origination;
         $product->fur_color = $request->fur_color;
         $product->weight = $request->weight;
+        $product->price = $request->price;
         $product->longevity = $request->longevity;
         $product->characteristics = $request->characteristics;
 
@@ -45,7 +46,7 @@ class ProductService extends Service
         $product->longevity = $request->longevity;
         $product->characteristics = $request->characteristics;
 
-        if ($request->hasFile('inputFile')) {
+        if ($request->hasFile('image')) {
             $file = $request->inputFile;
             $path = $file->store('images', 'public');
             $product->image = $path;
