@@ -12,12 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
-Route::get('/','HomeController@index')->name('shop.home');
-Route::get('/shop','HomeController@shop')->name('shop.shop');
-=======
-Route::get('/','HomeController@index')->name('home');
->>>>>>> 2c4e3c285f608245d5feb1267a6095225dd1d7ec
+
+
+
+Route::get('/','HomeController@index')->name('home.index');
+
+Route::prefix('shop')->group(function () {
+    Route::get('/','ShopController@index')->name('shop.index');
+});
+
+
+
 
 Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
 Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
