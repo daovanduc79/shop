@@ -25,23 +25,16 @@ class LoginController extends Controller
             'active' => true
         ];
 
-        if (Auth::attempt($user))
-        {
-<<<<<<< HEAD
-            Toastr::success('Đăng nhập thành công !', 'Welcome', ["positionClass" => "toast-top-center","progressBar" => true]);
-            return redirect()->route('admin.home');
-=======
-            if (Auth::user()->role === 1 or Auth::user()->role === 2)
-            {
+        if (Auth::attempt($user)) {
+            if (Auth::user()->role === 1 or Auth::user()->role === 2) {
+                Toastr::success('Đăng nhập thành công !', 'Welcome '.Auth::user()->name, ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return redirect()->route('admin.home');
             } else {
-                session()->flash('error-login','ban khong co quyen');
+                Toastr::error('Bạn không có quyền !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return back();
             }
->>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
         } else {
-            session()->flash('error-login','tai khoan mat khau khong dung');
-            Toastr::error('Đăng nhập thất bại !', 'False', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+            Toastr::error('Đăng nhập thất bại !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
             return back();
         }
     }
@@ -49,7 +42,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        Toastr::warning('Bạn đã đăng xuất !', 'Warning', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+        Toastr::warning('Bạn đã đăng xuất !', 'Warning', ["positionClass" => "toast-top-center", "progressBar" => true]);
         return redirect()->route('formLogin');
     }
 }
