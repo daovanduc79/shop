@@ -44,14 +44,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="card-body px-lg-4 py-lg-6">
+                    <div class="card-body px-lg-4 py-lg-4">
                         <div class="text-center text-muted mb-4">
                             <small>Or sign in with credentials</small>
                         </div>
                         <p style="color: red">{{session('error-login')}}</p>
-{{--                        @if($status)--}}
-{{--                            {{$status}}--}}
-{{--                            @endif--}}
                         <form role="form" method="post" action="{{route('login')}}">
                             @csrf
                             <div class="form-group mb-3">
