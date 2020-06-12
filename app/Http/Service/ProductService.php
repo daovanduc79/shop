@@ -47,17 +47,12 @@ class ProductService extends Service
         $product->characteristics = $request->characteristics;
 
         if ($request->hasFile('image')) {
-<<<<<<< HEAD
             $file = $request->image;
-=======
-            $file = $request->inputFile;
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
             $path = $file->store('images', 'public');
             $product->image = $path;
         } else {
             $product->image = 'images/default.png';
         }
-
         $this->save($product);
     }
 
