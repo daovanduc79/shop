@@ -27,6 +27,9 @@ Route::prefix('shop')->group(function () {
     });
 
 
+
+    Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
+
     Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
 
 });

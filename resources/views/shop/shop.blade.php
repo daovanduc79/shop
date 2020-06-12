@@ -1,9 +1,8 @@
-
 @extends('shop.layout.shopLayout')
 @section('shop-content')
 
-    <div class="pages-title section-padding" >
-        <div class="container" >
+    <div class="pages-title section-padding">
+        <div class="container">
             <div class="row">
                 <div class="col-xs-12">
                     <div class="pages-title-text text-center">
@@ -135,10 +134,12 @@
                                                     <div class="pro-type">
                                                         <span>{{ $product->sale }}</span>
                                                     </div>
-                                                    <a href="{{ route('shop.detail',$product->id) }}"><img src="{{ asset('storage/' . $product->image) }}"
-                                                                     alt="Product Title" height="370" width="255"/></a>
+                                                    <a href="{{ route('shop.detail',$product->id) }}"><img
+                                                            src="{{ asset('storage/' . $product->image) }}"
+                                                            alt="Product Title" height="370" width="255"/></a>
                                                     <div class="actions-btn">
-                                                        <a href="#"><i class="mdi mdi-cart"></i></a>
+                                                        <a href="{{route('shop.addToCart',['productId'=>$product->id])}}"><i
+                                                                class="mdi mdi-cart"></i></a>
                                                         <a href="#" data-toggle="modal" data-target="#quick-view"><i
                                                                 class="mdi mdi-eye"></i></a>
                                                         <a href="#"><i class="mdi mdi-heart"></i></a>
@@ -183,7 +184,7 @@
                                                     <div class="col-xs-12 col-md-8">
                                                         <div class="list-text">
                                                             <h3>{{ $product->product_code }}</h3>
-{{--                                                            <span>{{ $product->category->name }}</span>--}}
+                                                            <span>{{ $product->category->name }}</span>
                                                             <div class="ratting floatright">
                                                                 <p>( 27 Rating )</p>
                                                                 <i class="mdi mdi-star"></i>
@@ -199,15 +200,15 @@
                                                             <div class="list-btn">
                                                                 <a href="#">add to cart</a>
                                                                 <a href="#">wishlist</a>
-{{--                                                                <a href="#" data-toggle="modal"--}}
-{{--                                                                   data-target="#quick-view">zoom</a>--}}
+                                                                {{--                                                                <a href="#" data-toggle="modal"--}}
+                                                                {{--                                                                   data-target="#quick-view">zoom</a>--}}
                                                             </div>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                             </div>
-                                        <!-- single product end -->
+                                            <!-- single product end -->
                                         </div>
                                     @endforeach
                                 </div>
@@ -412,5 +413,4 @@
     </div>
     <!-- quick view end -->
     <!-- shop content section end -->
-
 @endsection

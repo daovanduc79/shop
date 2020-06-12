@@ -13,8 +13,8 @@
                             <li>
                                 <a href="#"><i class="mdi mdi-account"></i></a>
                                 <ul>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="login.html">Registar</a></li>
+                                    <li><a href="{{route('login-shop.form')}}">Login</a></li>
+                                    <li><a href="login.html">Register</a></li>
                                     <li><a href="my-account.html">My account</a></li>
                                 </ul>
                             </li>
@@ -66,9 +66,6 @@
                                                 </ul>
                                             </li>
                                         @endforeach
-
-                                        <li class="banner"><a href="shop.html"><img
-
                                         <li class="banner"><a href="{{ route('shop.index') }}"><img
 
                                                     src="{{ asset('img/150x250/cat.jpg') }}" alt=""/></a></li>
@@ -123,7 +120,8 @@
                                 <div class="sin-itme clearfix">
                                     <a href="{{route('shop.removeProductIntoCart', ['productId'=>$product['item']->id])}}"><i
                                             class="mdi mdi-close"></i></a>
-                                    <a class="cart-img" href="{{route('shop.showCart')}}"><img width="83" height="108"
+                                    <a class="cart-img" href="{{route('shop.showCart')}}"><img width="83px"
+                                                                                               height="108px"
                                                                                                src="{{asset('storage/'.$product['item']->image)}}"
                                                                                                alt=""/></a>
                                     <div class="menu-cart-text">
@@ -141,7 +139,7 @@
                     @else
                         <a class="cart-itme-a" href="{{route('shop.showCart')}}">
                             <i class="mdi mdi-cart"></i>
-                            0 items <strong></strong>
+                            0 items
                         </a>
                     @endif
                 </div>
