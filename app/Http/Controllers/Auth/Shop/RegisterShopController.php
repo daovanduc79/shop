@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Auth\Shop;
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\RoleConstant;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\RegisterUserRequest;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Auth\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
@@ -18,14 +17,16 @@ class RegisterShopController extends Controller
         return view('shop.auth.register');
     }
 
-    public function registerActive(Request $request)
+    public function registerActive(RegisterUserRequest $request)
     {
-//        dd($request);
         $activation_code = time() . uniqid(true);
         $user = new User();
         $user->name = $request->name;
         $user->username = $request->email;
-        $user->password = Hash::make($request->password);
+        if ($request->password === $request->confirm)
+        {
+            $user->password = Hash::make($request->password);
+        }
         $user->phone = $request->phone;
         $user->role = RoleConstant::MEMBER;
         $user->activation_code = $activation_code;
