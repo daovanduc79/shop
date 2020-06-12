@@ -12,7 +12,8 @@ class LoginShopController extends Controller
 {
     public function showFormLogin()
     {
-        return view('shop.auth.login');
+        $cart = session('cart');
+        return view('shop.auth.login', compact('cart'));
     }
 
     public function login(LoginShopRequest $request)

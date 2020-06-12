@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Cart;
+use App\Discount;
 use App\Http\Service\ProductService;
 use App\Http\Service\ShopService;
 use App\Product;
@@ -54,12 +55,22 @@ class ShopController extends Controller
 
     function checkout()
     {
-        
+
     }
 
     function showShopDetail($id)
     {
         $productDetails = Product::where('id', $id)->get();
         return view('shop.product_ detail', compact('productDetails'));
+    }
+
+    function getDiscount(Discount $discount)
+    {
+        $discounts = $discount->all();
+        $getDiscount = [
+            'status' => 200,
+            'discount' => $discounts
+        ];
+        return response()->json($discounts, 200);
     }
 }
