@@ -1,27 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\Shop;
 
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Http\Controllers\RoleConstant;
+use App\Http\Requests\UserRequest;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
-class RegisterController extends Controller
+class RegisterShopController extends Controller
 {
     public function showFormRegister()
     {
-        return view('login.register');
+        return view('shop.auth.register');
     }
 
     public function registerActive(Request $request)
     {
+//        dd($request);
         $activation_code = time() . uniqid(true);
         $user = new User();
         $user->name = $request->name;
         $user->username = $request->email;
         $user->password = Hash::make($request->password);
+        $user->phone = $request->phone;
+        $user->role = RoleConstant::MEMBER;
         $user->activation_code = $activation_code;
         $user->active = false;
         $user->save();
@@ -35,7 +41,8 @@ class RegisterController extends Controller
             $message->to($request->email, $request->name)->subject('Verify your email address');
         });
 
-        return redirect(route('formLogin'))->with('status', 'Vui lòng xác nhận tài khoản email');
+        Toastr::success('Vui lòng kiểm tra mail của bạn', 'Send to mail',["positionClass" => "toast-top-center", "progressBar" => true]);
+        return redirect(route('login-shop.form'));
     }
 
     public function verify($code)
@@ -48,10 +55,12 @@ class RegisterController extends Controller
                 'activation_code' => null
             ]);
             $notification_status = 'Bạn đã xác nhận thành công';
+            Toastr::success($notification_status,'Active success',["positionClass" => "toast-top-center", "progressBar" => true]);
         } else {
             $notification_status = 'Mã xác nhận không chính xác';
+            Toastr::warning($notification_status,'Active success',["positionClass" => "toast-top-center", "progressBar" => true]);
         }
-        session()->flash('status', $notification_status);
-        return redirect()->route('formLogin');
+
+        return redirect()->route('login-shop.form');
     }
 }
