@@ -36,38 +36,33 @@
                         <table class="table align-items-center table-flush">
                             <thead class="thead-light">
                             <tr>
-                                <th scope="col" class="sort" data-sort="name">#</th>
-                                <th scope="col" class="sort" data-sort="status">Image</th>
-                                <th scope="col" class="sort" data-sort="budget">Name</th>
-                                <th scope="col" class="sort" data-sort="completion">Amount</th>
-                                <th scope="col"></th>
+                                <th scope="col" class="sort">#</th>
+                                <th scope="col" class="text-center">Image</th>
+                                <th scope="col" class="text-center">Name</th>
+                                <th scope="col" class="text-center">Amount</th>
+                                <th scope="col" class="text-center">Action</th>
                             </tr>
                             </thead>
                             <tbody class="list">
                             @foreach($pets as $key => $pet)
                                 <tr>
-                                    <th scope="row">
-                                        {{++$key}}
-                                    </th>
-                                    <td class="budget">
-<<<<<<< HEAD
-                                        <img src="{{asset('storage/'.$pet->image)}}" height="85" width="65">
-=======
+                                    <th scope="row">{{ ++$key }}</th>
+                                    <td class="text-center">
                                         <img src="
                                     @if($pet->image)
                                         {{asset('storage/'.$pet->image)}}
                                         @else
                                         {{asset('img/default/pets.jpg')}}
-                                        @endif" width="70px" height="70px">
->>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
+                                        @endif" height="85" width="65">
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{$pet->name}}
                                     </td>
-                                    <td>
+                                    <td class="text-center">
                                         {{$pet->categories->count()}}
                                     </td>
-                                    <td class="text-right">
+
+                                    <td class="text-center">
                                         <a href="#" type="button" class="btn btn-outline-info btn-sm">View</a>
                                         <a href="{{route('pets.edit',['id'=>$pet->id])}}" type="button"
                                            class="btn btn-outline-primary btn-sm">Edit</a>

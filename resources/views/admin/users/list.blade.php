@@ -55,7 +55,7 @@
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
                                 <th scope="col" class="text-center">Role</th>
-                                <th scope="col" class="sort"></th>
+                                <th scope="col" class="text-center">Action</th>
 
                             </tr>
                             </thead>
@@ -64,16 +64,12 @@
                                 <tr>
                                     <th scope="row">{{$key}}</th>
                                     <td class="text-center">{{$user->id}}</td>
-<<<<<<< HEAD
-                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" height="85" width="65"></td>
-=======
                                     <td class="text-center"><img src="
                                     @if($user->image)
                                         {{asset('storage/'.$user->image)}}
                                         @else
                                         {{asset('img/default/avatar.jpg')}}
-                                        @endif" width="70px" height="70px"></td>
->>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
+                                        @endif" height="85" width="65"></td>
                                     <td class="text-center">{{$user->name}}</td>
                                     <td class="text-center">{{$user->username}}</td>
                                     <td class="text-center">
@@ -83,7 +79,7 @@
                                             @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
                                         @endswitch
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-center">
                                         <a class="btn btn-outline-info btn-sm">View</a>
                                         <a href="{{route('users.edit', ['id'=>$user->id])}}"
                                            class="btn btn-outline-primary btn-sm">Edit</a>
