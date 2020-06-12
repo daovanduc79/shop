@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,27 +22,29 @@ class LoginController extends Controller
         $user = [
             'username' => $email,
             'password' => $password,
-            'active' => 1,
+            'active' => true
         ];
 
-        if (Auth::attempt($user))
-        {
-            if (Auth::user()->role === 1 or Auth::user()->role === 2)
-            {
+        if (Auth::attempt($user)) {
+
+
+            if (Auth::user()->role === 1 or Auth::user()->role === 2) {
+                Toastr::success('Đăng nhập thành công !', 'Welcome', ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return redirect()->route('admin.home');
+
             } else {
-                session()->flash('error-login','ban khong co quyen');
+                Toastr::error('Không có quyền đăng nhập!', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return back();
             }
-        } else {
-            session()->flash('error-login','tai khoan mat khau khong dung');
-            return back();
         }
+        Toastr::error('Đăng nhập thất bại !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
+        return back();
     }
 
     public function logout()
     {
         Auth::logout();
+        Toastr::warning('Bạn đã đăng xuất !', 'Warning', ["positionClass" => "toast-top-center", "progressBar" => true]);
         return redirect()->route('formLogin');
     }
 }

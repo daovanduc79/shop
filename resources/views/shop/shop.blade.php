@@ -198,7 +198,7 @@
                                                                 ${{ $product->price }}</h5>
                                                             <p>{{ $product->characteristics }}</p>
                                                             <div class="list-btn">
-                                                                <a href="#">add to cart</a>
+                                                                <a href="{{route('shop.addToCart',['productId'=>$product->id])}}">add to cart</a>
                                                                 <a href="#">wishlist</a>
                                                                 {{--                                                                <a href="#" data-toggle="modal"--}}
                                                                 {{--                                                                   data-target="#quick-view">zoom</a>--}}

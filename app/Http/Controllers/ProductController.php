@@ -21,7 +21,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->products->paginate(5);
-
         return view('admin.products.list',compact('products'));
     }
 
@@ -35,6 +34,7 @@ class ProductController extends Controller
     {
         $product = $this->products->create($request);
         $this->products->save($product);
+        Toastr::success('Thêm mới thành công !', 'Success', ["positionClass" => "toast-top-center"]);
         return redirect()->route('product.index');
     }
 
@@ -47,16 +47,14 @@ class ProductController extends Controller
     public function update($id , Request $request)
     {
         $this->products->update($id,$request);
-        $message = 'chinh sua thanh cong';
-        session()->flash('success',$message);
-
+        Toastr::success('Chỉnh sửa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
         return redirect()->route('product.index');
     }
 
     public function destroy($id)
     {
         $this->products->delete($id);
-        session()->flash('success', 'Xóa thành công');
+        Toastr::success('Xóa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
         return redirect()->route('product.index');
     }
 

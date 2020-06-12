@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Service\CustomerService;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -24,7 +25,6 @@ class CustomerController extends Controller
     public function edit($id)
     {
         $customer = $this->customerService->findOrFail($id);
-
         return view('admin.customers.edit', compact('customer'));
     }
 
@@ -34,14 +34,16 @@ class CustomerController extends Controller
         $customer = $this->customerService->update($customer,$request);
         $this->customerService->save($customer);
 
-        $message = 'update success';
-        session()->flash('success', $message);
+        Toastr::success('Chỉnh sửa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+
         return redirect()->route('customers.index');
     }
 
     public function delete($id)
     {
         $this->customerService->delete($id);
+        Toastr::success('Xóa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+
         return redirect()->route('customers.index');
     }
 }

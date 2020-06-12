@@ -19,10 +19,12 @@ class ProductService extends Service
         $product = $this->repository->create();
         $product->product_code = $request->product_code;
         $product->origination = $request->origination;
+        $product->category_id = $request->category_id;
         $product->fur_color = $request->fur_color;
         $product->weight = $request->weight;
         $product->price = $request->price;
         $product->longevity = $request->longevity;
+        $product->sale = $request->sale;
         $product->characteristics = $request->characteristics;
 
         if ($request->hasFile('image')) {
@@ -47,17 +49,12 @@ class ProductService extends Service
         $product->characteristics = $request->characteristics;
 
         if ($request->hasFile('image')) {
-<<<<<<< HEAD
             $file = $request->image;
-=======
-            $file = $request->inputFile;
->>>>>>> 27abd8cb93fce443925336323bb6e1db02e65af7
             $path = $file->store('images', 'public');
             $product->image = $path;
         } else {
             $product->image = 'images/default.png';
         }
-
         $this->save($product);
     }
 

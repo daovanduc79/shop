@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use App\Http\Service\UserService;
 use App\User;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 
@@ -35,8 +36,8 @@ class UserController extends Controller
         $user = $this->userService->create();
         $this->userService->store($user, $request);
 
-        $message = 'them moi thanh cong';
-        session()->flash('success', $message);
+        Toastr::success('Thêm mới thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+
         return redirect()->route('users.index');
     }
 
@@ -44,6 +45,8 @@ class UserController extends Controller
     public function delete($id)
     {
         $this->userService->delete($id);
+        Toastr::success('Xóa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+
         return redirect()->route('users.index');
     }
 
@@ -58,8 +61,8 @@ class UserController extends Controller
         $user = $this->userService->findOrFail($id);
         $this->userService->update($user, $request);
 
-        $message = 'cap nhat thanh cong !!!';
-        session()->flash('success', $message);
+        Toastr::success('Chỉnh sửa thành công !', 'Succcess', ["positionClass" => "toast-top-center" , "progressBar" => true]);
+
         return redirect()->route('users.index');
     }
 }
