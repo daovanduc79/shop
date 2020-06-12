@@ -411,5 +411,4 @@
     </div>
     <!-- quick view end -->
     <!-- shop content section end -->
-
 @endsection

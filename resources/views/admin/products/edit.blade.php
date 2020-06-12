@@ -24,6 +24,7 @@
         </div>
     </div>
 
+<<<<<<< HEAD
     <!-- Page content -->
     <div class="container-fluid mt--6">
         <div class="row">
@@ -42,6 +43,42 @@
                                 <input class="form-control py-4"
                                        name="product_code" type="text"
                                        value="{{ $product->product_code }}"/>
+=======
+<!-- Page content -->
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h2 class="mb-0">Pet Add New</h2>
+                </div>
+                <div class="card-body">
+                    {{session('update-error')}}
+                    <form method="post" action="{{route('product.update', $product->id)}}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label class="small mb-1">Product Code</label>
+                            <input class="form-control py-4"
+                                   name="product_code" type="text"
+                                   placeholder="{{ $product->product_code }}"/>
+                        </div>
+                        <div class="form-group">
+                            <label class="small mb-1" for="inputEmailAddress">Origination</label>
+                            <input class="form-control py-4"
+                                   name="origination" id="inputEmailAddress" type="text"
+                                   aria-describedby="emailHelp"
+                                   placeholder="{{ $product->origination }}" />
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="small mb-1" for="inputPassword">Fur Color</label>
+                                    <input class="form-control py-4"
+                                           name="fur_color" id="inputPassword" type="text"
+                                           placeholder="{{ $product->fur_color }}" />
+                                </div>
+>>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Origination</label>

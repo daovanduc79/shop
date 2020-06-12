@@ -64,7 +64,16 @@
                                 <tr>
                                     <th scope="row">{{$key}}</th>
                                     <td class="text-center">{{$user->id}}</td>
+<<<<<<< HEAD
                                     <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" height="85" width="65"></td>
+=======
+                                    <td class="text-center"><img src="
+                                    @if($user->image)
+                                        {{asset('storage/'.$user->image)}}
+                                        @else
+                                        {{asset('img/default/avatar.jpg')}}
+                                        @endif" width="70px" height="70px"></td>
+>>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
                                     <td class="text-center">{{$user->name}}</td>
                                     <td class="text-center">{{$user->username}}</td>
                                     <td class="text-center">
