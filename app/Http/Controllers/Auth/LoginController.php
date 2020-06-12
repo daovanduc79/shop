@@ -26,9 +26,12 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($user)) {
+
             if (Auth::user()->role === 1 or Auth::user()->role === 2) {
                 Toastr::success('Đăng nhập thành công !', 'Welcome '.Auth::user()->name, ["positionClass" => "toast-top-center", "progressBar" => true]);
+
                 return redirect()->route('admin.home');
+
             } else {
                 Toastr::error('Bạn không có quyền !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return back();

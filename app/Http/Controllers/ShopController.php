@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Cart;
+use App\Http\Service\ProductService;
 use App\Http\Service\ShopService;
 use App\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller
@@ -18,6 +22,7 @@ class ShopController extends Controller
 
     function index()
     {
+
         $cart = Session::get('cart');
         $products = $this->shopService->index();
         return view('shop.shop', compact(['products', 'cart']));
@@ -49,7 +54,7 @@ class ShopController extends Controller
 
     function checkout()
     {
-
+        
     }
 
     function showShopDetail($id)
