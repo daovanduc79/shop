@@ -51,7 +51,12 @@
                                         {{++$key}}
                                     </th>
                                     <td class="budget">
-                                        <img src="{{asset('storage/'.$pet->image)}}" width="70px" height="70px">
+                                        <img src="
+                                    @if($pet->image)
+                                        {{asset('storage/'.$pet->image)}}
+                                        @else
+                                        {{asset('img/default/pets.jpg')}}
+                                        @endif" width="70px" height="70px">
                                     </td>
                                     <td>
                                         {{$pet->name}}
