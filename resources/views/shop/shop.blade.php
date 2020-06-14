@@ -132,7 +132,7 @@
                                             <div class="single-product">
                                                 <div class="product-img">
                                                     <div class="pro-type">
-                                                        <span>{{ $product->sale }}</span>
+                                                        <span>{{$product->sale}}</span>
                                                     </div>
                                                     <a href="{{ route('shop.detail',$product->id) }}"><img
                                                             src="{{ asset('storage/' . $product->image) }}"
@@ -200,11 +200,11 @@
                                                                 ${{ $product->price }}</h5>
                                                             <p>{{ $product->characteristics }}</p>
                                                             <div class="list-btn">
+                                                                @if($product->status == 1)
                                                                 <a href="{{route('shop.addToCart',['productId'=>$product->id])}}">add
                                                                     to cart</a>
-                                                                <a href="#">wishlist</a>
-                                                                {{--                                                                <a href="#" data-toggle="modal"--}}
-                                                                {{--                                                                   data-target="#quick-view">zoom</a>--}}
+                                                                <a href="{{ route('shop.showCart') }}">wishlist</a>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -220,17 +220,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="pagnation-ul">
-                                    <ul class="clearfix">
-                                        <li><a href="#"><i class="mdi mdi-menu-left"></i></a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">...</a></li>
-                                        <li><a href="#">10</a></li>
-                                        <li><a href="#"><i class="mdi mdi-menu-right"></i></a></li>
-                                    </ul>
+
                                 </div>
                             </div>
                         </div>

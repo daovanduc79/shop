@@ -9,9 +9,11 @@ use App\Discount;
 use App\Http\Service\ProductService;
 use App\Http\Service\ShopService;
 use App\Product;
+use App\User;
 use Brian2694\Toastr\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller
@@ -21,7 +23,6 @@ class ShopController extends Controller
     public function __construct(ShopService $shopService)
     {
         $this->shopService = $shopService;
-
     }
 
     function index()
@@ -29,7 +30,7 @@ class ShopController extends Controller
 //        \session()->flush();
         $cart = Session::get('cart');
         $products = $this->shopService->index();
-        return view('shop.shop', compact(['products', 'cart']));
+        return view('shop.shop', compact('cart','products'));
     }
 
     function showCart()
@@ -65,16 +66,16 @@ class ShopController extends Controller
 
     function showShopDetail($id)
     {
-        $products = $this->shopService->index();
+        $cart = Session::get('cart');
+        $products = DB::table('products')->inRandomOrder()->paginate(4);
         $productDetails = Product::where('id', $id)->get();
-        $comments = Comment::where('productDetail_id',$id)->get();
-
-        return view('shop.product_ detail', compact('productDetails','comments','products'));
+        $comments = Comment::where('productDetail_id', $id)->get();
+        return view('shop.product_ detail', compact('productDetails', 'comments', 'products','cart'));
     }
 
-    public function postComment(Request $request , $id)
+    public function postComment(Request $request, $id)
     {
-        if (Auth::attempt()){
+        if (Auth::check()) {
             $comment = new Comment();
             $comment->username = $request->name;
             $comment->content = $request->inputContent;
@@ -82,7 +83,7 @@ class ShopController extends Controller
             $comment->user_id = Auth::id();
             $comment->save();
             return back();
-        }else{
+        } else {
             return redirect()->route('login-shop.form');
         }
     }

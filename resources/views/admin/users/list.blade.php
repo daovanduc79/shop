@@ -54,7 +54,7 @@
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
                                 <th scope="col" class="text-center">Role</th>
-                                <th scope="col" class="sort"></th>
+                                <th scope="col" class="text-center">Action</th>
 
                             </tr>
                             </thead>
@@ -77,7 +77,7 @@
                                             @case(\App\Http\Controllers\RoleConstant::MEMBER) {{'Member'}} @break
                                         @endswitch
                                     </td>
-                                    <td class="text-right">
+                                    <td class="text-center">
                                         <a class="btn btn-outline-info btn-sm">View</a>
                                         <a href="{{route('users.edit', ['id'=>$user->id])}}"
                                            class="btn btn-outline-primary btn-sm">Edit</a>

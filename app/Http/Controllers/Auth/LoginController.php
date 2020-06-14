@@ -29,14 +29,13 @@ class LoginController extends Controller
         if (Auth::attempt($user)) {
             if (Auth::user()->role === RoleConstant::ADMIN or Auth::user()->role === RoleConstant::USER) {
                 Toastr::success('Đăng nhập thành công !', 'Welcome ' . Auth::user()->name, ["positionClass" => "toast-top-center", "progressBar" => true]);
-
                 return redirect()->route('admin.home');
             } else {
                 Toastr::error('Bạn không có quyền !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
                 return back();
             }
         } else {
-            Toastr::error('Đăng nhập thất bại !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
+            Toastr::error('Tài khoản mật khẩu không đúng !', 'False', ["positionClass" => "toast-top-center", "progressBar" => true]);
             return back();
         }
     }

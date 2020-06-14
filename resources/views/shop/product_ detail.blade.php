@@ -130,8 +130,10 @@
                                         </div>
                                     </div>
                                     <div class="list-btn">
-                                        <a href="#">add to cart</a>
-                                        <a href="#">wishlist</a>
+                                        @if($productDetail->status == 1)
+                                            <a href="{{route('shop.addToCart',['productId'=>$productDetail->id])}}">add to cart</a>
+                                        @endif
+                                        <a href="{{ route('shop.showCart') }}">wishlist</a>
                                     </div>
                                     <div class="share-tag clearfix">
                                         <ul class="blog-share floatleft">
@@ -304,7 +306,10 @@
                             <div class="pro-type">
                                 <span>new</span>
                             </div>
-                            <a href="{{route('shop.detail',$product->id)}}"><img src="{{ asset('storage/' . $product->image) }}" alt="Product Title"/></a>
+                            <a href="{{route('shop.detail',$product->id)}}">
+                                <img src="{{ asset('storage/' . $product->image) }}"
+                                     alt="Product Title"
+                                height="350" width="270"/></a>
                             <div class="actions-btn">
                                 <a href="#"><i class="mdi mdi-cart"></i></a>
                                 <a href="#" data-toggle="modal" data-target="#quick-view"><i
@@ -498,5 +503,4 @@
         </div>
     </div>
     <!-- quick view end -->
-
 @endsection
