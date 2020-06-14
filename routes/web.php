@@ -102,3 +102,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('test', function () {
    return view('shop.test');
 });
+
+
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle')->name('auth.google');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback')->name('googleCallBack');
