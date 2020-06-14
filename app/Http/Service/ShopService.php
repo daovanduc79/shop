@@ -21,7 +21,8 @@ class ShopService
     }
 
     function index() {
-        return $this->productRepository->all();
+        return $this->productRepository->paginate(9);
+
     }
 
     function addToCart($productId) {

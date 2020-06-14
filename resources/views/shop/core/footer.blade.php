@@ -106,12 +106,12 @@
                             </div>
                             <div class="clearfix instagram">
                                 <ul>
-                                    <li><a href="#"><img src="img/footer/in1.png" alt="Instagram"/></a></li>
-                                    <li><a href="#"><img src="img/footer/in2.png" alt="Instagram"/></a></li>
-                                    <li><a href="#"><img src="img/footer/in3.png" alt="Instagram"/></a></li>
-                                    <li><a href="#"><img src="img/footer/in4.png" alt="Instagram"/></a></li>
-                                    <li><a href="#"><img src="img/footer/in5.png" alt="Instagram"/></a></li>
-                                    <li><a href="#"><img src="img/footer/in6.png" alt="Instagram"/></a></li>
+                                    <li><a href="#"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-Doug-Pug.jpg')}}" alt="Instagram" height="65" width="83"/></a></li>
+                                    <li><a href="#"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-Jiffpom.jpg') }}" alt="Instagram" height="65" width="83"/></a></li>
+                                    <li><a href="#"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-Lil-Bub.jpg') }}" alt="Instagram" height="65" width="83"/></a></li>
+                                    <li><a href="#"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-Manny.jpg') }}" alt="Instagram" height="65" width="83"/></a></li>
+                                    <li><a href="#"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-nala-cat.jpg') }}" alt="Instagram" height="65" width="83"/></a></li>
+                                    <li><a href="@waffles_the_cat"><img src="{{ asset('img/footer/tai-khoan-instagram-cua-thu-cung-Waffles.jpg') }}" alt="Instagram" height="65" width="83"/></a></li>
                                 </ul>
                             </div>
                         </div>

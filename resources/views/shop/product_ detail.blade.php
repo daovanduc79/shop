@@ -289,25 +289,8 @@
                                 <div class="custom-input">
                                     <form action="mail.php" method="post">
                                         <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="input-mail">
-                                                    <input type="text" name="name" placeholder="Your Name"/>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="input-mail">
-                                                    <input type="text" name="email" placeholder="Your Email"/>
-                                                </div>
-                                            </div>
                                             <div class="col-xs-12">
                                                 <div class="custom-mess">
-                                                    <textarea name="message" placeholder="Your Review"
-                                                              rows="2"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12">
-                                                <div class="submit-text">
-                                                    <button type="submit">submit review</button>
                                                 </div>
                                             </div>
                                         </div>
