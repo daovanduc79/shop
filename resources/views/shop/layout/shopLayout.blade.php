@@ -36,6 +36,7 @@
     <!-- responsive css -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
     <!-- modernizr js -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
     <script src="{{ asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
 <body>
@@ -46,6 +47,10 @@
 
 @include('shop.core.footer')
 
+<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+{!! Toastr::message() !!}
 <script src="{{ asset('js/vendor/jquery-1.12.3.min.js')}}"></script>
 <!-- bootstrap js -->
 <script src="{{ asset('js/bootstrap.min.js')}}"></script>

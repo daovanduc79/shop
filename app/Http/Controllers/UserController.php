@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UserRequest;
 use App\Http\Service\UserService;
 use App\User;
@@ -31,7 +32,7 @@ class UserController extends Controller
         return view('admin.users.create');
     }
 
-    public function store(UserRequest $request)
+    public function store(CreateUserRequest $request)
     {
         $user = $this->userService->create();
         $this->userService->store($user, $request);

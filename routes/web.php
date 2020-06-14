@@ -22,29 +22,24 @@ Route::prefix('shop')->group(function () {
         Route::get('/','ShopController@showCart')->name('shop.showCart');
         Route::get('{productId}/add','ShopController@addToCart')->name('shop.addToCart');
         Route::get('{productId}/remove', 'ShopController@removeProductIntoCart')->name('shop.removeProductIntoCart');
-        Route::get('show-checkout','ShopController@showCheckout')->name('shop.showCheckout');
         Route::post('checkout','ShopController@checkout')->name('shop.checkout');
     });
 
-
-
     Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
-
-    Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
+    Route::post('{id}/detail','ShopController@postComment')->name('shop.comment');
 
 });
-
-Route::get('/register', 'Auth\RegisterController@showFormRegister')->name('formRegister');
-Route::post('/register', 'Auth\RegisterController@registerActive')->name('registerActive');
-Route::get('/register/verify/{code}', 'Auth\RegisterController@verify')->name('verify');
 
 Route::prefix('login')->group(function () {
     Route::get('/', 'Auth\LoginController@showFormLogin')->name('formLogin');
     Route::post('/', 'Auth\LoginController@login')->name('login');
 });
-Route::prefix('login-shop')->group(function () {
-    Route::get('/', 'Auth\Shop\LoginShopController@showFormLogin')->name('login-shop.form');
-    Route::post('/', 'Auth\Shop\LoginShopController@login')->name('login-shop');
+Route::prefix('auth-shop')->group(function () {
+    Route::get('/login', 'Auth\Shop\LoginShopController@showFormLogin')->name('login-shop.form');
+    Route::post('/login', 'Auth\Shop\LoginShopController@login')->name('login-shop');
+    Route::get('/register', 'Auth\Shop\RegisterShopController@showFormRegister')->name('register-shop');
+    Route::post('/register', 'Auth\Shop\RegisterShopController@registerActive')->name('registerActive-shop');
+    Route::get('/register/verify/{code}', 'Auth\Shop\RegisterShopController@verify')->name('verify');
 });
 
 Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');
@@ -103,3 +98,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('test', function () {
    return view('shop.test');
 });
+
+
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle')->name('auth.google');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback')->name('googleCallBack');

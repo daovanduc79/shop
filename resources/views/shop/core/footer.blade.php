@@ -5,11 +5,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="barnd-bg">
-                        <a href="#"><img src="img/brand/1.png" alt="Brand Logo"/></a>
-                        <a href="#"><img src="img/brand/2.png" alt="Brand Logo"/></a>
-                        <a href="#"><img src="img/brand/3.png" alt="Brand Logo"/></a>
-                        <a href="#"><img src="img/brand/4.png" alt="Brand Logo"/></a>
-                        <a href="#"><img src="img/brand/5.png" alt="Brand Logo"/></a>
+                        <a href="#"><img src="{{asset('img/brand/1.png')}}" alt="Brand Logo"/></a>
+                        <a href="#"><img src="{{asset('img/brand/2.png')}}" alt="Brand Logo"/></a>
+                        <a href="#"><img src="{{asset('img/brand/3.png')}}" alt="Brand Logo"/></a>
+                        <a href="#"><img src="{{asset('img/brand/4.png')}}" alt="Brand Logo"/></a>
+                        <a href="#"><img src="{{asset('img/brand/5.png')}}" alt="Brand Logo"/></a>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
                     <p>&copy; Sellshop 2016. All Rights Reserved.</p>
                 </div>
                 <div class="col-xs-12 col-sm-6 text-right">
-                    <a href="#"><img src="img/footer/payment.png" alt=""/></a>
+                    <a href="#"><img src="{{asset('img/footer/payment.png')}}" alt=""/></a>
                 </div>
             </div>
         </div>
