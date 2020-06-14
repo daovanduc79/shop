@@ -11,10 +11,10 @@
                     <div class="middel-top clearfix">
                         <ul class="clearfix right floatright">
                             <li>
-                                <a href="#"><i class="mdi mdi-account"></i></a>
+                                <a href="#"><i class="mdi mdi-account"></i>@if(\Illuminate\Support\Facades\Auth::user()){{\Illuminate\Support\Facades\Auth::user()->name}}@endif</a>
                                 <ul>
                                     <li><a href="{{route('login-shop.form')}}">Login</a></li>
-                                    <li><a href="login.html">Register</a></li>
+                                    <li><a href="{{route('register-shop')}}">Register</a></li>
                                     <li><a href="my-account.html">My account</a></li>
                                 </ul>
                             </li>

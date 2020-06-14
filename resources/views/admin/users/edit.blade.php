@@ -35,7 +35,14 @@
                             @csrf
                             <div class="form-group">
                                 <label class="small mb-1">Name</label>
-                                <input class="form-control py-4" name="name" type="text" value="{{$user->name}}"/>
+                                <input required class="form-control py-4
+                                @if($errors->first('name'))
+                                    is-invalid
+                                @endif
+                                    " value="{{ $user->name }}" name="name" placeholder="Enter name">
+                                @if($errors->first('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label class="small mb-1" for="inputEmailAddress">Email</label>

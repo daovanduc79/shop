@@ -27,7 +27,7 @@ class UserService extends Service
        $user->username = $request->email;
        $user->role = $request->role;
 
-       if ($request->password == $request->password_confirmation) {
+       if ($request->password == $request->confirm) {
            $user->password = Hash::make($request->password);
        }
 

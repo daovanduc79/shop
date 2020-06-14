@@ -66,7 +66,6 @@
                                     ">
                                     <option value="{{\App\Http\Controllers\RoleConstant::ADMIN}}">Admin</option>
                                     <option value="{{\App\Http\Controllers\RoleConstant::USER}}">User</option>
-                                    <option value="{{\App\Http\Controllers\RoleConstant::MEMBER}}">Member</option>
                                 </select>
                                 @if($errors->first('role'))
                                     <p class="text-danger">{{ $errors->first('role') }}</p>
@@ -91,14 +90,14 @@
                                     <div class="form-group">
                                         <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
                                         <input required minlength="6" maxlength="32" class="form-control py-4
-                                        @if($errors->first('password_confirmation'))
+                                        @if($errors->first('confirm'))
                                             is-invalid
                                         @endif
-                                            " name="password_confirmation"
+                                            " name="confirm"
                                                id="inputConfirmPassword" type="password"
                                                placeholder="Confirm password"/>
-                                        @if($errors->first('password_confirmation'))
-                                            <p class="text-danger">{{ $errors->first('password_confirmation') }}</p>
+                                        @if($errors->first('confirm'))
+                                            <p class="text-danger">{{ $errors->first('confirm') }}</p>
                                         @endif
                                     </div>
                                 </div>

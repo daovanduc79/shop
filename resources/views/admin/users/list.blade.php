@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-5 text-right">
-                        <a href="{{route('users.create')}}" class="btn btn-sm btn-success">New</a>
+                        <a href="{{route('users.create')}}" class="btn btn-sm btn-neutral">New</a>
                         <a href="#" class="btn btn-sm btn-neutral">Filters</a>
                     </div>
                 </div>
@@ -50,7 +50,6 @@
                             <thead class="thead-light">
                             <tr>
                                 <th scope="col" class="sort">#</th>
-                                <th scope="col" class="text-center">ID</th>
                                 <th scope="col" class="text-center">Image</th>
                                 <th scope="col" class="text-center">Name</th>
                                 <th scope="col" class="text-center">Email</th>
@@ -62,18 +61,13 @@
                             <tbody class="list">
                             @foreach($users as $key=>$user)
                                 <tr>
-                                    <th scope="row">{{$key}}</th>
-                                    <td class="text-center">{{$user->id}}</td>
-<<<<<<< HEAD
-                                    <td class="text-center"><img src="{{asset('storage/'.$user->image)}}" height="85" width="65"></td>
-=======
+                                    <th scope="row">{{++$key}}</th>
                                     <td class="text-center"><img src="
                                     @if($user->image)
                                         {{asset('storage/'.$user->image)}}
                                         @else
                                         {{asset('img/default/avatar.jpg')}}
                                         @endif" width="70px" height="70px"></td>
->>>>>>> 442c4fa4575abdfa47545ed7979a27340e19317e
                                     <td class="text-center">{{$user->name}}</td>
                                     <td class="text-center">{{$user->username}}</td>
                                     <td class="text-center">
@@ -91,7 +85,6 @@
                                            class="btn btn-outline-danger btn-sm"
                                            onclick="return confirm('Do you want to delete ???')">Delete</a>
                                     </td>
-
                                 </tr>
                             @endforeach
                             </tbody>
