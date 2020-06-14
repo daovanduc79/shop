@@ -130,8 +130,10 @@
                                         </div>
                                     </div>
                                     <div class="list-btn">
-                                        <a href="#">add to cart</a>
-                                        <a href="#">wishlist</a>
+                                        @if($productDetail->status == 1)
+                                            <a href="{{route('shop.addToCart',['productId'=>$productDetail->id])}}">add to cart</a>
+                                        @endif
+                                        <a href="{{ route('shop.showCart') }}">wishlist</a>
                                     </div>
                                     <div class="share-tag clearfix">
                                         <ul class="blog-share floatleft">

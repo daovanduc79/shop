@@ -128,7 +128,6 @@
                             <div class="tab-content grid-content">
                                 <div class="tab-pane fade in active text-center" id="grid">
                                     @foreach($products as $product)
-{{--                                        @dd($product->sale)--}}
                                         <div class="col-xs-12 col-sm-6 col-md-4">
                                             <div class="single-product">
                                                 <div class="product-img">
@@ -201,11 +200,11 @@
                                                                 ${{ $product->price }}</h5>
                                                             <p>{{ $product->characteristics }}</p>
                                                             <div class="list-btn">
+                                                                @if($product->status == 1)
                                                                 <a href="{{route('shop.addToCart',['productId'=>$product->id])}}">add
                                                                     to cart</a>
-                                                                <a href="#">wishlist</a>
-                                                                {{--                                                                <a href="#" data-toggle="modal"--}}
-                                                                {{--                                                                   data-target="#quick-view">zoom</a>--}}
+                                                                <a href="{{ route('shop.showCart') }}">wishlist</a>
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>

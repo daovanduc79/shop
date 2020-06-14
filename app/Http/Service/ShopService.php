@@ -89,7 +89,7 @@ class ShopService
             $product->status = 0;
             $product->save();
         }
-//        $this->shopRepository->save($waitOrder);
+        $this->shopRepository->save($waitOrder);
     }
 
 }

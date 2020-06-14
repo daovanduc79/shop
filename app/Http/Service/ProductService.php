@@ -25,6 +25,7 @@ class ProductService extends Service
         $product->price = $request->price;
         $product->longevity = $request->longevity;
         $product->sale = $request->sale;
+        $product->status = 1;
         $product->characteristics = $request->characteristics;
 
         if ($request->hasFile('image')) {

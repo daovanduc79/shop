@@ -13,6 +13,7 @@ use App\User;
 use Brian2694\Toastr\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller
@@ -65,7 +66,7 @@ class ShopController extends Controller
 
     function showShopDetail($id)
     {
-            $products = Product::paginate(4);
+            $products = DB::table('products')->inRandomOrder()->paginate(4);
             $productDetails = Product::where('id', $id)->get();
             $comments = Comment::where('productDetail_id', $id)->get();
             return view('shop.product_ detail', compact('productDetails', 'comments', 'products'));
