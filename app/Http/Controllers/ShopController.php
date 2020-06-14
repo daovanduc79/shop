@@ -23,7 +23,7 @@ class ShopController extends Controller
 
     function index()
     {
-
+//        \session()->flush();
         $cart = Session::get('cart');
         $products = $this->shopService->index();
         return view('shop.shop', compact(['products', 'cart']));
@@ -53,9 +53,11 @@ class ShopController extends Controller
         return view('shop.cart.checkout', compact('cart'));
     }
 
-    function checkout()
+    function checkout(Request $request)
     {
-
+        $this->shopService->saveWaitOrder($request);
+        \session()->forget('cart');
+        return redirect()->route('shop.index');
     }
 
     function showShopDetail($id)
@@ -67,10 +69,6 @@ class ShopController extends Controller
     function getDiscount(Discount $discount)
     {
         $discounts = $discount->all();
-        $getDiscount = [
-            'status' => 200,
-            'discount' => $discounts
-        ];
         return response()->json($discounts, 200);
     }
 }

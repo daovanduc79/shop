@@ -134,7 +134,6 @@
                                 <span>total <strong>= ${{$cart->totalPrice}}</strong></span>
                             </div>
                             <a class="goto" href="{{route('shop.showCart')}}">go to cart</a>
-                            <a class="out-menu" href="{{route('shop.showCheckout')}}">Check out</a>
                         </div>
                     @else
                         <a class="cart-itme-a" href="{{route('shop.showCart')}}">

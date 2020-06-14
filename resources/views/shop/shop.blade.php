@@ -138,8 +138,10 @@
                                                             src="{{ asset('storage/' . $product->image) }}"
                                                             alt="Product Title" height="370" width="255"/></a>
                                                     <div class="actions-btn">
-                                                        <a href="{{route('shop.addToCart',['productId'=>$product->id])}}"><i
-                                                                class="mdi mdi-cart"></i></a>
+                                                        @if($product->status == 1)
+                                                            <a href="{{route('shop.addToCart',['productId'=>$product->id])}}"><i
+                                                                    class="mdi mdi-cart"></i></a>
+                                                        @endif
                                                         <a href="#" data-toggle="modal" data-target="#quick-view"><i
                                                                 class="mdi mdi-eye"></i></a>
                                                         <a href="#"><i class="mdi mdi-heart"></i></a>
@@ -198,7 +200,8 @@
                                                                 ${{ $product->price }}</h5>
                                                             <p>{{ $product->characteristics }}</p>
                                                             <div class="list-btn">
-                                                                <a href="{{route('shop.addToCart',['productId'=>$product->id])}}">add to cart</a>
+                                                                <a href="{{route('shop.addToCart',['productId'=>$product->id])}}">add
+                                                                    to cart</a>
                                                                 <a href="#">wishlist</a>
                                                                 {{--                                                                <a href="#" data-toggle="modal"--}}
                                                                 {{--                                                                   data-target="#quick-view">zoom</a>--}}

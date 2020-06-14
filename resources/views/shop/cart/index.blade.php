@@ -36,16 +36,6 @@
                             <tbody>
                             @if(session('cart'))
                                 @foreach($cart->items as $product)
-                                    {{--                                    <tr>--}}
-                                    {{--                                        <td>{{$product['item']->product_code}}</td>--}}
-                                    {{--                                        <td class="img-center">--}}
-                                    {{--                                            <a href="#"><img width="140px" height="100px"--}}
-                                    {{--                                                             src="{{asset('storage/'.$product['item']->image)}}"--}}
-                                    {{--                                                             alt="Add Product"/></a>--}}
-                                    {{--                                        </td>--}}
-                                    {{--                                        <td>{{$product['item']->price}}</td>--}}
-                                    {{--                                        <td><a href="{{route('shop.removeProductIntoCart',['productId'=>$product['item']->id])}}"><i class="mdi mdi-close" title="Remove this product"></i></a></td>--}}
-                                    {{--                                    </tr>--}}
                                     <tr>
                                         <td>{{$product['item']->product_code}}</td>
                                         <td class="td-img text-left">
@@ -108,25 +98,27 @@
                             <h3><strong>payment details</strong></h3>
                         </div>
                         <div class="cart-form-text pay-details table-responsive">
-                            <form>
-                                <table>
-                                    @if(session('cart'))
+
+                            @if(session('cart'))
+                                <form action="{{route('shop.checkout')}}" method="post">
+                                    @csrf
+                                    <table>
                                         <tbody>
                                         <tr>
                                             <th>Cart Subtotal</th>
-                                            <td><input style="border: 0; text-align: right" id="cartSubtotal"
-                                                       value="{{$cart->totalPrice}}">$
+                                            <td><input style="border: 0; text-align: right" name="cartSubtotal"
+                                                       value="{{$cart->totalPrice}}" readonly>$
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Coupon Discount</th>
-                                            <td><input style="border: 0; text-align: right" id="discount" value="">$
+                                            <td><input style="border: 0; text-align: right" id="discount" name="discount" value="" readonly>$
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>Vat</th>
-                                            <td><input style="border: 0; text-align: right" id="vat"
-                                                       value="{{$cart->totalPrice * 0.15}}">$
+                                            <td><input style="border: 0; text-align: right" name="vat"
+                                                       value="{{$cart->totalPrice * 0.15}}" readonly>$
                                             </td>
                                         </tr>
                                         </tbody>
@@ -134,12 +126,19 @@
                                         <tr>
                                             <th class="tfoot-padd">Order total</th>
                                             <td class="tfoot-padd"><input style="border: 0; text-align: right"
-                                                                          id="orderTotal"
-                                                                          value="{{$cart->totalPrice + $cart->totalPrice * 0.15}}">$
+                                                                          name="orderTotal"
+                                                                          value="{{$cart->totalPrice + $cart->totalPrice * 0.15}}" readonly>$
                                             </td>
                                         </tr>
                                         </tfoot>
-                                    @else
+                                    </table>
+                                    <div class="submit-text coupon">
+                                        <button type="submit">Checkout</button>
+                                    </div>
+                                </form>
+                            @else
+                                <form>
+                                    <table>
                                         <tbody>
                                         <tr>
                                             <th>Cart Subtotal</th>
@@ -165,13 +164,13 @@
                                             </td>
                                         </tr>
                                         </tfoot>
-                                    @endif
-                                </table>
-                                <input type="hidden" name="information">
-                                <div class="submit-text coupon">
-                                    <button type="submit">Checkout</button>
-                                </div>
-                            </form>
+                                    </table>
+                                    <input type="hidden" name="information">
+                                    <div class="submit-text coupon">
+                                        <button type="submit">Checkout</button>
+                                    </div>
+                                </form>
+                            @endif
                         </div>
                     </div>
                 </div>
