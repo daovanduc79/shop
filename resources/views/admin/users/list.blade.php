@@ -61,22 +61,13 @@
                             <tbody class="list">
                             @foreach($users as $key=>$user)
                                 <tr>
-<<<<<<< HEAD
-                                    <th scope="row">{{$key}}</th>
-                                    <td class="text-center">{{$user->id}}</td>
-=======
                                     <th scope="row">{{++$key}}</th>
->>>>>>> 53ec5cc05438f756ce1370309385b36100ab90d2
                                     <td class="text-center"><img src="
                                     @if($user->image)
                                         {{asset('storage/'.$user->image)}}
                                         @else
                                         {{asset('img/default/avatar.jpg')}}
-<<<<<<< HEAD
-                                        @endif" height="85" width="65"></td>
-=======
                                         @endif" width="70px" height="70px"></td>
->>>>>>> 53ec5cc05438f756ce1370309385b36100ab90d2
                                     <td class="text-center">{{$user->name}}</td>
                                     <td class="text-center">{{$user->username}}</td>
                                     <td class="text-center">

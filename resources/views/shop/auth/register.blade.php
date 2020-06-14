@@ -9,7 +9,7 @@
                         <h2>Sign in to continue</h2>
                         <ul class="text-left">
                             <li><a href="{{route('shop.index')}}">Home </a></li>
-                            <li><span> // </span>Login</li>
+                            <li><span> // </span>Register</li>
                         </ul>
                     </div>
                 </div>

@@ -14,7 +14,8 @@ class RegisterShopController extends Controller
 {
     public function showFormRegister()
     {
-        return view('shop.auth.register');
+        $cart = session('cart');
+        return view('shop.auth.register',compact('cart'));
     }
 
     public function registerActive(RegisterUserRequest $request)

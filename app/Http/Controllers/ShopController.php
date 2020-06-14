@@ -30,7 +30,7 @@ class ShopController extends Controller
 //        \session()->flush();
         $cart = Session::get('cart');
         $products = $this->shopService->index();
-        return view('shop.shop', compact(['products', 'cart']));
+        return view('shop.shop', compact('cart','products'));
     }
 
     function showCart()
@@ -66,10 +66,11 @@ class ShopController extends Controller
 
     function showShopDetail($id)
     {
-            $products = DB::table('products')->inRandomOrder()->paginate(4);
-            $productDetails = Product::where('id', $id)->get();
-            $comments = Comment::where('productDetail_id', $id)->get();
-            return view('shop.product_ detail', compact('productDetails', 'comments', 'products'));
+        $cart = Session::get('cart');
+        $products = DB::table('products')->inRandomOrder()->paginate(4);
+        $productDetails = Product::where('id', $id)->get();
+        $comments = Comment::where('productDetail_id', $id)->get();
+        return view('shop.product_ detail', compact('productDetails', 'comments', 'products','cart'));
     }
 
     public function postComment(Request $request, $id)

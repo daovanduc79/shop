@@ -503,5 +503,4 @@
         </div>
     </div>
     <!-- quick view end -->
-
 @endsection
