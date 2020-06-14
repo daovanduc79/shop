@@ -40,6 +40,7 @@ Route::prefix('auth-shop')->group(function () {
     Route::get('/register', 'Auth\Shop\RegisterShopController@showFormRegister')->name('register-shop');
     Route::post('/register', 'Auth\Shop\RegisterShopController@registerActive')->name('registerActive-shop');
     Route::get('/register/verify/{code}', 'Auth\Shop\RegisterShopController@verify')->name('verify');
+    Route::get('/logout', 'Auth\Shop\LoginShopController@logout')->name('logout-shop');
 });
 
 Route::get('/forgot-password', 'Auth\ForgotPasswordController@formForgotPassword')->name('formForgotPassword');

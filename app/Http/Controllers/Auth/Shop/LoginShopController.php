@@ -36,4 +36,11 @@ class LoginShopController extends Controller
             return back();
         }
     }
+
+    public function logout()
+    {
+        Auth::logout();
+        Toastr::warning('Bạn đã đăng xuất !', 'Warning', ["positionClass" => "toast-top-center", "progressBar" => true]);
+        return redirect()->route('home.index');
+    }
 }

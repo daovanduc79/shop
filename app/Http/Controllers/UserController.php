@@ -57,7 +57,7 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update($id,UserRequest $request)
+    public function update($id,Request $request)
     {
         $user = $this->userService->findOrFail($id);
         $this->userService->update($user, $request);

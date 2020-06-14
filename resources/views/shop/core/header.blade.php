@@ -10,14 +10,29 @@
                     </div>
                     <div class="middel-top clearfix">
                         <ul class="clearfix right floatright">
+                            @if(\Illuminate\Support\Facades\Auth::user())
                             <li>
-                                <a href="#"><i class="mdi mdi-account"></i>@if(\Illuminate\Support\Facades\Auth::user()){{\Illuminate\Support\Facades\Auth::user()->name}}@endif</a>
+                                <a href="#"><img class="rounded-circle" alt="Cinque Terre" width="30px" height="30px" src="
+                                    @if(\Illuminate\Support\Facades\Auth::user()->google_id)
+                                            {{\Illuminate\Support\Facades\Auth::user()->image}}
+                                        @else{{'storage/'.\Illuminate\Support\Facades\Auth::user()->image}}@endif">
+                                    {{\Illuminate\Support\Facades\Auth::user()->name}}</a>
                                 <ul>
-                                    <li><a href="{{route('login-shop.form')}}">Login</a></li>
-                                    <li><a href="{{route('register-shop')}}">Register</a></li>
-                                    <li><a href="my-account.html">My account</a></li>
+                                    <li><a href="">My account</a></li>
+                                    <li><a href="{{route('logout-shop')}}">Logout</a></li>
+                                    <li><a href="{{route('formLogin')}}">Admin</a></li>
                                 </ul>
                             </li>
+                            @else
+                                <li>
+                                    <a href="{{route('login-shop.form')}}"><i class="mdi mdi-account"></i></a>
+                                    <ul>
+                                        <li><a href="{{route('login-shop.form')}}">Login</a></li>
+                                        <li><a href="{{route('register-shop')}}">Register</a></li>
+                                        <li><a href="{{route('formLogin')}}">Admin</a></li>
+                                    </ul>
+                                </li>
+                            @endif
                             <li>
                                 <a href="#"><i class="mdi mdi-settings"></i></a>
                                 <ul>
