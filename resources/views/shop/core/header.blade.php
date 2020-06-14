@@ -43,7 +43,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <div class="logo">
-                    <a href="index.html"><img src="img/logo2.png" alt="Sellshop"/></a>
+                    <a href="index.html"><img src="{{asset('img/logo2.png')}}" alt="Sellshop"/></a>
                 </div>
             </div>
             <div class="col-sm-8">

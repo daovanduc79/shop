@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 
 use App\Cart;
+use App\Comment;
 use App\Discount;
 use App\Http\Service\ProductService;
 use App\Http\Service\ShopService;
 use App\Product;
+use Brian2694\Toastr\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ShopController extends Controller
@@ -62,8 +65,26 @@ class ShopController extends Controller
 
     function showShopDetail($id)
     {
+        $products = $this->shopService->index();
         $productDetails = Product::where('id', $id)->get();
-        return view('shop.product_ detail', compact('productDetails'));
+        $comments = Comment::where('productDetail_id',$id)->get();
+
+        return view('shop.product_ detail', compact('productDetails','comments','products'));
+    }
+
+    public function postComment(Request $request , $id)
+    {
+        if (Auth::attempt()){
+            $comment = new Comment();
+            $comment->username = $request->name;
+            $comment->content = $request->inputContent;
+            $comment->productDetail_id = $id;
+            $comment->user_id = Auth::id();
+            $comment->save();
+            return back();
+        }else{
+            return redirect()->route('login-shop.form');
+        }
     }
 
     function getDiscount(Discount $discount)

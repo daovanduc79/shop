@@ -37,48 +37,47 @@
                                                 <div class="pro-type">
                                                     <span>{{ $productDetail->sale }}</span>
                                                 </div>
-                                                <a class="simpleLens-image" data-lens-image="img/products/z1.jpg"
-                                                   href="#"><img src="{{ asset('storage/' . $productDetail->image) }}"
-                                                                 alt="" class="simpleLens-big-image"></a>
+                                                <img src="{{ asset('storage/' . $productDetail->image) }}" height="510"
+                                                                 alt="" class="simpleLens-big-image">
                                             </div>
-{{--                                            <div class="simpleLens-container tab-pane active fade in" id="sin-2">--}}
-{{--                                                <div class="pro-type sell">--}}
-{{--                                                    <span>sell</span>--}}
-{{--                                                </div>--}}
-{{--                                                <a class="simpleLens-image" data-lens-image="img/products/z2.jpg"--}}
-{{--                                                   href="#"><img src="img/products/z2.jpg" alt=""--}}
-{{--                                                                 class="simpleLens-big-image"></a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="simpleLens-container tab-pane fade in" id="sin-3">--}}
-{{--                                                <div class="pro-type">--}}
-{{--                                                    <span>-15%</span>--}}
-{{--                                                </div>--}}
-{{--                                                <a class="simpleLens-image" data-lens-image="img/products/z3.jpg"--}}
-{{--                                                   href="#"><img src="img/products/z3.jpg" alt=""--}}
-{{--                                                                 class="simpleLens-big-image"></a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="simpleLens-container tab-pane fade in" id="sin-4">--}}
-{{--                                                <div class="pro-type">--}}
-{{--                                                    <span>new</span>--}}
-{{--                                                </div>--}}
-{{--                                                <a class="simpleLens-image" data-lens-image="img/products/z4.jpg"--}}
-{{--                                                   href="#"><img src="img/products/z4.jpg" alt=""--}}
-{{--                                                                 class="simpleLens-big-image"></a>--}}
-{{--                                            </div>--}}
+                                            <div class="simpleLens-container tab-pane active fade in" id="sin-2">
+                                                <div class="pro-type sell">
+                                                    <span>sell</span>
+                                                </div>
+                                                <img src="{{ asset('storage/' . $productDetail->image) }}" height="510"
+                                                                 alt="" class="simpleLens-big-image">
+                                            </div>
+                                            <div class="simpleLens-container tab-pane fade in" id="sin-3">
+                                                <div class="pro-type">
+                                                    <span>-15%</span>
+                                                </div>
+                                                <img src="{{ asset('storage/' . $productDetail->image) }}" height="510"
+                                                                 alt="" class="simpleLens-big-image">
+                                            </div>
+                                            <div class="simpleLens-container tab-pane fade in" id="sin-4">
+                                                <div class="pro-type">
+                                                    <span>new</span>
+                                                </div>
+                                                <img src="{{ asset('storage/' . $productDetail->image) }}" height="510"
+                                                                 alt="" class="simpleLens-big-image">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quick-thumb">
                                     <ul class="product-slider">
                                         <li><a data-toggle="tab" href="#sin-1"> <img
-                                                    src="{{ asset('storage/' . $productDetail->image) }}"
-                                                    alt="quick view"/> </a></li>
-{{--                                        <li class="active"><a data-toggle="tab" href="#sin-2"> <img--}}
-{{--                                                    src="img/products/s2.jpg" alt="small image"/> </a></li>--}}
-{{--                                        <li><a data-toggle="tab" href="#sin-3"> <img src="img/products/s3.jpg"--}}
-{{--                                                                                     alt="small image"/> </a></li>--}}
-{{--                                        <li><a data-toggle="tab" href="#sin-4"> <img src="img/products/s4.jpg"--}}
-{{--                                                                                     alt="small image"/> </a></li>--}}
+                                                    src="{{ asset('storage/' . $productDetail->image) }} "
+                                                    alt="quick view" height="110"/> </a></li>
+                                        <li class="active"><a data-toggle="tab" href="#sin-2"> <img
+                                                    src="{{ asset('storage/' . $productDetail->image) }} "
+                                                    alt="quick view" height="110"/> </a></li>
+                                        <li><a data-toggle="tab" href="#sin-3"> <img
+                                                    src="{{ asset('storage/' . $productDetail->image) }} "
+                                                    alt="quick view" height="110"/> </a></li>
+                                        <li><a data-toggle="tab" href="#sin-4"> <img
+                                                    src="{{ asset('storage/' . $productDetail->image) }} "
+                                                    alt="quick view" height="110"/> </a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -133,7 +132,6 @@
                                     <div class="list-btn">
                                         <a href="#">add to cart</a>
                                         <a href="#">wishlist</a>
-                                        <a href="#" data-toggle="modal" data-target="#quick-view">zoom</a>
                                     </div>
                                     <div class="share-tag clearfix">
                                         <ul class="blog-share floatleft">
@@ -180,11 +178,12 @@
                                     lorem nec augue.</p>
                             </div>
                             <div class="info-reviews review-text tab-pane fade in active" id="reviews">
+                                @foreach($comments as $comment)
                                 <div class="about-author">
                                     <div class="autohr-text">
-                                        <img src="img/blog/author1.png" alt=""/>
+                                        <img src="{{asset('img/blog/author1.png')}}" alt=""/>
                                         <div class="author-des">
-                                            <h4><a href="#">Gregory Hernandez</a></h4>
+                                            <h4><a href="#">{{ $comment->username }}</a></h4>
                                             <span class="floatright ratting">
 													<i class="mdi mdi-star"></i>
 													<i class="mdi mdi-star"></i>
@@ -192,53 +191,14 @@
 													<i class="mdi mdi-star-half"></i>
 													<i class="mdi mdi-star-outline"></i>
 												</span>
-                                            <span>27 Jun, 2016 at 2:30pm</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                                egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget
-                                                eni Praesent et messages in consectetur.</p>
+                                            <span>{{ $comment->created_at }}</span>
+                                            <p>{{ $comment->content }}</p>
                                         </div>
                                     </div>
                                 </div>
-                                <hr/>
-                                <div class="about-author">
-                                    <div class="autohr-text">
-                                        <img src="img/blog/author2.png" alt=""/>
-                                        <div class="author-des">
-                                            <h4><a href="#">Gregory Hernandez</a></h4>
-                                            <span class="floatright ratting">
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star-half"></i>
-													<i class="mdi mdi-star-outline"></i>
-												</span>
-                                            <span>27 Jun, 2016 at 2:30pm</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                                egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget
-                                                eni Praesent et messages in consectetur.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <hr/>
-                                <div class="about-author">
-                                    <div class="autohr-text">
-                                        <img src="img/blog/author3.png" alt=""/>
-                                        <div class="author-des">
-                                            <h4><a href="#">Gregory Hernandez</a></h4>
-                                            <span class="floatright ratting">
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star-half"></i>
-													<i class="mdi mdi-star-outline"></i>
-												</span>
-                                            <span>27 Jun, 2016 at 2:30pm</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan
-                                                egestas eleifend. Phasellus a felis at est bibenes dum feugiat ut eget
-                                                eni Praesent et messages in consectetur.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                <hr>
+                                @endforeach
+
                                 <div class="your-rating log-title">
                                     <h3>leave your review</h3>
                                     <h5>Your rating</h5>
@@ -275,7 +235,7 @@
                                                 <span>|</span>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="#" >
                                                     <i class="mdi mdi-star-outline"></i>
                                                     <i class="mdi mdi-star-outline"></i>
                                                     <i class="mdi mdi-star-outline"></i>
@@ -287,21 +247,17 @@
                                     </div>
                                 </div>
                                 <div class="custom-input">
-                                    <form action="mail.php" method="post">
+                                    <form  method="post">
+                                        @csrf
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="input-mail">
                                                     <input type="text" name="name" placeholder="Your Name"/>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <div class="input-mail">
-                                                    <input type="text" name="email" placeholder="Your Email"/>
-                                                </div>
-                                            </div>
                                             <div class="col-xs-12">
                                                 <div class="custom-mess">
-                                                    <textarea name="message" placeholder="Your Review"
+                                                    <textarea name="inputContent" placeholder="Your Review"
                                                               rows="2"></textarea>
                                                 </div>
                                             </div>
@@ -341,13 +297,14 @@
                 </div>
             </div>
             <div class="row text-center">
+                @foreach($products as $product)
                 <div class="col-xs-12 col-sm-6 col-md-3">
                     <div class="single-product">
                         <div class="product-img">
                             <div class="pro-type">
                                 <span>new</span>
                             </div>
-                            <a href="#"><img src="img/products/1.jpg" alt="Product Title"/></a>
+                            <a href="{{route('shop.detail',$product->id)}}"><img src="{{ asset('storage/' . $product->image) }}" alt="Product Title"/></a>
                             <div class="actions-btn">
                                 <a href="#"><i class="mdi mdi-cart"></i></a>
                                 <a href="#" data-toggle="modal" data-target="#quick-view"><i
@@ -356,71 +313,12 @@
                             </div>
                         </div>
                         <div class="product-dsc">
-                            <p><a href="#">men’s Black t-shirt</a></p>
-                            <span>$65.20</span>
+                            <p><a href="{{route('shop.detail',$product->id)}}">{{ $product->product_code }}</a></p>
+                            <span>${{ $product->price }}</span>
                         </div>
                     </div>
                 </div>
-                <!-- single product end -->
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <div class="pro-type sell">
-                                <span>sell</span>
-                            </div>
-                            <a href="#"><img src="img/products/2.jpg" alt="Product Title"/></a>
-                            <div class="actions-btn">
-                                <a href="#"><i class="mdi mdi-cart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick-view"><i
-                                        class="mdi mdi-eye"></i></a>
-                                <a href="#"><i class="mdi mdi-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-dsc">
-                            <p><a href="#">men’s White t-shirt</a></p>
-                            <span>$57.00</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- single product end -->
-                <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <div class="pro-type">
-                                <span>-15%</span>
-                            </div>
-                            <a href="#"><img src="img/products/3.jpg" alt="Product Title"/></a>
-                            <div class="actions-btn">
-                                <a href="#"><i class="mdi mdi-cart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick-view"><i
-                                        class="mdi mdi-eye"></i></a>
-                                <a href="#"><i class="mdi mdi-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-dsc">
-                            <p><a href="#">men’s Blue t-shirt</a></p>
-                            <span>$56.00</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- single product end -->
-                <div class="col-xs-12 col-sm-6 col-md-3 r-margin-top">
-                    <div class="single-product">
-                        <div class="product-img">
-                            <a href="#"><img src="img/products/4.jpg" alt="Product Title"/></a>
-                            <div class="actions-btn">
-                                <a href="#"><i class="mdi mdi-cart"></i></a>
-                                <a href="#" data-toggle="modal" data-target="#quick-view"><i
-                                        class="mdi mdi-eye"></i></a>
-                                <a href="#"><i class="mdi mdi-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-dsc">
-                            <p><a href="#">men’s White t-shirt</a></p>
-                            <span>$96.20</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <!-- single product end -->
             </div>
         </div>
@@ -490,16 +388,16 @@
                                                 <div class="quick-thumb">
                                                     <ul class="product-slider">
                                                         <li><a data-toggle="tab" href="#q-sin-1"> <img
-                                                                    src="img/products/s1.jpg" alt="quick view"/> </a>
+                                                                    src="{{asset('img/products/s1.jpg')}}" alt="quick view"/> </a>
                                                         </li>
                                                         <li class="active"><a data-toggle="tab" href="#q-sin-2"> <img
-                                                                    src="img/products/s2.jpg" alt="small image"/> </a>
+                                                                    src="{{asset('img/products/s2.jpg')}}" alt="small image"/> </a>
                                                         </li>
                                                         <li><a data-toggle="tab" href="#q-sin-3"> <img
-                                                                    src="img/products/s3.jpg" alt="small image"/> </a>
+                                                                    src="{{asset('img/products/s3.jpg')}}" alt="small image"/> </a>
                                                         </li>
                                                         <li><a data-toggle="tab" href="#q-sin-4"> <img
-                                                                    src="img/products/s4.jpg" alt="small image"/> </a>
+                                                                    src="{{asset('img/products/s4.jpg')}}" alt="small image"/> </a>
                                                         </li>
                                                     </ul>
                                                 </div>

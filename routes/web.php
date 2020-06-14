@@ -25,11 +25,8 @@ Route::prefix('shop')->group(function () {
         Route::post('checkout','ShopController@checkout')->name('shop.checkout');
     });
 
-
-
     Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
-
-    Route::get('{id}/detail','ShopController@showShopDetail')->name('shop.detail');
+    Route::post('{id}/detail','ShopController@postComment')->name('shop.comment');
 
 });
 
