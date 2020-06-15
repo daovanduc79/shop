@@ -61,41 +61,42 @@
                 </div>
             </div>
             <div class="row margin-top">
-                <div class="col-sm-6">
-                    <div class="single-cart-form padding60">
-                        <div class="log-title">
-                            <h3><strong>coupon discount</strong></h3>
+                    <div class="col-sm-6">
+                        <div class="single-cart-form padding60">
+                            <div class="log-title">
+                                <h3><strong>coupon discount</strong></h3>
+                            </div>
+                            <div class="cart-form-text custom-input">
+                                <p>Enter your coupon code if you have one!</p>
+                                <input type="text" id="couponDiscount" placeholder="Enter your code here..."/>
+                                <p style="color: red" id="notExist"></p>
+                                <div class="submit-text coupon">
+                                    <button type="submit" onclick="checkDiscount()">apply coupon</button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="cart-form-text custom-input">
-                            <p>Enter your coupon code if you have one!</p>
-                            <input type="text" id="couponDiscount" placeholder="Enter your code here..."/>
-                            <p style="color: red" id="notExist"></p>
-                            <div class="submit-text coupon">
-                                <button type="submit" onclick="checkDiscount()">apply coupon</button>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="padding60">
+                            <div class="log-title">
+                                <h3><strong>Payment method</strong></h3>
+                            </div>
+                            <div class="categories">
+                                <p>Choose the form of payment</p>
+                                <br>
+                                <div class="cart-form-text custom-input">
+                                    <input type="button" id="cash" onclick="changePaymentMethod('Cash')" value="CASH">
+                                </div>
+                                <br>
+                                <div class="cart-form-text custom-input">
+                                    <input type="button" id="transfer" onclick="changePaymentMethod('Transfer')"
+                                           value="TRANSFER">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
-                    <div class="padding60">
-                        <div class="log-title">
-                            <h3><strong>Payment method</strong></h3>
-                        </div>
-                        <div class="categories">
-                            <p>Choose the form of payment</p>
-                            <br>
-                            <div class="cart-form-text custom-input">
-                                <input type="button" id="cash" onclick="changePaymentMethod('Cash')" value="CASH">
-                            </div>
-                            <br>
-                            <div class="cart-form-text custom-input">
-                                <input type="button" id="transfer" onclick="changePaymentMethod('Transfer')"  value="TRANSFER">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
             <div class="row margin-top">
                 <div class="col-sm-12">
                     <div class="single-cart-form padding60">
@@ -117,7 +118,9 @@
                                         </tr>
                                         <tr>
                                             <th>Coupon Discount</th>
-                                            <td><input style="border: 0; text-align: right" id="discount" name="discount" value="" readonly>$
+                                            <td><input style="border: 0; text-align: right" id="discount"
+                                                       name="discount"
+                                                       value="" readonly>$
                                             </td>
                                         </tr>
                                         <tr>
@@ -128,7 +131,8 @@
                                         </tr>
                                         <tr>
                                             <th>Payment Method</th>
-                                            <td><input style="border: 0; text-align: right" id="payment_method" name="payment_method"
+                                            <td><input style="border: 0; text-align: right" id="payment_method"
+                                                       name="payment_method"
                                                        value="Cash" readonly>
                                             </td>
                                         </tr>
@@ -138,7 +142,8 @@
                                             <th class="tfoot-padd">Order total</th>
                                             <td class="tfoot-padd"><input style="border: 0; text-align: right"
                                                                           name="orderTotal"
-                                                                          value="{{$cart->totalPrice + $cart->totalPrice * 0.15}}" readonly id="orderTotal">$
+                                                                          value="{{$cart->totalPrice + $cart->totalPrice * 0.15}}"
+                                                                          readonly id="orderTotal">$
                                             </td>
                                         </tr>
                                         </tfoot>

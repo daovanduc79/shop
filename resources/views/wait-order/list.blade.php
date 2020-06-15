@@ -1,6 +1,7 @@
 @extends('home-admin')
 @section('object','waitOrders')
 @section('content')
+
     <div class="header bg-primary pb-6">
         <div class="container-fluid">
             <div class="header-body">
@@ -96,13 +97,13 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-6">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Products</strong></h3>
+                                            <h2><strong>Products</strong></h2>
                                         </div>
                                         <div class="categories">
-                                            <table class="wishlist-table text-center">
+                                            <table class="container">
                                                 <thead>
                                                 <tr>
                                                     <th>Code</th>
@@ -135,10 +136,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-3">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Customer</strong></h3>
+                                            <h2><strong>Customer</strong></h2>
                                         </div>
                                         <div class="categories">
                                             <h3>Information</h3>
@@ -150,10 +151,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-3">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Wait Order</strong></h3>
+                                            <h2><strong>Wait Order</strong></h2>
                                         </div>
                                         <div class="categories">
                                             <h3>Detail</h3>
@@ -170,9 +171,9 @@
                             </div>
 
                         </div>
-                        <a href="{{route('orders.create',['idWaitOrder'=>$waitOrder->id])}}" class="btn btn-primary" style="color: white">Agree</a>
+
                         <div class="modal-footer">
-                            <span></span>
+                            <span><a href="{{route('orders.create',['idWaitOrder'=>$waitOrder->id])}}" class="btn btn-primary" style="color: white">Agree</a></span>
                         </div>
                     </div>
                 </div>

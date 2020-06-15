@@ -10,7 +10,7 @@ use App\Http\Service\ProductService;
 use App\Http\Service\ShopService;
 use App\Product;
 use App\User;
-use Brian2694\Toastr\Toastr;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -42,6 +42,7 @@ class ShopController extends Controller
     public function addToCart($productId)
     {
         $this->shopService->addToCart($productId);
+        Toastr::success('Thêm vào giỏ hàng thành công !', 'Success', ["positionClass" => "toast-top-center"]);
         return redirect()->back();
     }
 
@@ -61,6 +62,7 @@ class ShopController extends Controller
     {
         $this->shopService->saveWaitOrder($request);
         \session()->forget('cart');
+        Toastr::success('Đặt hàng thành công !', 'Success', ["positionClass" => "toast-top-center"]);
         return redirect()->route('shop.index');
     }
 

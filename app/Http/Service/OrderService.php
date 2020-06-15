@@ -17,5 +17,10 @@ class OrderService extends Service
     {
         $this->repository->create($idWaitOrder);
     }
+
+    function delete($id)
+    {
+        $this->repository->delete($id);
+    }
 }
 

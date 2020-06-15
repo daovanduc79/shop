@@ -17,4 +17,11 @@ class WaitOrderService extends Service
     {
         $this->repository->delete($id);
     }
+
+    function update($id, $request) {
+        $waitOrder = $this->findOrFail($id);
+        $waitOrder->note = $request->note;
+        $waitOrder->payment_method = $request->payment_method;
+        $this->save($waitOrder);
+    }
 }

@@ -65,10 +65,10 @@
                                         <a href="#" type="button" data-toggle="modal"
                                            data-target="#quick-view{{$order->id}}"
                                            class="btn btn-outline-info btn-sm">View</a>
-                                        <a href="{{route('waitOrders.edit',['id'=>$order->id])}}" type="button"
+                                        <a href="{{route('orders.edit',['id'=>$order->id])}}" type="button"
                                            class="btn btn-outline-primary btn-sm">Edit</a>
                                         <a onclick="return confirm('Are you delete?')"
-                                           href="{{route('waitOrders.delete',['id'=>$order->id])}}" type="button"
+                                           href="{{route('orders.delete',['id'=>$order->id])}}" type="button"
                                            class="btn btn-outline-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
@@ -96,13 +96,13 @@
                         </div>
                         <div class="container">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-6">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Products</strong></h3>
+                                            <h2><strong>Products</strong></h2>
                                         </div>
                                         <div class="categories">
-                                            <table class="wishlist-table text-center">
+                                            <table class="container">
                                                 <thead>
                                                 <tr>
                                                     <th>Code</th>
@@ -135,10 +135,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-3">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Customer</strong></h3>
+                                            <h2><strong>Customer</strong></h2>
                                         </div>
                                         <div class="categories">
                                             <h3>Information</h3>
@@ -150,10 +150,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-12 col-sm-4">
+                                <div class="col-xs-12 col-sm-3">
                                     <div class="padding60">
                                         <div class="log-title">
-                                            <h3><strong>Wait Order</strong></h3>
+                                            <h2><strong>Order</strong></h2>
                                         </div>
                                         <div class="categories">
                                             <h3>Detail</h3>

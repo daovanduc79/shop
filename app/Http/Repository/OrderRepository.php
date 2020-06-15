@@ -37,4 +37,17 @@ class OrderRepository extends Repository
         }
         $waitOrder->delete();
     }
+
+    function delete($id)
+    {
+        $order = $this->findOrFail($id);
+        foreach ($order->products->all() as $product) {
+            $product->pivot->delete();
+            $product->status = 1;
+            $product->save();
+        }
+        $order->discount->amount += 1;
+        $order->discount->save();
+        $order->delete();
+    }
 }
