@@ -48,9 +48,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="{{ route('waitOrders.index') }}">
                             <i class="ni ni-send text-dark"></i>
-                            <span class="nav-link-text">Upgrade</span>
+                            <span class="nav-link-text">Wait Orders</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('orders.index') }}">
+                            <i class="ni ni-send text-dark"></i>
+                            <span class="nav-link-text">Orders</span>
                         </a>
                     </li>
                 </ul>

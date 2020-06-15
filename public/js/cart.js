@@ -27,7 +27,14 @@ function changeTotalOrder() {
     let discount = +document.getElementById('discount').value;
     let vat = +document.getElementById('vat').value;
 
-    document.getElementById('orderTotal').value = cartSubtotal + discount + vat;
+    document.getElementById('orderTotal').value = cartSubtotal - discount + vat;
 }
 
+function changePaymentMethod($paymentMethod) {
+    if ($paymentMethod === 'Transfer') {
+        document.getElementById('payment_method').value = 'Transfer';
+    } else {
+        document.getElementById('payment_method').value = 'Cash';
+    }
 
+}

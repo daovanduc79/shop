@@ -91,6 +91,21 @@ Route::middleware(['auth'])->group(function () {
             Route::get('{id}/delete', 'CategoryController@delete')->name('categories.delete');
         });
 
+        Route::prefix('wait-order')->group(function () {
+            Route::get('/','WaitOrderController@index')->name('waitOrders.index');
+            Route::get('{id}/edit', 'WaitOrderController@edit')->name('waitOrders.edit');
+            Route::post('{id}/edit', 'WaitOrderController@update')->name('waitOrders.update');
+            Route::get('{id}/delete', 'WaitOrderController@delete')->name('waitOrders.delete');
+        });
+
+        Route::prefix('orders')->group(function () {
+            Route::get('/','OrderController@index')->name('orders.index');
+            Route::get('{idWaitOrder}/create','OrderController@create')->name('orders.create');
+            Route::get('{id}/edit', 'OrderController@edit')->name('orders.edit');
+            Route::post('{id}/edit', 'OrderController@update')->name('orders.update');
+            Route::get('{id}/delete', 'OrderController@delete')->name('orders.delete');
+        });
+
         Route::get('search','SearchController@search')->name('search');
     });
 

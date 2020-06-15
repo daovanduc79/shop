@@ -10,6 +10,7 @@ use App\Http\Repository\ProductRepository;
 use App\Http\Repository\ShopRepository;
 use App\Product;
 use App\WaitOrder;
+use App\WaitOrderProduct;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -27,7 +28,7 @@ class ShopService
     function index()
     {
 //        dd(\session('cart'));
-        return $this->productRepository->all();
+        return $this->productRepository->paginate(9);
     }
 
     function addToCart($productId)
@@ -67,29 +68,33 @@ class ShopService
 
     function saveWaitOrder($request)
     {
-
         $discounts = new Discount();
-//        dd($discounts->all());
-//        dd($request->discount );
         $waitOrder = new WaitOrder();
         $waitOrder->user_id = Auth::user()->id;
         foreach ($discounts->all() as $discount) {
             if ($request->discount == $discount->price) {
                 $waitOrder->discount_id = $discount->id;
+                $discount->amount -= 1;
+                $discount->save();
             }
         }
         $waitOrder->totalQty = \session('cart')->totalQty;
         $waitOrder->totalPrice = \session('cart')->totalPrice;
         $waitOrder->vat = $request->vat;
         $waitOrder->totalOrder = $request->orderTotal;
-//        dd($waitOrder);
+        $waitOrder->note = $request->note;
+        $waitOrder->payment_method = $request->payment_method;
         $waitOrder->save();
+        $idLastWaitOder = $waitOrder->id;
         foreach (\session('cart')->items as $key => $item) {
+            $wait_order_product = new WaitOrderProduct();
+            $wait_order_product->wait_order_id = $idLastWaitOder;
+            $wait_order_product->product_id = $key;
+            $wait_order_product->save();
             $product = $this->productRepository->findOrFail($key);
             $product->status = 0;
             $product->save();
         }
-        $this->shopRepository->save($waitOrder);
     }
 
 }

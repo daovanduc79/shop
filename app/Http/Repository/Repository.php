@@ -38,7 +38,7 @@ class Repository
         return $model->save();
     }
 
-    public function delete()
+    public function delete($id)
     {
         return $this->model->delete();
     }
